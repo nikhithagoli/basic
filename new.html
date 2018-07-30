@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <title>Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="wnameth=device-wnameth, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,250' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/js/bootstrap.min.js">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="assets/css/mycss.css" rel="stylesheet">
+  
+<script type="text/javascript">
+		function myFunction() {
+    var x = document.getElementById("xx");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+	var y = document.getElementById("yy");
+    if (y.style.display === "none") {
+        y.style.display = "block";
+    } else {
+        y.style.display = "none";
+    }
+}</script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="text-align:center; margin-top:15px;">REGISTRATION FORM</h1>
+    <div class="Form" style="margin-top:30px;">
+      <form action="otpverify.php" method="post">
+        <div class="row form-group">
+			<div class="col-md-4 right">
+            <label for="exampleFormControlInput1">Title</label></div>
+			<div class="col-md-2 left">
+            
+					<select class="form-control" name="mydropdown">
+						<option value="Mr">Mr</option>
+						<option value="Mrs">Mrs</option>
+						<option value="Ms">Ms</option>
+					</select>
+			</div>
+			</div>
+        <div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">Name</label></div>
+          <div class="col-md-4 left">
+            <input type="text" class="form-control" name="name" placeholder="Name" value=""  required>
+          </div>
+        </div>
+        
+        <div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">Email</label></div>
+          <div class="col-md-4 left">
+            <input type="email" class="form-control" name="email" placeholder="name@example.com" value=""  required>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">Phone Number</label></div>
+          <div class="col-md-4 left">
+            <input type="text" class="form-control" name="phno" placeholder="123454789" value=""  required>
+          </div>
+        </div>
+		<div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">Job Type</label></div>
+          <div class="col-md-1 left">
+            <input type="radio" class="form-control" id="rad" name="job" value="salaried/selfemployed"  onclick="myFunction()" required>
+			<label for="exampleFormControlInput1" id="rad" >salaried/selfemployed</label> <br>
+			<input type="radio" class="form-control" id="ra" name="job" value="enterprise/business"  required>
+			<label for="exampleFormControlInput1" id="ra" >enterprise/business</label> <br>
+          </div>
+        </div>
+		
+		<div style="display:none;" id="yy">
+		<div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">company name</label></div>
+          <div class="col-md-4 left">
+            <input type="text" class="form-control"  name="company" placeholder="company name" value=""  required>
+          </div>
+        </div>
+		</div>
+		<div style="display:none;" id="xx">
+		<div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">net salary</label></div>
+          <div class="col-md-4 left">
+            <input type="text" class="form-control" name="salary" placeholder="1234" value=""  required>
+          </div>
+        </div>
+		</div>
+		</div>
+		<div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">city</label></div>
+          <div class="col-md-4 left">
+            <input type="text" class="form-control" name="city" placeholder="place" value=""  required>
+          </div>
+        </div>
+		<div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">products</label></div>
+          <div class="col-md-4 left">
+            <select class="form-control" name="mydropdown">
+						<option value="personal loan">personal loan</option>
+						<option value="business loan">business loan</option>
+						<option value="car loan">car loan</option>
+						<option value="auto loan">auto loan</option>
+						<option value="doctors loan">doctors loan</option>
+						<option value="home loan">home loan</option>
+						<option value="loan against property">loan against property</option>
+						<option value="credit card">credit card</option>
+						
+					</select>
+          </div>
+        </div>
+		<div class="row form-group">
+          <div class="col-md-4 right">
+            <label for="exampleFormControlInput1">reference name</label></div>
+          <div class="col-md-4 left">
+            <input type="text" class="form-control" name="reference" placeholder="name" value=""  required>
+          </div>
+        </div>
+			 <div class="col-md-7 right">
+            <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  I have read and Agree to all Terms & Coditions<br><br>
+			</div>
+          
+        <div class=row>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+          </div>
+      </form>
+      </div>
+    </div>
+
+</body>
+</html>
