@@ -3,16 +3,13 @@
 print("enter end value")
 end = int(input())
 
-i = 1
-
 s = 0
 
-# while is a iterative structure
-#is used to do same task multiple times till the condition is true
+# for is a iterative structure
+#is used to do same task m times 
 
-while i <= end:
+for i in range(1,end+1):
 #s is used to add the numbers.
 	s += i
 #i is incremented by 1 to get next number
-	i += 1
 print(s)
