@@ -5,7 +5,7 @@ def main():
     for i in inp_s:
         if i in 'aeiou':
             vowel_count += 1
-    print("Number of vowels:", vowel_count)
+    print(vowel_count)
 
 
 if __name__ == "__main__":
