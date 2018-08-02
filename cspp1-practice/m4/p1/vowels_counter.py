@@ -5,4 +5,4 @@ C = 0
 for i in S:
     if i in 'aeiou':
         C += 1
-print("Number of vowels:", C)
+print(C)
