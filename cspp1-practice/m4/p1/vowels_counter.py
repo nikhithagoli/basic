@@ -1,8 +1,12 @@
-'"# find number of vowels in a given string" '
-S = input("enter string\n")
-C = 0
-'"# counting the vowels" '
-for i in S:
-    if i in 'aeiou':
-        C += 1
-print(C)
+"""#Assume s is a string of lower case characters."""
+def main():
+    inp_s = input()
+    vowel_count = 0
+    for i in inp_s:
+        if i in 'aeiou':
+            vowel_count += 1
+    print(vowel_count)
+
+
+if __name__ == "__main__":
+    main()
