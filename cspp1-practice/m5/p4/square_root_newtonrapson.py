@@ -1,5 +1,6 @@
 '"find the square root of the number using Newton-Rapson method"'
 def main():
+	"""newton-rapson method"""
     square = int(input())
     epsilon = 0.01
     guess_value = square/2.0
