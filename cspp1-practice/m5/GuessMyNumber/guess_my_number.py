@@ -1,5 +1,6 @@
 """#Guess My Number Exercise"""
 def main():
+    """guess secret number game"""
     guess_number = 50
     guess_count = 1
     while True:
