@@ -1,5 +1,6 @@
 '"find if the given number is a perfect cube or not using guess and check algorithm"'
 def main():
+""" guess and check method"""
     cube_value = int(input())
     guess_value = 0
     while (guess_value ** 3) != cube_value and guess_value <= cube_value:
