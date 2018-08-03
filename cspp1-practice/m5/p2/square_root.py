@@ -3,7 +3,7 @@
 def main():
     given_number = int(input())
     epsilon = 0.01
-    increment = 0.001
+    increment = 0.0001
     guess_value = 0.0
     while abs((guess_value ** 2) - given_number) >= epsilon and guess_value <= given_number:
         guess_value += increment
