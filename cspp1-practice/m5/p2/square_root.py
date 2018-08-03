@@ -1,7 +1,6 @@
 "'to find the square root of the given number using approximation method'"
-
 def main():
-	"""using approximation method"""
+    """using approximation method"""
     given_number = int(input())
     epsilon = 0.01
     increment = 0.0001
