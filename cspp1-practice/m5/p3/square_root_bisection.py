@@ -6,7 +6,7 @@ def main():
     low = 1.0
     high = square
     guess = (high + low)/2.0
-    while abs(guess ** 2) - square >= epsilon:
+    while abs(guess ** 2 - square) >= epsilon:
         if guess ** 2 <= square:
             low = guess
         else:
