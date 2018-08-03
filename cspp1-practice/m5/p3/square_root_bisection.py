@@ -2,7 +2,7 @@
 
 def main():
     square = int(input())
-    epsilon = 0.01
+    epsilon = 0.001
     low = 1.0
     high = square
     guess = (high + low)/2.0
