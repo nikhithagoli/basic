@@ -15,9 +15,8 @@ def main():
             digit = int_input % 10
             digit_product = digit_product * digit
             int_input = int_input // 10
-        print(digit_product)
+        print("-" + str(digit_product))
     else:
-        int_input = -int_input
         digit_product = 1
         while int_input != 0:
             digit = int_input % 10
