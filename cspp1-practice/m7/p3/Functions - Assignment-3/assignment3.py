@@ -52,7 +52,7 @@ def paying_debt_off_in_a_year(balance, annual_interest_rate):
     monthly_payment_lower_bound = balance / 12
     monthly_payment_upper_bound = (balance * (1 + monthly_interest_rate)**12) / 12.0
     new_balance = balance
-    epsilon = 0.001
+    epsilon = 0.0001
     guess = (monthly_payment_lower_bound + monthly_payment_upper_bound)/2
     while True:
         month = 1
