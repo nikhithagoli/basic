@@ -36,6 +36,7 @@ def paying_debt_off_in_a_year(inp_balance, annual_interest_rate):
             (monthly_interest_rate * monthly_unpaid_balance)
             balance = updated_balance_each_month
             month += 1
+            print(balance)
     return monthly_payment
 def main():
     """ it is a main function"""
