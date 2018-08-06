@@ -71,10 +71,10 @@ def paying_debt_off_in_a_year(balance, annual_interest_rate):
 
         guess = (monthly_payment_lower_bound + monthly_payment_upper_bound)/2
 def main():
-    """it is a main function to call paying debt function by sending data list items as argumnets""" 
+    """ it is a main function"""
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print('Lowest Payment: ' + str(paying_debt_off_in_a_year(data[0], data[1]))) 
+    print("Lowest Payment: " + str(paying_debt_off_in_a_year(data[0], data[1])))
 if __name__ == "__main__":
     main()
