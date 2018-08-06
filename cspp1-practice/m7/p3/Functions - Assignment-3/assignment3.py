@@ -67,7 +67,7 @@ def paying_debt_off_in_a_year(balance, annual_interest_rate):
             monthly_payment_upper_bound = guess
             new_balance = balance
         else:
-            return round(guess, 2)
+            return guess
 
         guess = (monthly_payment_lower_bound + monthly_payment_upper_bound)/2
 def main():
@@ -75,6 +75,6 @@ def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print("Lowest Payment: " + str(paying_debt_off_in_a_year(data[0], data[1])))
+    print("Lowest Payment: " + str(round(paying_debt_off_in_a_year(data[0], data[1]), 2)))
 if __name__ == "__main__":
     main()
