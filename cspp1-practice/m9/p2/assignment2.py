@@ -25,7 +25,7 @@ def get_guessed_word(secret_word, letters_guessed):
             for k in indices:
                 guessed_word_list[k*2] = i
             guessed_word = "".join(guessed_word_list)
-    return " ".join(guessed_word)
+    return "".join(guessed_word)
 
 def main():
     '''
