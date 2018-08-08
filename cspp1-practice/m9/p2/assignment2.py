@@ -29,7 +29,7 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
     guessed_word = ''
     for i in secret_word:
-        if i in letters_guessed:
+        if j in letters_guessed:
             guessed_word += i
         else:
             guessed_word += '_'
