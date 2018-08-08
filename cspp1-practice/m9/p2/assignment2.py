@@ -32,7 +32,7 @@ def get_guessed_word(secret_word, letters_guessed):
         if i in letters_guessed:
             guessed_word += i
         else:
-            guessed_word += '_ '
+            guessed_word += '_'
     return guessed_word
 
 def main():
