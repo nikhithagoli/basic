@@ -11,8 +11,8 @@ def get_guessed_word(secret_word, letters_guessed):
     letters_guessed: list, what letters have been guessed so far
     returns: string, comprised of letters and underscores that represents
       what letters in secret_word have been guessed so far.
-    '''
     # FILL IN YOUR CODE HERE...
+
     length = len(secret_word)
     guessed_word = '_ ' * length
     for i in letters_guessed:
@@ -26,6 +26,14 @@ def get_guessed_word(secret_word, letters_guessed):
                 guessed_word_list[k*2] = i
             guessed_word = "".join(guessed_word_list)
     return "".join(guessed_word.split(" "))
+    '''
+    guessed_word = ''
+    for i in secret_word:
+        if i in letters_guessed:
+            guessed_word += i
+        else:
+            guessed_word += '_ '
+    return guessed_word
 
 def main():
     '''
