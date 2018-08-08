@@ -13,7 +13,7 @@ def main():
     list1 = []
     for j in data:
         list1.append(int(j))
-    print(apply_to_each(list1, abs))
+    print(apply_to_each(list1, abs)
 
 if __name__ == "__main__":
     main()
