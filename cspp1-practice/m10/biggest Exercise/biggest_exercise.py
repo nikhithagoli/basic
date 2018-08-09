@@ -24,10 +24,10 @@ def main():
     for i in range(n):
         s=input()
         l=s.split()
-        if l[0] not in aDict:
-            aDict[l[0]]=[l[1]]
+        if l[0][0] not in aDict:
+            aDict[l[0][0]]=[l[1]]
         else:
-            aDict[l[0]].append(l[1])
+            aDict[l[0][0]].append(l[1])
         
     print(biggest(aDict))
 
