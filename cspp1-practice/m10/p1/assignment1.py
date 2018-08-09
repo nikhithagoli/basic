@@ -13,10 +13,16 @@ def get_available_letters(letters_guessed):
       yet been guessed.
     '''
     remaining = ''
+    alphabets = {}
     available_letters = 'abcdefghijklmnopqrstuvwxyz'
     for i in available_letters:
+        alphabets[i] = False
+    for i in alphabets:
         if i not in letters_guessed:
-            remaining += i
+            alphabets[i] = True
+    for key, value in alphabets.items():
+        if value:
+            remaining += key
     return remaining
 
 
