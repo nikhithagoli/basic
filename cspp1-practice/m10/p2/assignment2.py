@@ -20,7 +20,7 @@ def load_words():
     """
     print("Loading word list from file...")
     # inFile: file
-    inFile = open('E:\\basic\\cspp1-practice\\m10\\words.txt', 'r')
+    inFile = open('E:\\basic\\cspp1-practice\\m10\\p2\\words.txt', 'r')
     # line: string
     line = inFile.readline()
     # wordlist: list of strings
