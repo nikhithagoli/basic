@@ -30,8 +30,9 @@ def unfollow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    ind = network[arg1].index(arg2)
-    network[arg1] = network[arg1][:ind] + network[arg1][ind+1:]
+    if arg2 in network[arg1]:
+        ind = network[arg1].index(arg2)
+        network[arg1] = network[arg1][:ind] + network[arg1][ind+1:]
     return network
 def delete_person(network, arg1):
     '''
@@ -46,8 +47,9 @@ def delete_person(network, arg1):
     # remove the pass below and start writing your code
     deleted_account = network.pop(arg1)
     for each in network:
-        ind = network[each].index(arg1)
-        network[each] = network[each][:ind] + network[each][ind+1:]
+        if arg1 in network[each]:
+            ind = network[each].index(arg1)
+            network[each] = network[each][:ind] + network[each][ind+1:]
     return network
 def main():
     '''
