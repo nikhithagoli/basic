@@ -45,7 +45,8 @@ def delete_person(network, arg1):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    deleted_account = network.pop(arg1)
+    if arg1 in network:
+        deleted_account = network.pop(arg1)
     for each in network:
         if arg1 in network[each]:
             ind = network[each].index(arg1)
