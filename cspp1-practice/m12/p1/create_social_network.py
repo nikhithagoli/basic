@@ -34,7 +34,7 @@ def create_social_network(data):
 
     # remove the pass below and start writing your code
     adict = {}
-    if data != '':
+    if 'follows' in data:
         all_members = data.split('\n')
         all_members = all_members[:-1]
         for each in all_members:
