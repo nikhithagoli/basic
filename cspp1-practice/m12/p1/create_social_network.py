@@ -34,11 +34,12 @@ def create_social_network(data):
 
     # remove the pass below and start writing your code
     adict = {}
-    all_members = data.split('\n')
-    all_members = all_members[:-1]
-    for each in all_members:
-        list1 = each.split(' follows ')
-        adict[list1[0]] = list1[1].split(',')
+    if string != '':
+        all_members = data.split('\n')
+        all_members = all_members[:-1]
+        for each in all_members:
+            list1 = each.split(' follows ')
+            adict[list1[0]] = list1[1].split(',')
     return adict
 def main():
     '''
