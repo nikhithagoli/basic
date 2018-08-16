@@ -163,7 +163,7 @@ def hand_rank(hand):
     elif is_four_of_a_kind(hand):
         print(hand)
         return 8
-    elif is_full_house(hand):
+    elif is_three_of_a_kind(hand) and is_one_pair(hand):
         print(hand)
         return 7
     elif is_flush(hand):
