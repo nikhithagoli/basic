@@ -17,7 +17,7 @@ def is_straight(hand):
     hand_list = []
     for i in hand:
         if i[0] == 'T':
-            hand_list.append(10) 
+            hand_list.append(10)
         elif i[0] == 'J':
             hand_list.append(11)
         elif i[0] == 'Q':
@@ -25,14 +25,14 @@ def is_straight(hand):
         elif i[0] == 'K':
             hand_list.append(13)
         elif i[0] == 'A':
-            hand_list.append(14)            
+            hand_list.append(14)     
         else:
             hand_list.append(int(i[0]))
     hand_list.sort()
     for i in range(len(hand_list)-1):
-        if int(hand_list[i+1]) - int(hand_list[i]) != 1: 
+        if int(hand_list[i+1]) - int(hand_list[i]) != 1:
             return False
-    
+
     return True
 def is_flush(hand):
     '''
