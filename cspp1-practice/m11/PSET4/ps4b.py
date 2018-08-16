@@ -7,7 +7,7 @@ from ps4a import *
 # Problem #6: Computer chooses a word
 #
 #
-def compChooseWord(hand, wordList, n):
+def comp_choose_word(hand, word_list, n):
     """
     Given a hand and a wordList, find the word that gives
     the maximum value score, and return it.
@@ -43,12 +43,20 @@ def compChooseWord(hand, wordList, n):
                 # Update your best score, and best word accordingly
 
     # return the best word you found.
-
+    max_score = 0
+    best_word = None
+    for word in word_list:
+        if is_valid_word(word, hand, word_list):
+            score = get_word_score(word, hand_size)
+            if max_score < score:
+                max_score = score
+                best_word = word
+    return best_word
 
 #
 # Problem #7: Computer plays a hand
 #
-def compPlayHand(hand, wordList, n):
+def comp_play_hand(hand, word_list, n):
     """
     Allows the computer to play the given hand, following the same procedure
     as playHand, except instead of the user choosing a word, the computer
@@ -68,13 +76,32 @@ def compPlayHand(hand, wordList, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     """
     # TO DO ... <-- Remove this comment when you code this function
-
+    total_score = 0
+     
+    while calculate_hand_len(hand) > 0:
+     
+        print("Current Hand:")
+        display_hand(hand)
+         
+        word = comp_choose_word(hand, word_list, hand_size)
+        print("Computer entered:" + str(word))
+         
+        if word == None:
+            break;
+        else:
+            points = get_word_score(word, hand_size)
+            total_score += points
+            print("\""+word+"\" earned", points, "points. Total:", total_score, "points")
+             
+            hand = update_hand(hand, word)
+                 
+    print("Total score:", total_score, "points.")
 
 #
 # Problem #8: Playing a game
 #
 #
-def playGame(wordList):
+def play_game(word_list):
     """
     Allow the user to play an arbitrary number of hands.
 
@@ -101,12 +128,47 @@ def playGame(wordList):
     wordList: list (string)
     """
     # TO DO... <-- Remove this comment when you code this function
-    print "playGame not yet implemented."  # <-- Remove this when you code this function
+    #print "playGame not yet implemented."  # <-- Remove this when you code this function
 
+    hand = None
+    while True:
+        choice = input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
+        if choice == 'e':
+            break
+        else:
+            player_choice = input("Enter u to play yourself or c to let the computer play: ")
+            if player_choice == 'u':
+                if choice == 'n':
+                    hand = deal_hand(hand_size)
+                    play_hand(hand, word_list, hand_size)
+                    print()
+                elif choice == 'r':
+                    if hand == None:
+                        print("You have not played a hand yet. Please play a new hand first!")
+                    else:
+                        play_hand(hand, word_list, hand_size)
+                    print()
+                else:
+                    print("Invalid command.")
+            elif player_choice == 'c':
+                if choice == 'n':
+                    hand = deal_hand(hand_size)
+                    comp_play_hand(hand, word_list, hand_size)
+                    print
+                elif choice == 'r':
+                    if hand == None:
+                        print("You have not played a hand yet. Please play a new hand first!")
+                    else:
+                        comp_play_hand(hand, word_list,hand_size)
+                    print()
+                else:
+                    print("Invalid command.")
+            else:
+                print("Invalid command.")
 
 #
 # Build data structures used for entire session and play game
 #
 if __name__ == '__main__':
-    wordList = loadWords()
-    playGame(wordList)
+    word_list = load_words()
+    play_game(word_list)
