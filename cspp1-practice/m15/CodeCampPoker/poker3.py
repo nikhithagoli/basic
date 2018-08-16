@@ -30,7 +30,7 @@ def is_flush(hand):
             return False
     return True
 def card_ranks(hand):
-    ranks = sorted(['--23456789TJQKA'.index(c) for c,s in hand ], reverse=True)
+    ranks = sorted(['--23456789TJQKA'.index(c) for c,s in hand], reverse=True)
     return ranks
 def kind(ranks, n):
     for r in ranks:
