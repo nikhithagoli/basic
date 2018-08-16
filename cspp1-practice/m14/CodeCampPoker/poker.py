@@ -25,7 +25,7 @@ def is_straight(hand):
         elif i[0] == 'K':
             hand_list.append(13)
         elif i[0] == 'A':
-            hand_list.append(14)     
+            hand_list.append(14)
         else:
             hand_list.append(int(i[0]))
     hand_list.sort()
