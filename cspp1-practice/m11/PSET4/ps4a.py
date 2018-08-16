@@ -151,10 +151,11 @@ def updateHand(hand, word):
     returns: dictionary (string -> int)
     """
     # TO DO ... <-- Remove this comment when you code this function
+    new_hand = dict(hand)
     for char in word:
-        if char in hand:
-            hand[char] -= 1
-    return hand
+        if char in new_hand:
+            new_hand[char] -= 1
+    return new_hand
 
 
 
