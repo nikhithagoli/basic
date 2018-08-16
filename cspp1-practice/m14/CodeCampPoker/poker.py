@@ -48,7 +48,150 @@ def is_flush(hand):
         if suit[1] != each[1]:
             return False
     return True
+def is_four_of_a_kind(hand):
+    '''
+        How do we find out if the given hand is a flush?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The second character is good enough to determine a flush
+        Think of an algorithm: given the card suite how to check if it is a flush
+        Write the code for it and return True if it is a flush else return False
+    '''
+    hand_list = []
+    for i in hand:
+        if i[0] == 'T':
+            hand_list.append(10)
+        elif i[0] == 'J':
+            hand_list.append(11)
+        elif i[0] == 'Q':
+            hand_list.append(12)
+        elif i[0] == 'K':
+            hand_list.append(13)
+        elif i[0] == 'A':
+            hand_list.append(14)
+        else:
+            hand_list.append(int(i[0]))
+    s = set(hand_list)
+    for i in s:
+        if hand_list.count(i) == 4:
+            return True
+    return False
 
+def is_three_of_a_kind(hand):
+    '''
+        How do we find out if the given hand is a flush?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The second character is good enough to determine a flush
+        Think of an algorithm: given the card suite how to check if it is a flush
+        Write the code for it and return True if it is a flush else return False
+    '''
+    hand_list = []
+    for i in hand:
+        if i[0] == 'T':
+            hand_list.append(10)
+        elif i[0] == 'J':
+            hand_list.append(11)
+        elif i[0] == 'Q':
+            hand_list.append(12)
+        elif i[0] == 'K':
+            hand_list.append(13)
+        elif i[0] == 'A':
+            hand_list.append(14)
+        else:
+            hand_list.append(int(i[0]))
+    s = set(hand_list)
+    for i in s:
+        if hand_list.count(i) == 3:
+            return True
+    return False
+
+def is_one_pair(hand):
+    '''
+        How do we find out if the given hand is a flush?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The second character is good enough to determine a flush
+        Think of an algorithm: given the card suite how to check if it is a flush
+        Write the code for it and return True if it is a flush else return False
+    '''
+    hand_list = []
+    for i in hand:
+        if i[0] == 'T':
+            hand_list.append(10)
+        elif i[0] == 'J':
+            hand_list.append(11)
+        elif i[0] == 'Q':
+            hand_list.append(12)
+        elif i[0] == 'K':
+            hand_list.append(13)
+        elif i[0] == 'A':
+            hand_list.append(14)
+        else:
+            hand_list.append(int(i[0]))
+    s = set(hand_list)
+    for i in s:
+        if hand_list.count(i) == 2:
+            return True
+    return False
+
+def is_full_house(hand):
+    '''
+        How do we find out if the given hand is a flush?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The second character is good enough to determine a flush
+        Think of an algorithm: given the card suite how to check if it is a flush
+        Write the code for it and return True if it is a flush else return False
+    '''
+    hand_list = []
+    for i in hand:
+        if i[0] == 'T':
+            hand_list.append(10)
+        elif i[0] == 'J':
+            hand_list.append(11)
+        elif i[0] == 'Q':
+            hand_list.append(12)
+        elif i[0] == 'K':
+            hand_list.append(13)
+        elif i[0] == 'A':
+            hand_list.append(14)
+        else:
+            hand_list.append(int(i[0]))
+    s = set(hand_list)
+    if len(s) == 2:
+        if (hand_list.count(s[0]) == 3 and hand_list.count(s[1]) == 2) or (hand_list.count(s[0]) == 3 and hand_list.count(s[1]) == 2):
+            return True
+        return False
+
+def is_two_pair(hand):
+    '''
+        How do we find out if the given hand is a flush?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The second character is good enough to determine a flush
+        Think of an algorithm: given the card suite how to check if it is a flush
+        Write the code for it and return True if it is a flush else return False
+    '''
+    hand_list = []
+    for i in hand:
+        if i[0] == 'T':
+            hand_list.append(10)
+        elif i[0] == 'J':
+            hand_list.append(11)
+        elif i[0] == 'Q':
+            hand_list.append(12)
+        elif i[0] == 'K':
+            hand_list.append(13)
+        elif i[0] == 'A':
+            hand_list.append(14)
+        else:
+            hand_list.append(int(i[0]))
+    s = set(hand_list)
+    if len(s) == 3:
+        if (hand_list.count(s[0]) == 2 and hand_list.count(s[1]) == 2 ) or (hand_list.count(s[1]) == 2 and hand_list.count(s[2]) == 2)  or (hand_list.count(s[0]) == 2 and hand_list.count(s[2]) == 2):
+            return True
+        return False 
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
