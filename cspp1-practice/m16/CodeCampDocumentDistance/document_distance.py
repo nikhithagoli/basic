@@ -13,7 +13,7 @@ def similarity(dict1, dict2):
     list1 = dict1_list + dict2_list
     count_dict = {}
     for each in list1:
-        if each not in load_stopwords(file).keys():
+        if each not in load_stopwords(FILE).keys():
             if each not in "!@#$%^&*()_+?":
                 count_dict[each] = (dict1_list.count(each), dict2_list.count(each))
     numerator = 0
