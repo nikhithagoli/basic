@@ -7,7 +7,7 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    
+
     dict1_list = dict1.split(' ')
     dict2_list = dict2.split(' ')
     list1 = dict1_list + dict2_list
@@ -15,7 +15,7 @@ def similarity(dict1, dict2):
     for each in list1:
         if each not in load_stopwords(file).keys():
             if each not in "!@#$%^&*()_+?":
-                count_dict[each] = (count_dict_1.count(each),count_dict.count(each))
+                count_dict[each] = (count_dict.count(each), count_dict.count(each))
     numerator = 0
     sum_of_dict1 = 0
     sum_of_dict2 = 0
