@@ -2,7 +2,7 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
-file = 'stopwords.txt'
+FILE = 'stopwords.txt'
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
