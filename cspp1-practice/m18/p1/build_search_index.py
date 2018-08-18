@@ -69,8 +69,8 @@ def build_search_index(docs):
         			index_dict[word] = [(ind,words_list.count(word))]
         		else:
         			list_set = set()
-        			x=(ind,words_list.count(word))
-  					return [x for x in index_dict[word] if x not in list_set and not list_set.add(x)]
+                    x=(ind,words_list.count(word))
+                    return [x for x in index_dict[word] if x not in list_set and not list_set.add(x)]
         			#index_dict[word].append((ind,words_list.count(word)))
 
     # return search index
