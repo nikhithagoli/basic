@@ -72,8 +72,7 @@ def build_search_index(docs):
         			    index_dict[word].append((ind,words_list.count(word)))
 
     # return search index
-    for each in index_dict:
-    	index_dict[each] = list(set(index_dict[each]))
+    
     return index_dict
 
 # helper function to print the search index
