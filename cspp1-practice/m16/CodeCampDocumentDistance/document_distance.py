@@ -13,7 +13,8 @@ def similarity(dict1, dict2):
     count_dict = {}
     for each in list1:
         if each not in load_stopwords(FILE).keys():
-            if each not in "!@#$%^&*()_+?=-,;:.'":
+            if each not in "!@#$%^&*()_+?=-,.":
+            	
                 count_dict[each] = (dict1_list.count(each), dict2_list.count(each))
     numerator = 0
     sum_of_dict1 = 0
@@ -23,7 +24,6 @@ def similarity(dict1, dict2):
         sum_of_dict1 += count_dict[each][0] ** 2
         sum_of_dict2 += count_dict[each][1] ** 2
     return numerator//(math.sqrt(sum_of_dict1)*math.sqrt(sum_of_dict2))
-
 
 def load_stopwords(filename):
     '''
@@ -41,7 +41,6 @@ def main():
     '''
     input1 = input().lower()
     input2 = input().lower()
-
     print(similarity(input1, input2))
 
 if __name__ == '__main__':
