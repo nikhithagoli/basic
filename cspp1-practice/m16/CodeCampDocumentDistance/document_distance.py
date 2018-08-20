@@ -4,7 +4,7 @@ import re
 import math
 FILE = "stopwords.txt"
 def clean_words(input1):
-    ''' cleaning function''' 
+    ''' cleaning function'''
     reg = re.compile('[^a-z]')
     input1 = [reg.sub('', w.strip())for w in input1.lower().split(' ')]
     return input1
