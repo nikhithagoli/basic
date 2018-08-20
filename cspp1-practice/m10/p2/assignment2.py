@@ -37,7 +37,7 @@ def choose_word(word_list):
     return random.choice(word_list)
 
 # end of helper code
-# -----------------------------------
+# --------------------------------------------------------------------------------
 
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
