@@ -60,7 +60,6 @@ def read_matrix():
 def main():
     '''main function'''
     # read matrix 1
-    
     matrix1 = read_matrix()
     if matrix1 is None:
         exit(0)
