@@ -13,7 +13,8 @@ def mult_matrix(matrix1, matrix2):
         for i in enumerate(matrix1):
             for j in enumerate(matrix2[0]):
                 for k in enumerate(matrix2):
-                    multi_matrix[i[0]][j[0]] = multi_matrix[i[0]][j[0]] + (matrix1[i[0]][k[0]] * matrix2[k[0]][j[0]])
+                    multi_matrix[i[0]][j[0]] = multi_matrix[i[0]][j[0]] +\
+                     (matrix1[i[0]][k[0]] * matrix2[k[0]][j[0]])
         return multi_matrix
     print('Error: Matrix shapes invalid for mult')
     return None
