@@ -59,12 +59,14 @@ def main():
     # read matrix 1
     matrix1_rows, matrix1_cols = map(int,input().split(','))
     matrix1 = read_matrix(matrix1_rows,matrix1_cols)
+    #print(matrix1)
     if matrix1 == None:
     	exit(0)
 
     # read matrix 2
     matrix2_rows, matrix2_cols = map(int,input().split(','))
     matrix2 = read_matrix(matrix2_rows,matrix2_cols)
+    #print(matrix2)
     if matrix2 == None:
     	exit(0)
     # add matrix 1 and matrix 2
