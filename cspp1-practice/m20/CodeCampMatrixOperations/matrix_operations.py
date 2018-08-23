@@ -62,13 +62,9 @@ def main():
     # read matrix 1
     
     matrix1 = read_matrix()
-    #print(matrix1)
     if matrix1 is None:
         exit(0)
-
-    # read matrix 2
     matrix2 = read_matrix()
-    #print(matrix2)
     if matrix2 is None:
         exit(0)
     # add matrix 1 and matrix 2

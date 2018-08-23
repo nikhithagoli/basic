@@ -20,7 +20,7 @@ def is_won(game_matrix, no_of_turns):
     elif game_matrix[0][2] == game_matrix[1][1] and game_matrix[0][2] == game_matrix[2][0] and game_matrix[0][2] != ' ':
         won = game_matrix[0][2]
     # If no more slots are open, it's a tie
-    elif no_of_turns == 9: 
+    elif no_of_turns == 10: 
         won = 'd'
     else:
         won = 'n'
