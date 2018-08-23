@@ -46,8 +46,8 @@ def comp_choose_word(hand, word_list, n):
     max_score = 0
     best_word = None
     for word in word_list:
-        if is_valid_word(word, hand, word_list):
-            score = get_word_score(word, hand_size)
+        if isValidWord(word, hand, word_list):
+            score = getWordScore(word, HAND_SIZE)
             if max_score < score:
                 max_score = score
                 best_word = word
@@ -78,22 +78,22 @@ def comp_play_hand(hand, word_list, n):
     # TO DO ... <-- Remove this comment when you code this function
     total_score = 0
      
-    while calculate_hand_len(hand) > 0:
+    while calculateHandlen(hand) > 0:
      
         print("Current Hand:")
-        display_hand(hand)
+        displayHand(hand)
          
-        word = comp_choose_word(hand, word_list, hand_size)
+        word = comp_choose_word(hand, word_list, HAND_SIZE)
         print("Computer entered:" + str(word))
          
         if word == None:
             break;
         else:
-            points = get_word_score(word, hand_size)
+            points = getWordScore(word, HAND_SIZE)
             total_score += points
             print("\""+word+"\" earned", points, "points. Total:", total_score, "points")
              
-            hand = update_hand(hand, word)
+            hand = updateHand(hand, word)
                  
     print("Total score:", total_score, "points.")
 
@@ -139,27 +139,27 @@ def play_game(word_list):
             player_choice = input("Enter u to play yourself or c to let the computer play: ")
             if player_choice == 'u':
                 if choice == 'n':
-                    hand = deal_hand(hand_size)
-                    play_hand(hand, word_list, hand_size)
+                    hand = dealHand(HAND_SIZE)
+                    playHand(hand, word_list, HAND_SIZE)
                     print()
                 elif choice == 'r':
                     if hand == None:
                         print("You have not played a hand yet. Please play a new hand first!")
                     else:
-                        play_hand(hand, word_list, hand_size)
+                        playHand(hand, word_list, HAND_SIZE)
                     print()
                 else:
                     print("Invalid command.")
             elif player_choice == 'c':
                 if choice == 'n':
-                    hand = deal_hand(hand_size)
-                    comp_play_hand(hand, word_list, hand_size)
+                    hand = dealHand(HAND_SIZE)
+                    comp_play_hand(hand, word_list, HAND_SIZE)
                     print
                 elif choice == 'r':
                     if hand == None:
                         print("You have not played a hand yet. Please play a new hand first!")
                     else:
-                        comp_play_hand(hand, word_list,hand_size)
+                        comp_play_hand(hand, word_list,HAND_SIZE)
                     print()
                 else:
                     print("Invalid command.")
@@ -170,5 +170,5 @@ def play_game(word_list):
 # Build data structures used for entire session and play game
 #
 if __name__ == '__main__':
-    word_list = load_words()
+    word_list = loadWords()
     play_game(word_list)

@@ -251,7 +251,8 @@ def playHand(hand, wordList, n):
     totalScore = 0
     while calculateHandlen(hand) > 0:
         # Display the hand
-        print(" current hand:" , hand)
+        print(" current hand:")
+        displayHand(hand)
         # Ask user for input
         user_input = input("Enter word, or a . to indicate that you are finished:")
         # If the input is a single period:
