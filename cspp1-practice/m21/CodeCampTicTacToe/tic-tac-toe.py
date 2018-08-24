@@ -46,7 +46,12 @@ def main():
     game_matrix = []
     for i in range(3):
         i += 1
-        game_matrix.append(input().split(' '))
+        inp = input().split(' ')
+        for i in inp:
+            if i not in "xo.":
+                print("invalid input")
+                break
+        game_matrix.append(inp)
     print(is_won(game_matrix))
 
 if __name__ == '__main__':
