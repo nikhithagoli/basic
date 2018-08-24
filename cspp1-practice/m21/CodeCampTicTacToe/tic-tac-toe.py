@@ -50,7 +50,7 @@ def main():
         for i in inp:
             if i not in "xo.":
                 print("invalid input")
-                break
+                exit(0)
         game_matrix.append(inp)
     print(is_won(game_matrix))
 
