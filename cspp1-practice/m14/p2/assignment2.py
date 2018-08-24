@@ -98,7 +98,7 @@ class Message:
         upper_values = list(string.ascii_uppercase)
         upper_shift_values = upper_values[shift:] + upper_values[:shift]
         all_keys = lower_keys + upper_keys
-        all_values = shift_lower_values + upper_shift_values
+        all_values = lower_shift_values + upper_shift_values
         self.shift_dict = dict(zip(all_keys, all_values))
         return self.shift_dict
 
