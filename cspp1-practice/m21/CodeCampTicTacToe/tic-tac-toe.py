@@ -33,13 +33,14 @@ def is_won(game_matrix):
         won.append(game_matrix[0][2])
     # If no more slots are open, it's a tie
     else:
-        if len(won) > 1:
-            return "invalid game"
-        elif len(won) == 1:
-            return won[0]
-        else:
-            if is_full(game_matrix):
-                return 'draw'
+        pass
+    if len(won) > 1:
+        return "invalid game"
+    elif len(won) == 1:
+        return won[0]
+    else:
+        if is_full(game_matrix):
+            return 'draw'
 def main():
     '''main function'''
     game_matrix = []
