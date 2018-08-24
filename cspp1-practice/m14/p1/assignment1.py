@@ -51,13 +51,13 @@ def load_words(file_name):
     take a while to finish.
     '''
     # inFile: file
-    in_file = open(file_name, 'r')
+    input_file = open(file_name, 'r')
     # line: string
-    line = in_file.readline()
+    line = input_file.readline()
     # word_list: list of strings
-    word_list = line.split()
-    in_file.close()
-    return word_list
+    words_list = line.split()
+    input_file.close()
+    return words_list
 WORDLIST_FILENAME = 'words.txt'
 # Helper code End
 class Message:
@@ -74,7 +74,7 @@ class Message:
         self.valid_words (list, determined using helper function load_words
         '''
         self.cipher_dict = {}
-        self.message_text = text
+        self.msg_text = text
         self.valid_words = load_words(WORDLIST_FILENAME)
 
     ### DO NOT MODIFY THIS METHOD ###
@@ -83,7 +83,7 @@ class Message:
         Used to safely access self.message_text outside of the class
         Returns: self.message_text
         '''
-        return self.message_text
+        return self.msg_text
     ### DO NOT MODIFY THIS METHOD ###
     def get_valid_words(self):
         '''
@@ -103,17 +103,17 @@ class Message:
         Returns: a dictionary mapping a letter (string) to
         another letter (string).
         '''
-        cap = lambda char, shift: chr((ord(char)-65 + shift)%26 +65)
-        small = lambda char, shift: chr((ord(char)-97 + shift)%26 +97)
+        big_case = lambda char, shift: chr((ord(char)-65 + shift)%26 +65)
+        small_case = lambda char, shift: chr((ord(char)-97 + shift)%26 +97)
         for i in string.ascii_lowercase:
             self.cipher_dict[i] = i
         for i in string.ascii_uppercase:
             self.cipher_dict[i] = i
         for i in self.cipher_dict:
             if i.islower():
-                self.cipher_dict[i] = small(i, shift)
+                self.cipher_dict[i] = small_case(i, shift)
             elif i.isupper():
-                self.cipher_dict[i] = cap(i, shift)
+                self.cipher_dict[i] = big_case(i, shift)
         return self.cipher_dict
 
     def apply_shift(self, shift):
@@ -126,13 +126,13 @@ class Message:
         Returns: the message text (string) in which every character is shifted
         down the alphabet by the input shift
         '''
-        new_text = []
-        for letter in self.message_text:
-            if letter in self.build_shift_dict(shift).keys():
-                new_text.append(self.build_shift_dict(shift)[letter])
+        new_msg = []
+        for char in self.msg_text:
+            if char in self.build_shift_dict(shift).keys():
+                new_msg.append(self.build_shift_dict(shift)[char])
             else:
-                new_text.append(letter)
-        return ''.join(new_text)
+                new_msg.append(char)
+        return ''.join(new_msg)
 def main():
     '''
         Function to handle testcases
