@@ -13,23 +13,17 @@ def is_won(game_matrix):
         o_count += i.count('o')
     if x_count > 5 or o_count > 5:
         return "invalid game"   
-    if game_matrix[0][0] == game_matrix[0][1] and game_matrix[0][0] == game_matrix[0][2] and game_matrix[0][0] != '.':
-        won.append(game_matrix[0][0]) 
-    if game_matrix[1][0] == game_matrix[1][1] and game_matrix[1][0] == game_matrix[1][2] and game_matrix[1][0] != '.':
-        won.append(game_matrix[1][0])
-    if game_matrix[2][0] == game_matrix[2][1] and game_matrix[2][0] == game_matrix[2][2] and game_matrix[2][0] != '.':
-        won.append(game_matrix[2][0])
+    for row in game_matrix:
+        if row[0] == row[1] == row[2]:
+            won.append(row[0]) 
    #Vertical
-    if game_matrix[0][0] == game_matrix[1][0] and game_matrix[0][0] == game_matrix[2][0] and game_matrix[0][0] != '.': 
-        won.append(game_matrix[0][0])
-    if game_matrix[0][1] == game_matrix[1][1] and game_matrix[0][1] == game_matrix[2][1] and game_matrix[0][1] != '.':
-        won.append(game_matrix[0][1])
-    if game_matrix[0][2] == game_matrix[1][2] and game_matrix[0][2] == game_matrix[2][2] and game_matrix[0][2] != '.':
-        won.append(game_matrix[0][2])
+    for i in range(3):
+        if game_matrix[0][i] == game_matrix[1][i] == game_matrix[2][i]:
+            won.append(game_matrix[0][i])
     # Diagonal
-    if game_matrix[0][0] == game_matrix[1][1] and game_matrix[0][0] == game_matrix[2][2] and game_matrix[0][0] != '.':
+    if game_matrix[0][0] == game_matrix[1][1] == game_matrix[2][2] and game_matrix[0][0] != '.':
         won.append(game_matrix[0][0])
-    if game_matrix[0][2] == game_matrix[1][1] and game_matrix[0][2] == game_matrix[2][0] and game_matrix[0][2] != '.':
+    if game_matrix[0][2] == game_matrix[1][1] == game_matrix[2][0] and game_matrix[0][2] != '.':
         won.append(game_matrix[0][2])
     # If no more slots are open, it's a tie
     if len(won) > 1:
