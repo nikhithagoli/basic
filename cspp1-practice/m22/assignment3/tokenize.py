@@ -6,18 +6,19 @@ def clean_string(string):
     '''to remove spl characters'''
     new_string = ""
     for char in string:
-        if char not in "!@#$%^&*()-_+=:;.,? ":
+        if char not in "!@#$%^&*()-_+=:;.,?\"\'\n ":
             new_string += char
     return new_string
 def tokenize(string):
     tokens_dict = {}
     words_list = string.split(' ')
     for word in words_list:
-        word = clean_string(word)
-        if word not in tokens_dict:
-            tokens_dict[i] = 1
+        new_word = clean_string(word)
+        if new_word not in tokens_dict:
+            print(new_word)
+            tokens_dict[new_word] = 1
         else:
-            tokens_dict[i] += 1
+            tokens_dict[new_word] += 1
     return tokens_dict  
             
 def main():
@@ -27,7 +28,7 @@ def main():
     for i in range(no_of_lines):
         i += 1
         string += input()
-        string += '\n'
-    print(tokenize(string[:-1]))
+        string += " "
+    print(tokenize(string))
 if __name__ == '__main__':
     main()
