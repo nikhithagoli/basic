@@ -4,7 +4,7 @@ alphabets in both upper and lower case and numbers.
 '''
 
 def clean_string(string):
-	'''to remove spl characters'''
+    '''to remove spl characters'''
     new_string = ""
     for i in string:
         if i not in "!@#$%^&*()-_+=:;.,? ":
