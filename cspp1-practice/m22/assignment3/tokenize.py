@@ -15,7 +15,6 @@ def tokenize(string):
     for word in words_list:
         new_word = clean_string(word)
         if new_word not in tokens_dict:
-            print(new_word)
             tokens_dict[new_word] = 1
         else:
             tokens_dict[new_word] += 1
