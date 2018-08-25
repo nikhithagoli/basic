@@ -5,16 +5,16 @@ each word
 def clean_string(string):
     '''to remove spl characters'''
     new_string = ""
-    for i in string:
-        if i not in "!@#$%^&*()-_+=:;.,? ":
-            new_string += i
+    for char in string:
+        if char not in "!@#$%^&*()-_+=:;.,? ":
+            new_string += char
     return new_string
 def tokenize(string):
     tokens_dict = {}
     words_list = string.split(' ')
-    for i in words_list:
-    	i = clean_string(i)
-        if i not in tokens_dict:
+    for word in words_list:
+        word = clean_string(i)
+        if word not in tokens_dict:
             tokens_dict[i] = 1
         else:
             tokens_dict[i] += 1
