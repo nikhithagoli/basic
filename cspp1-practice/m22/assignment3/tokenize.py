@@ -13,7 +13,7 @@ def tokenize(string):
     tokens_dict = {}
     words_list = string.split(' ')
     for word in words_list:
-        word = clean_string(i)
+        word = clean_string(word)
         if word not in tokens_dict:
             tokens_dict[i] = 1
         else:
