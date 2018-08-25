@@ -23,8 +23,7 @@ def check_rows(row):
         return False 
     return True
 def grid_transpose(sudoku):
-    transpose_sudoku = [[sudoku[col][row] for col in range(9)]for row in range(9)]
-    print(transpose_sudoku)        
+    return [[sudoku[col][row] for col in range(9)]for row in range(9)]
 def check_sudoku(sudoku):
     '''
         Your solution goes here. You may add other helper functions as needed.
