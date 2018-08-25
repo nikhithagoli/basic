@@ -26,8 +26,7 @@ def main():
     no_of_lines = int(input())
     for i in range(no_of_lines):
         i += 1
-        string += input()
-        string += " "
-    print(tokenize(string))
+        string += input() + " "
+    print(tokenize(string[:-1]))
 if __name__ == '__main__':
     main()
