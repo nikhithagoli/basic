@@ -8,6 +8,7 @@
     satisfies all the sudoku rules given in the statement above.
 '''
 def check_frequency(row):
+    '''to check frequency'''
     freq_dict = {}
     for each in row:
         if each not in freq_dict:
@@ -16,13 +17,15 @@ def check_frequency(row):
             return False
     return True
 def check_rows(row):
+    '''to check rows'''
     for i in row:
         if i not in "123456789":
             return False
     if not check_frequency(row):
-        return False 
+        return False
     return True
 def grid_transpose(sudoku):
+    '''to transpose sudoko'''
     return [[sudoku[col][row] for col in range(9)]for row in range(9)]
 def check_sudoku(sudoku):
     '''
@@ -42,13 +45,13 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
     # initialize empty list
     sudoku = []
 
     # loop to read 9 lines of input from console
     for i in range(9):
         # read a line, split it on SPACE and append row to list
+        i += 1
         row = input().split(' ')
         sudoku.append(row)
     # call solution function and print result to console
