@@ -11,7 +11,7 @@ def clean_string(string):
     return new_string
 def tokenize(string):
     tokens_dict = {}
-    string = clean_input(string)
+    string = clean_string(string)
     words_list = string.split(' ')
     for i in words_list:
         if i not in tokens_dict:
