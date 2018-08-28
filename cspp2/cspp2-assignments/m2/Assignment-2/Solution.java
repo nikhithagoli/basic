@@ -24,21 +24,11 @@ public final class Solution {
         */
         double discriminant = Math.sqrt((b * b) - (4 * a * c));
         double root1, root2;
-        if (discriminant > 0) {
-            root1 = (-b + discriminant) / (2 * a);
-            root2 = (-b - discriminant) / (2 * a);
+        root1 = (-b + discriminant) / (2 * a);
+        root2 = (-b - discriminant) / (2 * a);
 
-            System.out.println(root1 + " " + root2);
-        } else if (discriminant == 0) {
-            root1 = -b / (2 * a);
-            root2 = -b / (2 * a);
-            System.out.println(root1 + " " + root1);
-        } else {
-            double real = -(double)b / (2 * a);
-            double img = discriminant / (2 * a);
-
-            System.out.println(real + "+ i" + img + "  " + real + "- i" + img);
-        }
+        System.out.println(root1 + " " + root2);
+           
     }
     /**
      * { function_description }.
