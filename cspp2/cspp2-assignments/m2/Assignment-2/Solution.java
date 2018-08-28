@@ -32,12 +32,12 @@ public final class Solution {
         } else if (discriminant == 0) {
             root1 = -b / (2 * a);
             root2 = -b / (2 * a);
-            System.out.println(root1);
+            System.out.println(root1 + " " + root1);
         } else {
             double real = -(double)b / (2 * a);
             double img = discriminant / (2 * a);
 
-            System.out.println(real + "+ i" + img + " , " + real + "- i" + img);
+            System.out.println(real + "+ i" + img + "  " + real + "- i" + img);
         }
     }
     /**
