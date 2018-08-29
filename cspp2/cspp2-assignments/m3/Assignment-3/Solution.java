@@ -21,7 +21,7 @@ public final class Solution {
         if (n2 == 0) {
             return (n1);
         } else {
-            return gcd(n2, n1%n2);
+            return gcd(n2, n1 % n2);
         }
     }
     /**
