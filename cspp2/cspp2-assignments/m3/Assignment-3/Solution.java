@@ -17,7 +17,7 @@ public final class Solution {
      *
      * @return     { description_of_the_return_value }.
      */
-    static int gcd(final int a, final int b) {
+    static int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
