@@ -12,8 +12,8 @@ public final class Solution {
     /**
      * { function_description }.
      *
-     * @param      a     { parameter_description }.
-     * @param      b     { parameter_description }.
+     * @param      n1     { parameter_description }.
+     * @param      n2     { parameter_description }.
      *
      * @return     { description_of_the_return_value }.
      */
