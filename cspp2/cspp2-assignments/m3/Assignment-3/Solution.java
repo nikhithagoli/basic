@@ -17,13 +17,12 @@ public final class Solution {
      *
      * @return     { description_of_the_return_value }.
      */
-    static int gcd(int n1, int n2) {
-        while (n2 != 0) {
-            int temp = n2;
-            n2 = n1 % n2;
-            n1 = temp;
+    static int gcd(final int n1, final int n2) {
+        if (n2 == 0) {
+            return (n1);
+        } else {
+            return gcd(n2, n1%n2);
         }
-        return (n1);
     }
     /**
     * { function_description }.
