@@ -14,7 +14,7 @@ public final class Solution {
      *
      * @param      n1     { parameter_description }.
      * @param      n2     { parameter_description }.
-     * 
+     *
      * @return     { description_of_the_return_value }.
      */
      static int gcd(final int n1, final int n2) {
