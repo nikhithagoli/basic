@@ -46,7 +46,7 @@ public final class Solution {
                 for(int ele : c[i]) {
                     s += Integer.toString(ele) + " ";
                 }
-                System.out.println(s);
+                System.out.println(s.substring(0,s.length()));
             }
         } else {
             System.out.println("not possible");
