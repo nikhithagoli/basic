@@ -19,7 +19,7 @@ public final class Solution {
 		 * { item_description }.
 		 */
 		int m,n,p,q;
-		Scanner sc = new Scnner(System.in);
+		Scanner sc = new Scanner(System.in);
 		m = sc.nextInt();
 		n = sc.nextInt();
 		p = sc.nextInt();
