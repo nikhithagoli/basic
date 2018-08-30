@@ -2,11 +2,11 @@ import java.util.*;
 /**
  * Class for solution.
  */
-public class Solution
-{/*
+public class Solution {
+/*
     Fill this main function to print maximum of given array
     */
-    private Solution(){
+    private Solution() {
         //constructor.
     }
     /**
@@ -14,9 +14,8 @@ public class Solution
      *
      * @param      args  The arguments.
      */
-    public static void main(String[] args)
-    {
-        Scanner sc=new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         int n= sc.nextInt();
         int[] a = new int[n];
         int max = 0;
