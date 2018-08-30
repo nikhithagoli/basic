@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Class for solution.
  */
 public final class Solution {
-	/**
+    /**
      * Fill the main function to print resultant of addition of matrices.
     */
     private Solution() {
@@ -43,10 +43,10 @@ public final class Solution {
                     c[i][j] = a[i][j] + b[i][j];
                 }
                 String s = "";
-                for(int ele : c[i]) {
+                for (int ele : c[i]) {
                     s += Integer.toString(ele) + " ";
                 }
-                System.out.println(s.substring(0,s.length()));
+                System.out.println(s.substring(0, s.length()));
             }
         } else {
             System.out.println("not possible");
