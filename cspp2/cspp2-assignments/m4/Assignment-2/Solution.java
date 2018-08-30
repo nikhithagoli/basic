@@ -15,7 +15,7 @@ public final class Solution {
      * @param      args  The arguments.
      */
     public static void main(final String[] args) {
-		/**
+        /**
          * { item_description }.
          */
         int m, n, p, q;
@@ -46,7 +46,7 @@ public final class Solution {
                 for (int ele : c[i]) {
                     s += Integer.toString(ele) + " ";
                 }
-                System.out.println(s.substring(0, s.length()-1));
+                System.out.println(s.substring(0, s.length() - 1));
             }
         } else {
             System.out.println("not possible");
