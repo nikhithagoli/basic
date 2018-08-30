@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public final class Solution {
 
-/**
+    /**
 
-    Fill this main function to print maximum of given array.
+        Fill this main function to print maximum of given array.
 
-*/
+    */
 
     private Solution() {
 
