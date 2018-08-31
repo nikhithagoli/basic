@@ -1,8 +1,11 @@
 import java.util.Scanner;
+/**
+ * { item_description }.
+ */
 public final class Solution {
 /**
-    * Do not modify the main function.
-*/
+ * Constructs the object.
+ */
     private Solution() {
         //function.
     }
@@ -29,6 +32,9 @@ public final class Solution {
      * @param      args  The arguments.
      */
     public static void main(final String[] args) {
+        /**
+         * { var_description }.
+         */
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         String reverse = reverseString(s);
