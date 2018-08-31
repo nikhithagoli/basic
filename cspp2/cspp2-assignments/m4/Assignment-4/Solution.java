@@ -1,8 +1,8 @@
 import java.util.Scanner;
-public final class Solution {   
+public final class Solution {
 /**
-    Do not modify the main function.
-    */
+    * Do not modify the main function.
+*/
     private Solution() {
         //function.
     }
