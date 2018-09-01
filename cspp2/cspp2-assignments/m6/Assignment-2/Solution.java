@@ -22,26 +22,26 @@ final class Solution {
 	 *
 	 * @return     Matrix of the rounded elements
 	 */
-	static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
+	static int[][] round(final int[][] a, final int r, final int c) {
 
 		// write ypur code here
-		final int hundred = 100;
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < columns; j++) {
+		final int h = 100;
+		for (int i = 0; i < r; i++) {
+			for (int j = 0; j < c; j++) {
 				int num = a[i][j];
 				String s = Integer.toString(num);
-				if (num <= hundred) {
-					if (num < (hundred - num)){
+				if (num <= h) {
+					if (num < (h - num)) {
 						a[i][j] = 0;
 					} else {
-						a[i][j] = hundred;
+						a[i][j] = h;
 					}
 				} else {
 					int n = Integer.parseInt(String.valueOf(s.charAt(0)));
-					if ((num - (hundred * n)) < ((hundred * (n + 1)) - num)){
-						a[i][j] = (hundred * n);
+					if ((num - (h * n)) < ((h * (n + 1)) - num)) {
+						a[i][j] = (h * n);
 					} else {
-						a[i][j] = (hundred * (n + 1));
+						a[i][j] = (h * (n + 1));
 					}
 				}
 			}
@@ -63,7 +63,7 @@ final class Solution {
 				a[i][j] = scan.nextInt();
 			}
 		}
-		int[][] b = roundHundred(a, m, n);
+		int[][] b = round(a, m, n);
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n - 1; j++) {
 				System.out.print(b[i][j] + " ");
