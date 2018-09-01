@@ -12,8 +12,19 @@ public final class Solution {
     private Solution() {
         //not used
     }
+    /**
+     * { function_description }.
+     *
+     * @param      i     { parameter_description }.
+     *
+     * @return     { description_of_the_return_value }.
+     */
     static boolean isprime(final int i) {
-        for (int j = 3; j <= Math.sqrt(i); j += 2) {
+        /**
+         * { item_description }.
+         */
+        final int three = 3;
+        for (int j = three; j <= Math.sqrt(i); j += 2) {
             if (i % j == 0) {
                 return (false);
             }
@@ -27,7 +38,8 @@ public final class Solution {
      */
     static void oddComposites(final int n) {
         // write your code here
-        for (int i = 3; i <= n; i += 2 ) {
+        final int three = 3;
+        for (int i = three; i <= n; i += 2) {
             if (!isprime(i)) {
                 System.out.println(i);
             }
