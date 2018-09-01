@@ -40,7 +40,7 @@ final class Solution {
                     int n = Integer.parseInt(s1);
                     int upper = (h * (n + 1));
                     int lower = (h * n);
-                    if ((num - lower) < ( upper - num)) {
+                    if ((num - lower) < (upper - num)) {
                         a[i][j] = lower;
                     } else {
                         a[i][j] = upper;
