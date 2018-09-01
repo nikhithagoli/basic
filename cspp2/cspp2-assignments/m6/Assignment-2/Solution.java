@@ -25,15 +25,16 @@ final class Solution {
 	static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
 
 		// write ypur code here
+		final int hundred = 100;
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < columns; j++) {
 				int num = a[i][j];
 				String s = Integer.toString(num);
-				if (num <= 100) {
-					a[i][j] = (num < (100 - num)) ? 0 : 100;
+				if (num <= hundred) {
+					a[i][j] = (num < (hundred - num)) ? 0 : hundred;
 				} else {
 					int n = Integer.parseInt(String.valueOf(s.charAt(0)));;
-					a[i][j] = (num - (100 * n)) < ((100 * (n + 1)) - num) ? (100 * n) : (100 * (n + 1));
+					a[i][j] = (num - (hundred * n)) < ((hundred * (n + 1)) - num) ? (hundred * n) : (hundred * (n + 1));
 				}
 			}
 		}
