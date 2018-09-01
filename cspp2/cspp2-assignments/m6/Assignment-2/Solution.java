@@ -31,10 +31,18 @@ final class Solution {
 				int num = a[i][j];
 				String s = Integer.toString(num);
 				if (num <= hundred) {
-					a[i][j] = (num < (hundred - num)) ? 0 : hundred;
+					if (num < (hundred - num)){
+						a[i][j] = 0;
+					} else {
+						a[i][j] = hundred;
+					}
 				} else {
-					int n = Integer.parseInt(String.valueOf(s.charAt(0)));;
-					a[i][j] = (num - (hundred * n)) < ((hundred * (n + 1)) - num) ? (hundred * n) : (hundred * (n + 1));
+					int n = Integer.parseInt(String.valueOf(s.charAt(0)));
+					if ((num - (hundred * n)) < ((hundred * (n + 1)) - num)){
+						a[i][j] = (hundred * n);
+					} else {
+						a[i][j] = (hundred * (n + 1));
+					}
 				}
 			}
 		}
