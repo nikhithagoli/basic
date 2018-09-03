@@ -21,7 +21,8 @@ class InputValidator {
      * @return     boolean value.
      */
     boolean validateData() {
-        if (len >= 6) {
+        final int six = 6;
+        if (len >= six) {
             return (true);
         }
         return (false);
