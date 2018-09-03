@@ -6,7 +6,7 @@ import java.util.Scanner;
 class InputValidator {
     /**Write the atrributes and methods for InputValidator.
      */
-    final int len;
+    private int len;
     /**
      * Constructs the object.
      *
@@ -30,16 +30,16 @@ class InputValidator {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * main class.
      */
+    private Solution() {
+        //constructor.
+    }
     /**
      * @param      args   The string
      */
-    private Solution(){
-        //constructor.
-    }
     public static void main(final String[] args) {
         /**
          * { var_description }.
