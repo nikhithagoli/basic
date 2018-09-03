@@ -4,7 +4,7 @@ import java.util.Scanner;
  *
  */
 class InputValidator {
-    /**Write the atrributes and methods for InputValidator.
+    /** class to validate the input string.
      */
     private int len;
     /**
@@ -16,7 +16,7 @@ class InputValidator {
         len = str.length();
     }
     /**
-     * { function_description }.
+     * to validate the input.
      *
      * @return     boolean value.
      */
@@ -40,7 +40,7 @@ public final class Solution {
      */
     public static void main(final String[] args) {
         /**
-         * { var_description }.
+         * to read the input string.
         */
         Scanner s = new Scanner(System.in);
         String input = s.next();
