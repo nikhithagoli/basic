@@ -8,7 +8,17 @@ public class Student {
         * class.
     */
     String name, rollnumber;
+    /**
+     * to calculate average
+     *
+     * @param      a     marks.
+     * @param      b     marks.
+     * @param      c     marks.
+     */
     void gpa(double a, double b, double c) {
+        /**
+         * gpa calculation.
+         */
         System.out.println((double)((int)(((a + b + c) / 3)*10.0))/10.0);
     }
     Student(String name, String rollnumber, double a, double b, double c) {
@@ -28,4 +38,3 @@ public class Student {
         Student s = new Student(sc.next(), sc.next(), sc.nextDouble(), sc.nextDouble(), sc.nextDouble());
     }
 }
-
