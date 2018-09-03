@@ -22,10 +22,7 @@ class InputValidator {
      */
     boolean validateData() {
         final int six = 6;
-        if (len >= six) {
-            return (true);
-        }
-        return (false);
+        return (len >= six);
     }
 }
 /**
