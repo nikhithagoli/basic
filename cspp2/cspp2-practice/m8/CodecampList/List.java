@@ -1,10 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
 /**
  * List operations .
  */
-public class List {
+public final class List {
     /**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -95,21 +94,28 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
-        
-    /**
-     * 
-     * The size method returns the value of the size.
-     * The purpose of the method is to announce the size of the list
-     * to the objects outside the list
-     *
-     * The method returns an int. Empty list should return 0.
-     */
+    public void add(final int item) {
+
+        /**
+         *
+         * The size method returns the value of the size.
+         * The purpose of the method is to announce the size of the list
+         * to the objects outside the list
+         *
+         * The method returns an int. Empty list should return 0.
+         */
         list[size()] = item;
         listsize += 1;
     }
+    /**
+     * size of list.
+     *
+     * @return     integer value.
+     */
     public int size() {
-        // replace the code below to implement the size method
+        /**
+         * replace the code below to implement the size method.
+         */
         return (listsize);
     }
 
@@ -138,14 +144,18 @@ public class List {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         /**
         // Think about what to do to the size variable.
         */
-        for (int i = index - 1; i < size() - 1; i++) {
-            list[i] = list[i + 1];
+        if (index <= listsize) {
+            for (int i = index; i < size() - 1; i++) {
+                list[i] = list[i + 1];
+            }
+            listsize -= 1;
+        } else {
+            System.out.println("Invalid Position Exception");
         }
-        listsize -= 1;
     }
 
     /**
@@ -160,24 +170,23 @@ public class List {
      * number of items in the list? Would size variable be useful?
      */
     /**
-     * 
+     *
      *
      * @param      index  The index
      *
      * @return     element at that index
      */
-    public int get(int index) {
+    public void get(final int index) {
         /**
-         * 
+         *
          *Replace the code below to write the code for get.
         */
         if (index < listsize) {
-            return list[index];
+            System.out.println(list[index]);
         }
-        return -1;
     }
 
-    /*
+    /**
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
      * invoked when an object variable is used in println.
@@ -197,8 +206,15 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        // Replace the code below
+        /**
+         * Replace the code below
+         */
         String s = "";
         for (int i = 0; i < listsize; i++) {
             s += list[i] + ",";
@@ -212,7 +228,14 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
-    public boolean contains(int item) {
+    /**
+     * finds whether the list contains item or not.
+     *
+     * @param      item  The item
+     *
+     * @return     boolean value.
+     */
+    public boolean contains(final int item) {
         // Replace the code below
         for (int element : list) {
             if (element == item) {
@@ -227,8 +250,17 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
-    public int indexOf(int item) {
-        // Replace the code below
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int indexOf(final int item) {
+        /**
+         * Replace the code below.
+         */
         for (int i = 0; i < listsize; i++) {
             if (list[i] == item) {
                 return (i);
@@ -236,9 +268,15 @@ public class List {
         }
         return -1;
     }
-
-    public static void main(String[] args) {
-        // create an object of the list to invoke methods on it
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        /**
+         * create an object of the list to invoke methods on it.
+         */
         List l = new List();
 
         // code to read the test cases input file
@@ -273,10 +311,12 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
             case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+                l.get(Integer.parseInt(tokens[1]));
                 break;
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
+                break;
+            default :
                 break;
             }
         }
