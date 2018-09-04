@@ -174,7 +174,6 @@ public final class List {
      *
      * @param      index  The index
      *
-     * @return     element at that index
      */
     public void get(final int index) {
         /**
