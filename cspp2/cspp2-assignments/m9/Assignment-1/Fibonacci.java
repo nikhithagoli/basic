@@ -53,7 +53,7 @@ public final class Fibonacci {
         return l;
      }
     /**
-     * main function
+     * main function.
      *
      * @param      args  The arguments
      */
