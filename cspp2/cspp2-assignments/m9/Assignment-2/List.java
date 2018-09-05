@@ -112,11 +112,12 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
-        if (size < list.length) {
-            list[size++] = item;
-        } else {
+        if (size == list.length) {
             resize(item);
         }
+        list[size++] = item;
+        
+
     }
     public void resize(int item) {
         // int[] newarray = new int[2*size];
@@ -246,7 +247,7 @@ public class List {
         if (size == 0)
             return "";
         String s = "";
-        for (int i = 0; i < listsize; i++) {
+        for (int i = 0; i < size; i++) {
             s += list[i] + ",";
         }
         return ("[" + s.substring(0, s.length() - 1) + "]");
