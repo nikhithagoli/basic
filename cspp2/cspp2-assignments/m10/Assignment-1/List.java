@@ -294,7 +294,7 @@ public class List {
      */
     public int indexOf(int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i]){
+            if (item == list[i]) {
                 return i;
             }
         }
@@ -305,11 +305,11 @@ public class List {
     public void addAll(int items[]) {
         // write the logic
         if (items.length + size >= list.length) {
-            resize();   
+            resize();
         }
         for (int each : items) {
-                list[size ++] = each;
-        } 
+            list[size ++] = each;
+        }
     }
 
     /*
@@ -320,7 +320,7 @@ public class List {
     public void add(int index, int item) {
         // write the logic
         int i;
-        if (index >= 0 && index <= size){
+        if (index >= 0 && index <= size) {
             for (i = size ++; i > index ; i--) {
                 list[i] = list[i - 1];
             }
@@ -335,7 +335,7 @@ public class List {
         // write the logic
         int c = 0;
         for (int element : list) {
-            if (element == item){
+            if (element == item) {
                 c++;
             }
         }
@@ -363,7 +363,7 @@ public class List {
                     if (t.length == 1) {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
-                        if (t.length > 1){
+                        if (t.length > 1) {
                             l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
                         }
                     }
@@ -376,7 +376,7 @@ public class List {
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
                     int[] temp = new int[t1.length];
-                    for (int i = 0; i < temp.length; i++){
+                    for (int i = 0; i < temp.length; i++) {
                         temp[i] = Integer.parseInt(t1[i]);
                     }
                     l.addAll(temp);
