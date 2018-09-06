@@ -50,7 +50,7 @@ class Student {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public int hashCode(){
+	public int hashCode() {
 		return this.hashCode();
 	}
 	/**
