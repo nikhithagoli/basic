@@ -153,6 +153,7 @@ public class List<E> {
 		//Write logic for contains method
             for (E each: list){
                 if (each.equals(item)){
+                    System.out.println(each + " " + item);
                     return true;
                 }
             }
