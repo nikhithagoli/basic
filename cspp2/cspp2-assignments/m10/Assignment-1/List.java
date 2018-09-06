@@ -1,5 +1,6 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class List {
     //Implement all the methods mentioned to build a ListADT
@@ -146,7 +147,12 @@ public class List {
      */
 
     // todo create resize method
-
+    public void resize() {
+        // int[] newarray = new int[2*size];
+        // System.arraycopy(list, 0, newarray, 0, size);
+        list =  Arrays.copyOf(list, list.length * 2);
+        //list[size++] = item;
+    }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
@@ -269,9 +275,12 @@ public class List {
      array to the end of list*/
     public void addAll(int items[]) {
         // write the logic
-        for (int each : items) {
-            list[size++] = each;
+        if (items.length + size >= list.length){
+            resize();   
         }
+        for (int each : items) {
+                list[size++] = each;
+        } 
     }
 
     /*
