@@ -11,7 +11,7 @@ class Student {
     private String name;
     /**
     * Constructs the object.
-    * 
+    *
     * @param      name  The name
     */
     Student(final String name) {
