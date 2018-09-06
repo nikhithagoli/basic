@@ -151,7 +151,12 @@ public class List<E> {
      */
     public boolean contains(E item) {
 		//Write logic for contains method
-        return indexOf(item) == -1;
+        for (E each: list){
+            if (each == item){
+                return true;
+            }
+        }
+        return false;
     }
     /*
      * Returns the index of the first occurrence 
