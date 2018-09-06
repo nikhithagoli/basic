@@ -3,7 +3,7 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/*
+/**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
      * An array would be good. Right?
@@ -14,6 +14,9 @@ import java.util.Scanner;
         actual type when the object got created.
      */
 public class List<E> {
+    /**
+     * list class.
+     */
     private E[] list;
     private int size;
     //Constructor
