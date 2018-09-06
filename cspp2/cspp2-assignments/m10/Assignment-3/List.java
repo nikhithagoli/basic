@@ -151,11 +151,11 @@ public class List<E> {
      */
     public boolean contains(E item) {
 		//Write logic for contains method
-        for (E each: list){
-            if (each == item){
-                return true;
+            for (E each: list){
+                if (each.equals(item)){
+                    return true;
+                }
             }
-        }
         return false;
     }
     /*
