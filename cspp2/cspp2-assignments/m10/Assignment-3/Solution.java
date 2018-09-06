@@ -183,8 +183,8 @@ public final class Solution {
     /**
      * for floats.
      */
-    /**
-     * { function_description }
+    /**.
+     * { function_description }.
      *
      * @param      line       The line
      * @param      listFloat  The list float
@@ -241,12 +241,13 @@ public final class Solution {
      * for chars.
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      line           The line
      * @param      listCharacter  The list character
      */
-    static void characters(final String line, final List<Character> listCharacter) {
+    static void characters(final String line,
+     final List<Character> listCharacter) {
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
         case "add":
@@ -298,7 +299,7 @@ public final class Solution {
      * for doubles.
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      line        The line
      * @param      listDouble  The list double
@@ -357,7 +358,7 @@ public final class Solution {
      * for objects.
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      line         The line
      * @param      listStudent  The list student
