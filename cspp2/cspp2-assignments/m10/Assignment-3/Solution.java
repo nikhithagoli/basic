@@ -75,6 +75,12 @@ public final class Solution {
     /**
      * for strings.
      */
+    /**
+     * strings.
+     *
+     * @param      line        The line
+     * @param      listString  The list string
+     */
     static void strings(String line, List<String> listString) {
         // split the line using space
         String[] tokens = line.split(" ");
@@ -118,6 +124,12 @@ public final class Solution {
     }
     /**
      * for integers.
+     */
+    /**
+     * { function_description }.
+     *
+     * @param      line         The line
+     * @param      listInteger  The list integer
      */
     static void integers(String line, List<Integer> listInteger) {
 
@@ -171,6 +183,12 @@ public final class Solution {
     /**
      * for floats.
      */
+    /**
+     * { function_description }
+     *
+     * @param      line       The line
+     * @param      listFloat  The list float
+     */
     static void floats(String line, List<Float> listFloat) {
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
@@ -222,6 +240,12 @@ public final class Solution {
     /**
      * for chars.
      */
+    /**
+     * { function_description }
+     *
+     * @param      line           The line
+     * @param      listCharacter  The list character
+     */
     static void characters(String line, List<Character> listCharacter) {
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
@@ -272,6 +296,12 @@ public final class Solution {
     }
     /**
      * for doubles.
+     */
+    /**
+     * { function_description }
+     *
+     * @param      line        The line
+     * @param      listDouble  The list double
      */
     static void doubles(String line, List<Double> listDouble) {
 
@@ -325,6 +355,12 @@ public final class Solution {
     }
     /**
      * for objects.
+     */
+    /**
+     * { function_description }
+     *
+     * @param      line         The line
+     * @param      listStudent  The list student
      */
     static void objects(String line, List<Student> listStudent) {
         String[] tokens = line.split(" ");
