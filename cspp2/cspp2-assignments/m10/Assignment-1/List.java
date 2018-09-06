@@ -282,7 +282,7 @@ public class List {
     public void add(int index, int item) {
         // write the logic
         int i;
-        if (index > 0 && index <= size){
+        if (index >= 0 && index <= size){
             for (i = size ++; i > index ; i--) {
                 list[i] = list[i - 1];
             }
