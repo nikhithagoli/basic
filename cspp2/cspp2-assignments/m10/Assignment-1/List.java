@@ -351,7 +351,7 @@ public class List {
            The method returns void (nothing)
         */
     /**
-     * { function_description }
+     * add at index function.
      *
      * @param      index  The index
      * @param      item   The item
