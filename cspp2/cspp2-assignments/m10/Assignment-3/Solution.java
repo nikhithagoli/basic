@@ -75,8 +75,7 @@ public final class Solution {
     /**
      * for strings.
      */
-    static void strings(String line){
-        List<String> listString = new List();
+    static void strings(String line, List<String> listString){
                 // split the line using space
                 String[] tokens = line.split(" ");
                 switch (tokens[0]) {
@@ -120,8 +119,7 @@ public final class Solution {
     /**
      * for integers.
      */
-    static void integers(String line){
-        List<Integer> listInteger = new List();
+    static void integers(String line, List<Integer> listInteger){
             
                 String[] tokens = line.split(" ");
                 switch (tokens[0]) {
@@ -173,8 +171,7 @@ public final class Solution {
     /**
      * for floats.
      */
-    static void floats(String line){
-         List<Float> listFloat = new List();
+    static void floats(String line, List<Float> listFloat){
                 String[] tokens = line.split(" ");
                 switch (tokens[0]) {
                 case "add":
@@ -225,8 +222,7 @@ public final class Solution {
     /**
      * for chars.
      */
-    static void characters(String line){
-        List<Character> listCharacter = new List();
+    static void characters(String line, List<Character> listCharacter){
                 String[] tokens = line.split(" ");
                 switch (tokens[0]) {
                 case "add":
@@ -277,8 +273,8 @@ public final class Solution {
     /**
      * for doubles.
      */
-    static void doubles(String line){
-        List<Double> listDouble = new List();
+    static void doubles(String line, List<Double> listDouble){
+        
                 String[] tokens = line.split(" ");
                 switch (tokens[0]) {
                 case "add":
@@ -330,8 +326,7 @@ public final class Solution {
     /**
      * for objects.
      */
-    static void objects(String line){
-        List<Student> listStudent = new List();
+    static void objects(String line, List<Student> listStudent){
                 String[] tokens = line.split(" ");
                 switch (tokens[0]) {
                 case "add":
@@ -389,50 +384,56 @@ public final class Solution {
 
         switch (objectType) {
         case "S":
+            List<String> listString = new List();
             while (stdin.hasNext()) {
                 // read the line
                 String line = stdin.nextLine();
-                strings(line);
+                strings(line, listString);
             }
             break;
 
         case "I":
+            List<Integer> listInteger = new List();
             while (stdin.hasNext()) {
                 // read the line
                 String line = stdin.nextLine();
-                integers(line);
+                integers(line, listInteger);
             }
             break;
 
         case "F":
+            List<Float> listFloat = new List();
             while (stdin.hasNext()) {
                 // read the line
                 String line = stdin.nextLine();
-                floats(line);
+                floats(line, listFloat);
             }
             break;
 
         case "C":
+            List<Character> listCharacter = new List();
             while (stdin.hasNext()) {
                 // read the line
                 String line = stdin.nextLine();
-                characters(line);
+                characters(line, listCharacter);
             }
             break;
 
         case "D":
+            List<Double> listDouble = new List();
             while (stdin.hasNext()) {
                 // read the line
                 String line = stdin.nextLine();
-                doubles(line);
+                doubles(line, listDouble);
             }
             break;
 
         case "O":
+            List<Student> listStudent = new List();
             while (stdin.hasNext()) {
                 // read the line
                 String line = stdin.nextLine();
-                objects(line);
+                objects(line, listStudent);
             }
             break;
         default:
