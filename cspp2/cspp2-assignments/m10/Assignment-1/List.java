@@ -123,7 +123,7 @@ public class List {
      * The method returns void (nothing)
      */
     /**
-     * { function_description }
+     * add function.
      *
      * @param      item  The item
      */
@@ -153,7 +153,8 @@ public class List {
      * with the contents of the original array.
      *
      * TODO
-     * Create a method called resize(). Resize should create an new array that is
+     * Create a method called resize().
+     *  Resize should create an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
      *
@@ -161,7 +162,8 @@ public class List {
      * Will the client invoke resize or is it internal to List class?
      * Should the resize be public method or private?
      * Should the resize method return any values?
-     * You know enough of Object Oriented Programming to answer these questions :-)
+     * You know enough of Object Oriented Programming
+     *  to answer these questions :-)
      *
      */
 
@@ -222,7 +224,7 @@ public class List {
     }
 
     /*
-     * Get method has to return the items that is
+     * Get method has to return the items that is.
      * at the index position passed as an argument to the method.
      * If the item doesn't exist then return a -1 to indicate that
      * there is no element at that index.
@@ -233,7 +235,7 @@ public class List {
      * number of items in the list? Would size variable be useful?
      */
     /**
-     * get function
+     * get function.
      *
      * @param      index  The index
      *
@@ -267,9 +269,15 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        if (size == 0)
+        if (size == 0){
             return "[]";
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -285,7 +293,14 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
-    public boolean contains(int item) {
+    /**
+     * { function_description }
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public boolean contains(final int item) {
         return indexOf(item) == -1;
     }
 
@@ -294,7 +309,14 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
-    public int indexOf(int item) {
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
                 return i;
@@ -304,7 +326,10 @@ public class List {
     }
     /*Inserts all the elements of specified int
      array to the end of list*/
-    public void addAll(int items[]) {
+    /**
+     * { item_description }
+     */
+    public void addAll(final int items[]) {
         // write the logic
         if (items.length + size >= list.length) {
             resize();
