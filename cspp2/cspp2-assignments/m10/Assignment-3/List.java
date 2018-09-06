@@ -151,9 +151,8 @@ public class List<E> {
      */
     public boolean contains(E item) {
 		//Write logic for contains method
-            for (E each: list){
-                if (each.equals(item)){
-                    System.out.println(each + " " + item);
+            for (int i = 0; i < size; i++){
+                if (list[i].equals(item)){
                     return true;
                 }
             }
