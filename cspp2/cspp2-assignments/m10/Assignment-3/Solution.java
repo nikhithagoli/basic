@@ -81,7 +81,7 @@ public final class Solution {
      * @param      line        The line
      * @param      listString  The list string
      */
-    static void strings(String line, List<String> listString) {
+    static void strings(final String line, final List<String> listString) {
         // split the line using space
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
@@ -131,7 +131,7 @@ public final class Solution {
      * @param      line         The line
      * @param      listInteger  The list integer
      */
-    static void integers(String line, List<Integer> listInteger) {
+    static void integers(final String line, final List<Integer> listInteger) {
 
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
@@ -189,7 +189,7 @@ public final class Solution {
      * @param      line       The line
      * @param      listFloat  The list float
      */
-    static void floats(String line, List<Float> listFloat) {
+    static void floats(final String line, final List<Float> listFloat) {
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
         case "add":
@@ -246,7 +246,7 @@ public final class Solution {
      * @param      line           The line
      * @param      listCharacter  The list character
      */
-    static void characters(String line, List<Character> listCharacter) {
+    static void characters(final String line, final List<Character> listCharacter) {
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
         case "add":
@@ -303,7 +303,7 @@ public final class Solution {
      * @param      line        The line
      * @param      listDouble  The list double
      */
-    static void doubles(String line, List<Double> listDouble) {
+    static void doubles(final String line, final List<Double> listDouble) {
 
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
@@ -362,7 +362,7 @@ public final class Solution {
      * @param      line         The line
      * @param      listStudent  The list student
      */
-    static void objects(String line, List<Student> listStudent) {
+    static void objects(final String line, final List<Student> listStudent) {
         String[] tokens = line.split(" ");
         switch (tokens[0]) {
         case "add":
