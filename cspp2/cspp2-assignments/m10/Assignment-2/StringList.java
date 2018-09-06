@@ -134,7 +134,7 @@ public class StringList implements StringListInterface{
 		if (items.length + size >= list.length) {
             resize();
         }
-        for (int each : items) {
+        for (String each : items) {
             list[size++] = each;
         }
 	}
@@ -196,7 +196,7 @@ public class StringList implements StringListInterface{
      */
     public String get(int index) {
         if (index < 0 || index >= size) {
-            return -1;
+            return "-1";
         } else {
             return list[index];
         }
