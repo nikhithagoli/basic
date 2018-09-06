@@ -181,6 +181,11 @@ public class List {
      *
      * The method returns an int. Empty list should return 0.
      */
+    /**
+     * size.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int size() {
         return size;
     }
@@ -275,7 +280,7 @@ public class List {
      * @return     String representation of the object.
      */
     public String toString() {
-        if (size == 0){
+        if (size == 0) {
             return "[]";
         }
         String str = "[";
@@ -294,7 +299,7 @@ public class List {
      * the item exists and otherwise false
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item  The item
      *
@@ -327,15 +332,16 @@ public class List {
     /*Inserts all the elements of specified int
      array to the end of list*/
     /**
-     * { item_description }
+     * { item_description }.
+     * @param      items the list.
      */
-    public void addAll(final int items[]) {
+    public void addAll(final int[] items) {
         // write the logic
         if (items.length + size >= list.length) {
             resize();
         }
         for (int each : items) {
-            list[size ++] = each;
+            list[size++] = each;
         }
     }
 
@@ -344,11 +350,17 @@ public class List {
     by moving all the elements to the right.
            The method returns void (nothing)
         */
-    public void add(int index, int item) {
+    /**
+     * { function_description }
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
+    public void add(final int index, final int item) {
         // write the logic
         int i;
         if (index >= 0 && index <= size) {
-            for (i = size ++; i > index ; i--) {
+            for (i = size++; i > index; i--) {
                 list[i] = list[i - 1];
             }
             list[index] = item;
@@ -358,7 +370,14 @@ public class List {
     }
 
     /* Returns the count of occurances of a given item in the list*/
-    public int count(int item) {
+    /**
+     * count.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int count(final int item) {
         // write the logic
         int c = 0;
         for (int element : list) {
@@ -369,8 +388,12 @@ public class List {
         return c;
     }
 
-
-    public static void main(String[] args) {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -391,7 +414,8 @@ public class List {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
                         if (t.length > 1) {
-                            l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                            l.add(Integer.parseInt(t[0]),
+                             Integer.parseInt(t[1]));
                         }
                     }
                 }
