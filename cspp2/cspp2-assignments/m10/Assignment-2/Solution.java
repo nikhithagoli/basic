@@ -3,16 +3,17 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
 
+    
+    private Solution() {
+        //functon.
+    }
     /**
-     * { function_description }
+     * main function.
      *
      * @param      args  The arguments
      */
-    private Solution(){
-        //functon.
-    }
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
