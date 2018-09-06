@@ -1,11 +1,13 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
+/**
+ * list operations.
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
-    /*
+    /**
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
      * An array would be good. Right?
@@ -57,7 +59,7 @@ public class List {
     // variable initialization should be done in the constructor
     private int size;
 
-    /*
+    /**
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
@@ -65,22 +67,25 @@ public class List {
 
 
     public List() {
-
+        /**
         // what are the two variables to be initialized here?
         // think about the private variables described above.
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[10];
+        */
+        final int ten = 10;
+        list = new int[ten];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        size = 0;
+        final int zero = 0;
+        size = zero;
     }
 
-    /*
+    /**
      * Overloaded constructor with list capacity as argument
      * The default constructor sets the list capacity to 10
      * So, adding an item when the list size is 10
@@ -94,7 +99,12 @@ public class List {
      * constructor.
      *
      */
-    public List(int capacity) {
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
+    public List(final int capacity) {
         size = 0;
         list = new int[capacity];
     }
@@ -110,17 +120,24 @@ public class List {
      *
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    /**
+     * { function_description }
+     *
+     * @param      item  The item
+     */
+    public void add(final int item) {
         //Inserts the specified element at the end of the zelist.
         list[size++] = item;
     }
 
-    /*
+    /**
      *
      * Resize the list
-     * Sometimes the clients of the ADT won't know the expected list capacity
+     * Sometimes the clients of the ADT won't
+     *  know the expected list capacity
      * To solve this the list has to grow dynamically
-     * when the maximum capacity is reached and there is no room to add items.
+     * when the maximum capacity is reached
+     *  and there is no room to add items.
      * So, how do we dynamically resize the list?
      * Java doesn't support resize of array. Here are some options.
      *
@@ -153,7 +170,7 @@ public class List {
         list =  Arrays.copyOf(list, list.length * 2);
         //list[size++] = item;
     }
-    /*
+    /**
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
@@ -184,8 +201,12 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
-
-    public void remove(int index) {
+    /**
+     * remove function.
+     *
+     * @param      index  The index
+     */
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= 0 && index < size) {
@@ -209,7 +230,14 @@ public class List {
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
-    public int get(int index) {
+    /**
+     * get function
+     *
+     * @param      index  The index
+     *
+     * @return     element
+     */
+    public int get(final int index) {
         if (index < 0 || index >= size) {
             return -1;
         } else {
@@ -275,11 +303,11 @@ public class List {
      array to the end of list*/
     public void addAll(int items[]) {
         // write the logic
-        if (items.length + size >= list.length){
+        if (items.length + size >= list.length) {
             resize();   
         }
         for (int each : items) {
-                list[size++] = each;
+                list[size ++] = each;
         } 
     }
 
