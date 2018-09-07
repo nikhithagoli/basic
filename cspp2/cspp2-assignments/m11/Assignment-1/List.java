@@ -235,18 +235,6 @@ public class List {
     */
     public List subList(int start, int end) {
         // write the logic for subList
-
-        /*int[] newList = new int[end - start];
-        if (start > end || start < 0 || end < 0){
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        } else {
-            for (int i = 0; i < (end - start) && start < end; i++, start++){
-                 newList[i] = list[start];
-            }
-        }
-        return null;
-        */
         List newList = new List();
         if (start > end || start < 0 || end < 0) {
             System.out.println("Index Out of Bounds Exception");
@@ -272,17 +260,17 @@ public class List {
         if (this == list) {
             return true;
         }
-        if (this.size != list.size()){
+        if (this.size != list.size()) {
             return false;
         }
-        for (int i =0; i < list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             int count = 0;
-            for (int j = 0; j < this.size; j++){
-                if (this.list[j] != list.get(i)){
+            for (int j = 0; j < this.size; j++) {
+                if (this.list[j] != list.get(i)) {
                     count += 1;
                 }
             }
-            if (count == this.size){
+            if (count == this.size) {
                 return false;
             }
         }
