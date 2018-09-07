@@ -116,8 +116,8 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        if (index >= 0 && index < size) {
-            for (int i = index; i < size ; i++) {
+        if (index >= 0 && index < size && size >= 0) {
+            for (int i = index; i < size; i++) {
                 list[i] = list[i + 1];
             }
             size--;
