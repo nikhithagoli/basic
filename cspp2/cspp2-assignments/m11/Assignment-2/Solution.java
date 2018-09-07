@@ -15,7 +15,7 @@ class Student {
     }
 
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
      //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
@@ -24,15 +24,39 @@ class Student {
         Student that = (Student) other;
         return this.getName().equals(that.getName());
     }
-
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int hashCode() {
+        return this.hashCode();
+    }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return this.name;
     }
 }
-
+/**
+ * Class for solution.
+ */
 public class Solution {
-
-    public static void executeListInteger(Scanner stdin) {
+    /**
+     * Constructs the object.
+     */
+    private Solution(){
+        //function.
+    }
+    /**
+     * for ints.
+     *
+     * @param      stdin  The stdin
+     */
+    public static void executeListInteger(final Scanner stdin) {
         List<Integer> l = new List();
         while (stdin.hasNext()) {
             // read the line
@@ -89,8 +113,9 @@ public class Solution {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     Integer[] a = new Integer[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
@@ -101,7 +126,7 @@ public class Solution {
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
                  Integer.parseInt(arrstring3[1]));
-                if (object != null){
+                if (object != null) {
                     System.out.println(object);
                 }
                 break;
@@ -188,7 +213,7 @@ public class Solution {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     Double[] a = new Double[t2.length];
-                    for (int i = 0; i < t2.length; i++){
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Double.parseDouble(t2[i]);
                     }
                     l.removeAll(a);
