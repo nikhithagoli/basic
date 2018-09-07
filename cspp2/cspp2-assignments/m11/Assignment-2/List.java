@@ -220,6 +220,8 @@ public class List<E> {
     public void clear()
     {
         // write the logic for clear.
-        removeAll(list);
+        //removeAll(list);
+        size = 0;
+        list = (E[]) new Object[10];
     }
 }
