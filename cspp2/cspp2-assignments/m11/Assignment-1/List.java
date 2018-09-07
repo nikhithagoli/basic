@@ -272,17 +272,12 @@ public class List {
     public void removeAll(final int[] newArray) {
         // write the logic
         for (int each : newArray) {
-            for (int i = 0; i < newArray.length; i++){
-                if(contains(newArray[i])){
+            for (int i = 0; i < newArray.length; i++) {
+                if (contains(newArray[i])) {
                     remove(indexOf(newArray[i]));
                 }
             }
         }
-        /*for(int i =0 ; i<newArray.length;i++){
-            remove(newArray[i]);
-        }*/
-
-
     }
     /*
     Returns a list object containing elements, including startIndex and
