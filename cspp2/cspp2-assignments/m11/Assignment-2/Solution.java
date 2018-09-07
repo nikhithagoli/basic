@@ -1,14 +1,28 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 //A Class is implemented for Student details
+/**
+* class.
+*/
 class Student {
+    /**
+     * class.
+     */
     private String name;
-
-    public Student(String name) {
+    /**
+     * Constructs the object.
+     *
+     * @param      name1  The name 1
+     */
+    Student(String name1) {
     //A constructor used to initialize the instance variables
-        this.name = name;
+        this.name = name1;
     }
-
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
     public String getName() {
     //Getter method which returns the value of instance variable
         return this.name;
@@ -44,11 +58,11 @@ class Student {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){
+    private Solution() {
         //function.
     }
     /**
