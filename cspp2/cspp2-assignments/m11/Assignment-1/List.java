@@ -275,8 +275,14 @@ public class List {
         if (this.size != list.size()){
             return false;
         }
-        for (int i = 0; i < this.size; i++){
-            if (this.list[i] != list.get(i)){
+        for (int i =0; i < list.size(); i++){
+            int count = 0;
+            for (int j = 0; j < this.size; j++){
+                if (this.list[j] != list.get(i)){
+                    count += 1;
+                }
+            }
+            if (count == this.size){
                 return false;
             }
         }
