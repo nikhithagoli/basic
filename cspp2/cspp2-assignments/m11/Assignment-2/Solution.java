@@ -379,7 +379,11 @@ public class Solution {
             }
         }
     }
-
+    /**
+     * for students.
+     *
+     * @param      stdin  The stdin
+     */
     public static void executeListStudent(final Scanner stdin) {
         List<Student> l = new List();
         while (stdin.hasNext()) {
@@ -443,18 +447,17 @@ public class Solution {
                     l.removeAll(students);
                 }
                 break;
-            case "subList": {
-                if (tokens.length != 2){
+            case "subList":
+                if (tokens.length != 2) {
                     break;
                 }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
                  Integer.parseInt(arrstring3[1]));
-                if (object != null){
+                if (object != null) {
                     System.out.println(object);
                 }
                 break;
-            }
             case "equals":
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
