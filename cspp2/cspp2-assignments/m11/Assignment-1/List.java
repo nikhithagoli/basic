@@ -327,7 +327,7 @@ public class List {
         if (this == list1) {
             return true;
         }
-        return this.toString().equals(list.toString());
+        return this.toString().equals(list1.toString());
         /*if (this == list1) {
             return true;
         }
