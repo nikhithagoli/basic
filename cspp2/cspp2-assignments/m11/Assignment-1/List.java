@@ -264,10 +264,23 @@ public class List {
     */
     public boolean equals(List list) {
         // Replace the code below
-        if (this == list) {
+        /*if (this == list) {
             return true;
         }
         return this.toString().equals(list.toString());
+        */
+        if (this == list) {
+            return true;
+        }
+        if (this.size != list.size()){
+            return false;
+        }
+        for (int i = 0; i < this.size; i++){
+            if (this.list[i] != list.get(i)){
+                return false;
+            }
+        }
+        return true;
     }
     /*
     * Removes all the elements from list
