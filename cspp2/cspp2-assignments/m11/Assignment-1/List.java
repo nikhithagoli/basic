@@ -324,12 +324,11 @@ public class List {
      */
     public boolean equals(final List list1) {
         // Replace the code below
-        /*if (this == list) {
+        if (this == list1) {
             return true;
         }
         return this.toString().equals(list.toString());
-        */
-        if (this == list1) {
+        /*if (this == list1) {
             return true;
         }
         if (this.size != list1.size()) {
@@ -347,6 +346,7 @@ public class List {
             }
         }
         return true;
+        */
     }
     /**
     * Removes all the elements from list
