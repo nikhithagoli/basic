@@ -276,7 +276,7 @@ public class List {
         }
         return true;
     }
-    /*
+    /**
     * Removes all the elements from list
     * Think about this case and make the method
     * the simpler.
@@ -285,8 +285,12 @@ public class List {
         // write the logic for clear.
         removeAll(list);
     }
-
-    public static void main(String[] args) {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -357,7 +361,7 @@ public class List {
                     l.removeAll(a);
                 }
                 break;
-            case "subList": 
+            case "subList":
                 if (tokens.length != 2) {
                     break;
                 }
