@@ -215,16 +215,13 @@ public class List {
     */
     public void removeAll(int[] newArray) {
         // write the logic
-        /*for (int each : newArray) {
+        for (int each : newArray) {
             for (int i = 0; i < size; i++) {
                 if (each == list[i]) {
                     remove(i);
 
                 }
             }
-        }*/
-        for(int i = 0; i < newArray.length; i++){
-            remove(newArray[i]);
         }
 
 
