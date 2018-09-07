@@ -272,7 +272,8 @@ public class List {
     public void removeAll(final int[] newArray) {
         // write the logic
         for (int each : newArray) {
-            for (int i = 0; i < size; i++) {
+            int i;
+            for (i = 0; i < size; i++) {
                 if (each == list[i]) {
                     remove(i);
                     i = 0;
@@ -328,25 +329,6 @@ public class List {
             return true;
         }
         return this.toString().equals(list1.toString());
-        /*if (this == list1) {
-            return true;
-        }
-        if (this.size != list1.size()) {
-            return false;
-        }
-        for (int i = 0; i < list1.size(); i++) {
-            int count = 0;
-            for (int j = 0; j < this.size; j++) {
-                if (this.list[j] != list1.get(i)) {
-                    count += 1;
-                }
-            }
-            if (count == this.size) {
-                return false;
-            }
-        }
-        return true;
-        */
     }
     /**
     * Removes all the elements from list
