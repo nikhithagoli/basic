@@ -250,23 +250,30 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    public boolean equals(List list) {
+    /**
+     * equals function.S
+     *
+     * @param      list1  The list
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public boolean equals(List list1) {
         // Replace the code below
         /*if (this == list) {
             return true;
         }
         return this.toString().equals(list.toString());
         */
-        if (this == list) {
+        if (this == list1) {
             return true;
         }
-        if (this.size != list.size()) {
+        if (this.size != list1.size()) {
             return false;
         }
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list1.size(); i++) {
             int count = 0;
             for (int j = 0; j < this.size; j++) {
-                if (this.list[j] != list.get(i)) {
+                if (this.list[j] != list1.get(i)) {
                     count += 1;
                 }
             }
