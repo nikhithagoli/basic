@@ -14,7 +14,7 @@ class Set {
     */
     private int[] set;
     /**
-     * { var_description }
+     * { var_description }.
      */
     private int size;
     /**
