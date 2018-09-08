@@ -124,7 +124,6 @@ class Set {
             }
         }
         return product;
-        
     }
 
 }
