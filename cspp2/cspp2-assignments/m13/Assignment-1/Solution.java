@@ -214,7 +214,11 @@ public final class Solution {
                 s.add(intArray);
                 intArray = intArray(tokens[2]);
                 t.add(intArray);
-                System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                if (t.size() == 0 || s.size() == 0){
+                	System.out.println("null");
+                } else {
+                    System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                }
                 break;
                 default:
                 break;
