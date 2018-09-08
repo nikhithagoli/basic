@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Class for set.
- * @author : 
+ * @author :
  */
 class Set {
     //your code goes here...
@@ -12,113 +12,113 @@ class Set {
     private int[] set;
     private int size;
 
-    public Set(){
-    	final int ten = 10;
-    	set = new int[ten];
+    public Set() {
+        final int ten = 10;
+        set = new int[ten];
         final int zero = 0;
-    	size = zero;
+        size = zero;
     }
-    public int size(){
-    	return size;
+    public int size() {
+        return size;
     }
-    public boolean contains(int item){
-        for (int each: set){
-        	if (each == item){
-        		return true;
-        	}
+    public boolean contains(int item) {
+        for (int each : set) {
+            if (each == item) {
+                return true;
+            }
         }
         return false;
     }
 
-    public String toString(){
-    	if (size == 0){
-    		return "{}";
-    	}
-    	String s = "";
-    	for (int i = 0; i < size; i++){
-    		s += ", " + Integer.toString(set[i]);
-    	}
-    	return "{" + s.substring(2) + "}";
+    public String toString() {
+        if (size == 0) {
+            return "{}";
+        }
+        String s = "";
+        for (int i = 0; i < size; i++) {
+            s += ", " + Integer.toString(set[i]);
+        }
+        return "{" + s.substring(2) + "}";
     }
-    
-    public void resize(){
+
+    public void resize() {
         set =  Arrays.copyOf(set, set.length * 2);
     }
 
-    public void add(int item){
-        if (size == set.length){
-        	resize();
-        } else{
-        	if(!this.contains(item)){
+    public void add(int item) {
+        if (size == set.length) {
+            resize();
+        } else {
+            if (!this.contains(item)) {
                 set[size++] = item;
-        	}
+            }
         }
     }
 
-    public void add(int[] items){
-    	for (int element: items){
-    		add(element);
-    	}
+    public void add(int[] items) {
+        for (int element : items) {
+            add(element);
+        }
     }
 
-    public Set intersection(Set b){
+    public Set intersection(Set b) {
         Set result = new Set();
         /*for (int ele: b.set){
-        	if(this.contains(ele)){
-        		result.add(ele);
-        	}
+            if(this.contains(ele)){
+                result.add(ele);
+            }
         }*/
-        for (int ele: set){
-    		for(int y: b.set){
-    			if(ele == y){
-    				result.add(ele);
-    			}
-    		}
-    	}
+        for (int ele : set) {
+            for (int y : b.set) {
+                if (ele == y) {
+                    result.add(ele);
+                }
+            }
+        }
         return result;
     }
 
-    public Set retainAll(int[] array){
-    	Set res = new Set();
-    	/*for (int e: array){
-    		if (this.contains(e)){
-    			res.add(e);
-    		}
-    	}*/
-    	for (int e: set){
-    		for(int x: array){
-    			if(e == x){
-    				res.add(e);
-    			}
-    		}
-    	}
-    	return res;
+    public Set retainAll(int[] array) {
+        Set res = new Set();
+        /*for (int e: array){
+            if (this.contains(e)){
+                res.add(e);
+            }
+        }*/
+        for (int e : set) {
+            for (int x : array) {
+                if (e == x) {
+                    res.add(e);
+                }
+            }
+        }
+        return res;
     }
-    public int get(int index){
-    	return set[index];
+    public int get(int index) {
+        return set[index];
     }
     /*public String[][] cartesianProduct(Set newset){
-    	int row = this.size();
-    	int col = newset.size();
+        int row = this.size();
+        int col = newset.size();
         String[][] product = new String[row][col];
         for (int i = 0; i < row; i++){
-        	for (int j = 0; j < col; j++){
-        		String r = Integer.toString(this.set[i]);
-        		String c = Integer.toString(newset.set[j]);
-        		product[i][j] ="[" + r + ", " + c + "]";
-        	}
+            for (int j = 0; j < col; j++){
+                String r = Integer.toString(this.set[i]);
+                String c = Integer.toString(newset.set[j]);
+                product[i][j] ="[" + r + ", " + c + "]";
+            }
         }
         return product;
-        
+
     }*/
-    public int[][] cartesianProduct(Set newset){
-    	int row = this.size() * newset.size();
-    	int col = 2;
+    public int[][] cartesianProduct(Set newset) {
+        int row = this.size() * newset.size();
+        int col = 2;
         int[][] product = new int[row][col];
         int k = 0;
-        for (int i = 0; i < this.size(); i++){
-        	for (int j =0; j < newset.size(); j++){
-        		product[k][0] = this.get(i);
+        for (int i = 0; i < this.size(); i++) {
+            for (int j = 0; j < newset.size(); j++) {
+                product[k][0] = this.get(i);
                 product[k][1] = newset.set[j];
                 k += 1;
             }
@@ -153,8 +153,8 @@ public final class Solution {
             input = s.substring(1, s.length() - 1);
         }
         return Arrays.stream(input.split(","))
-                            .mapToInt(Integer::parseInt)
-                            .toArray();
+               .mapToInt(Integer::parseInt)
+               .toArray();
     }
     /**
      * main function to execute test cases.
@@ -174,16 +174,16 @@ public final class Solution {
             String[] tokens = line.split(" ");
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
-                case "size":
+            case "size":
                 System.out.println(s.size());
                 break;
-                case "contains":
+            case "contains":
                 System.out.println(s.contains(Integer.parseInt(tokens[1])));
                 break;
-                case "print":
+            case "print":
                 System.out.println(s);
                 break;
-                case "add":
+            case "add":
                 int[] intArray = intArray(tokens[1]);
                 if (intArray.length == 1) {
                     s.add(intArray[0]);
@@ -191,7 +191,7 @@ public final class Solution {
                     s.add(intArray);
                 }
                 break;
-                case "intersection":
+            case "intersection":
                 s = new Set();
                 Set t = new Set();
                 intArray = intArray(tokens[1]);
@@ -200,27 +200,27 @@ public final class Solution {
                 t.add(intArray);
                 System.out.println(s.intersection(t));
                 break;
-                case "retainAll":
+            case "retainAll":
                 s = new Set();
                 intArray = intArray(tokens[1]);
                 s.add(intArray);
                 intArray = intArray(tokens[2]);
                 System.out.println(s.retainAll(intArray));
                 break;
-                case "cartesianProduct":
+            case "cartesianProduct":
                 s = new Set();
                 t = new Set();
                 intArray = intArray(tokens[1]);
                 s.add(intArray);
                 intArray = intArray(tokens[2]);
                 t.add(intArray);
-                if (t.size() == 0 || s.size() == 0){
-                	System.out.println("null");
+                if (t.size() == 0 || s.size() == 0) {
+                    System.out.println("null");
                 } else {
                     System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 }
                 break;
-                default:
+            default:
                 break;
             }
         }
