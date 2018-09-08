@@ -9,18 +9,35 @@ import java.util.Arrays;
 class Set {
     //your code goes here...
     //Good luck :-)
+    /**
+    *class
+    */
     private int[] set;
     private int size;
-
-    public Set() {
+    /**
+     * Constructs the object.
+     */
+     Set() {
         final int ten = 10;
         set = new int[ten];
         final int zero = 0;
         size = zero;
     }
+    /**
+     * size.
+     *
+     * @return     int
+     */
     public int size() {
         return size;
     }
+    /**
+     * contains function.
+     *
+     * @param      item  The item
+     *
+     * @return     int
+     */
     public boolean contains(final int item) {
         for (int each : set) {
             if (each == item) {
@@ -29,7 +46,11 @@ class Set {
         }
         return false;
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if (size == 0) {
             return "{}";
@@ -40,11 +61,17 @@ class Set {
         }
         return "{" + s.substring(2) + "}";
     }
-
+    /**
+     * resizes.
+     */
     public void resize() {
         set =  Arrays.copyOf(set, set.length * 2);
     }
-
+    /**
+     * add.
+     *
+     * @param      item  The item
+     */
     public void add(final int item) {
         if (size == set.length) {
             resize();
@@ -54,13 +81,23 @@ class Set {
             }
         }
     }
-
+    /**
+     * add All.
+     *
+     * @param      items  The items
+     */
     public void add(final int[] items) {
         for (int element : items) {
             add(element);
         }
     }
-
+    /**
+     * intersection.
+     *
+     * @param      b     { parameter_description }
+     *
+     * @return     object
+     */
     public Set intersection(final Set b) {
         Set result = new Set();
         /*for (int ele: b.set){
@@ -77,7 +114,13 @@ class Set {
         }
         return result;
     }
-
+    /**
+     * retains all elements.
+     *
+     * @param      array  The array
+     *
+     * @return     object.
+     */
     public Set retainAll(final int[] array) {
         Set res = new Set();
         /*for (int e: array){
@@ -94,6 +137,13 @@ class Set {
         }
         return res;
     }
+    /**
+     * get.
+     *
+     * @param      index  The index
+     *
+     * @return     int
+     */
     public int get(final int index) {
         return set[index];
     }
@@ -111,6 +161,13 @@ class Set {
         return product;
 
     }*/
+    /**
+     * cartesian product.
+     *
+     * @param      newset  The newset
+     *
+     * @return     2-d array.
+     */
     public int[][] cartesianProduct(final Set newset) {
         int row = this.size() * newset.size();
         int col = 2;
