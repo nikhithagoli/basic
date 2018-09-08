@@ -10,9 +10,12 @@ class Set {
     //your code goes here...
     //Good luck :-)
     /**
-    *class
+    *class.
     */
     private int[] set;
+    /**
+     * { var_description }
+     */
     private int size;
     /**
      * Constructs the object.
