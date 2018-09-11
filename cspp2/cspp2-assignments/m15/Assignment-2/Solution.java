@@ -17,13 +17,14 @@ class SortedSetADT {
     /**
      * magicnumber.
      */
-    private final int x = 10;
     /**
      * Constructs the object.
      */
+    final int ten = 10;
+    final int zero = 0;
     SortedSetADT() {
-        set = new int[x];
-        size = 0;
+        set = new int[ten];
+        size = zero;
     }
     /**
      * size.
@@ -41,13 +42,12 @@ class SortedSetADT {
      * @return     true or false.
      */
     public boolean contains(final int item) {
-        boolean checkFlag = false;
-        for (int i = 0; i < size; i++) {
-            if (set[i] == item) {
-                checkFlag = true;
+        for (int each : set) {
+            if (each == item) {
+                return true;
             }
         }
-        return checkFlag;
+        return false;
     }
     /**
      * Returns a string representation of the object.
@@ -58,25 +58,19 @@ class SortedSetADT {
         if (size == 0) {
             return "{}";
         }
-        String str = "{";
+        String s = "{";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
-            str = str + set[i] + ", ";
+            s = s + set[i] + ", ";
         }
-        str = str + set[i] + "}";
-        return str;
+        s = s + set[i] + "}";
+        return s;
     }
     /**
-     * add.
-     *
-     * @param      newArray  The new array.
+     * resize.
      */
-    public void addAll(final int[] newArray) {
-        for (int a : newArray) {
-            add(a);
-        }
-        set = Arrays.copyOf(set, size);
-        Arrays.sort(set);
+    public void resize() {
+        set = Arrays.copyOf(set, 2 * size);
     }
     /**
      * add.
@@ -92,16 +86,18 @@ class SortedSetADT {
         }
     }
     /**
-     * resize.
+     * add.
+     *
+     * @param      newArray  The new array.
      */
-    public void resize() {
-        int resizefactor = 2;
-        int[] temp = new int[resizefactor * size];
-        for (int i = 0; i < size; i++) {
-            temp[i] = set[i];
+    public void addAll(final int[] newArray) {
+        for (int a : newArray) {
+            add(a);
         }
-        set = temp;
+        set = Arrays.copyOf(set, size);
+        Arrays.sort(set);
     }
+
     /**
      * get.
      *
@@ -156,16 +152,16 @@ class SortedSetADT {
 
     public int[][] cartesianProduct(final SortedSetADT t) {
         if (size != 0 && t.size != 0) {
-            int[][] carray = new int[size * t.size()][2];
+            int[][] arr = new int[size * t.size()][2];
             System.out.println(t.get(1));
             int s = 0;
             for (int i = 0; i < this.size(); i++) {
                 for (int k = 0; k < t.size(); k++) {
-                    carray[s][0] = set[i];
-                    carray[s][1] = t.get(k);
+                    arr[s][0] = set[i];
+                    arr[s][1] = t.get(k);
                     s++;
                 }
-            } return carray;
+            } return arr;
         }
         return null;
     }
@@ -177,11 +173,11 @@ class SortedSetADT {
      *
      * @return     { description_of_the_return_value }.
      */
-    public int[] subSet(final int fromElement, final  int toElement) {
-        int[] temp = new int[x];
+    public int[] subSet(final int start, final  int end) {
+        int[] temp = new int[ten];
         int s = 0;
         for (int i = 0; i < size; i++) {
-            if (set[i] >= fromElement && set[i] < toElement) {
+            if (set[i] >= start && set[i] < end) {
                 temp[s++] = set[i];
             }
         }
@@ -195,16 +191,16 @@ class SortedSetADT {
      *
      * @return     { description_of_the_return_value }.
      */
-    public int[] headSet(final int toElement) {
-        int[] temp = new int[x];
+    public int[] headSet(final int end) {
+        int[] temp = new int[ten];
         int s = 0;
         for (int i = 0; i < size; i++) {
-            if (set[i] < toElement) {
+            if (set[i] < end) {
                 temp[s++] = set[i];
             }
         }
-            temp = Arrays.copyOf(temp, s);
-            return temp;
+        temp = Arrays.copyOf(temp, s);
+        return temp;
     }
     /**
      * last.
@@ -212,17 +208,17 @@ class SortedSetADT {
      * @return     last value.
      */
     public int last() {
-    try {
-        return set[size - 1];
-    } catch (IndexOutOfBoundsException e) {
-        System.out.println("Set Empty Exception");
-    }
-    return -1;
+        try {
+            return set[size - 1];
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Set Empty Exception");
+        }
+        return -1;
     }
 }
-    /**
-     * sorted set.
-     */
+/**
+ * sorted set.
+ */
 /**
  * Solution class for code-eval.
  */
@@ -269,7 +265,7 @@ public final class Solution {
                 break;
             case "contains":
                 System.out.println(s.
-                    contains(Integer.parseInt(tokens[1])));
+                                   contains(Integer.parseInt(tokens[1])));
                 break;
             case "print":
                 System.out.println(s);
@@ -285,11 +281,11 @@ public final class Solution {
             case "subSet":
                 String[] arrstring = tokens[1].split(",");
                 if (Integer.parseInt(arrstring[0])
-                      > Integer.parseInt(arrstring[1])) {
+                        > Integer.parseInt(arrstring[1])) {
                     System.out.println("Invalid Arguments to Subset Exception");
                 } else {
                     int[] subarray = s.subSet(Integer.parseInt(arrstring[0]),
-                            Integer.parseInt(arrstring[1]));
+                                              Integer.parseInt(arrstring[1]));
                     SortedSetADT subset = new SortedSetADT();
                     subset.addAll(subarray);
                     if (subset != null) {
@@ -299,7 +295,7 @@ public final class Solution {
                 break;
             case "headSet":
                 int[] headarray = s.headSet(Integer.parseInt(tokens[1]));
-                    SortedSetADT headset = new SortedSetADT();
+                SortedSetADT headset = new SortedSetADT();
                 headset.addAll(headarray);
                 if (headset.size() != 0) {
                     System.out.println(headset);
@@ -336,7 +332,7 @@ public final class Solution {
                 intArray = intArray(tokens[2]);
                 t.addAll(intArray);
                 System.out.println(Arrays.
-                    deepToString(s.cartesianProduct(t)));
+                                   deepToString(s.cartesianProduct(t)));
                 break;
             default:
                 break;
