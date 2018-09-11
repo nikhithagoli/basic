@@ -15,12 +15,12 @@ class Set {
     /**
      * holds the elemtns in this Set array.
      */
-    public int[] set;
+    public static int[] set;
     /**
      * This constant is used to create an array
      * with the initial capacity.
      */
-    public static final int zero = 0;
+    public static final int ZERO = 0;
     /**
      * indicates the number of elememnts of this set.
      */
@@ -31,7 +31,7 @@ class Set {
      */
     public Set() {
         set = new int[TEN];
-        size = zero;
+        size = ZERO;
     }
 
     /**
