@@ -24,7 +24,7 @@ class Set {
     /**
      * indicates the number of elememnts of this set.
      */
-    public int size;
+    public static int size;
 
     /**
      * Default constructor to create an array with the szie 10.
