@@ -15,7 +15,7 @@ class Set {
     /**
      * holds the elemtns in this Set array.
      */
-    public static int[] set;
+    public int[] set;
     /**
      * indicates the number of elememnts of this set.
      */
