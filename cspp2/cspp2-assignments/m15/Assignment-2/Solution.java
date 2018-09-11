@@ -17,11 +17,11 @@ class SortedSetADT {
     /**
      * magicnumber.
      */
+    private final int ten = 10;
+    private final int zero = 0;
     /**
      * Constructs the object.
      */
-    final int ten = 10;
-    final int zero = 0;
     SortedSetADT() {
         set = new int[ten];
         size = zero;
