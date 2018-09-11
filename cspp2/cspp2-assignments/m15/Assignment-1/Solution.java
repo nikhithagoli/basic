@@ -130,21 +130,17 @@ class List {
      *
      * @param      index  The index
      */
-    public void remove(final int index) {
+    public void remove(final int index) throws Exception {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        try {
             if (index >= 0 && index < size && size >= 0) {
                 for (int i = index; i < size - 1; i++) {
                     list[i] = list[i + 1];
                 }
                 size--;
             } else {
-                throw new Exception();
+                throw new Exception("Invalid position Exception");
             }
-        } catch (Exception e) {
-            System.out.println("Invalid Position Exception");
-        }
     }
 
     /*
@@ -273,7 +269,7 @@ class List {
      *
      * @param      newArray  The new array
      */
-    public void removeAll(final int[] newArray) {
+    public void removeAll(final int[] newArray) throws Exception{
         // write the logic
         for (int each : newArray) {
             for (int i = 0; i < newArray.length; i++) {
@@ -298,23 +294,18 @@ class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public List subList(final int start, final int end) {
+    public List subList(final int start, final int end) throws Exception {
         // write the logic for subList
         List newList = new List();
-        try {
             if (start > end || start < 0 || end <= 0 || size < end) {
-                throw new Exception();
-
+                throw new Exception("Index Out of Bounds Exception");
             } else {
                 for (int i = start; i < end; i++) {
                     newList.add(list[i]);
                 }
             }
             return newList;
-        } catch (Exception e) {
-            System.out.println("Index Out of Bounds Exception");
-        }
-        return null;
+        
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -341,7 +332,7 @@ class List {
     */
     public void clear() {
         // write the logic for clear.
-        removeAll(list);
+        size = 0; 
     }
     /**
      * { function_description }
@@ -368,7 +359,7 @@ public class Solution {
 /**
  * { item_description }
  */
-    private Solution(){
+    private Solution() {
         //function.
     }
     /**
@@ -405,8 +396,12 @@ public class Solution {
                 System.out.println(l);
                 break;
             case "remove":
-                if (tokens.length == 2) {
-                    l.remove(Integer.parseInt(tokens[1]));
+                try{
+                    if (tokens.length == 2) {
+                        l.remove(Integer.parseInt(tokens[1]));
+                    }
+                } catch(Exception e){
+                    System.out.println(e.getMessage());
                 }
                 break;
             case "indexOf":
@@ -438,24 +433,32 @@ public class Solution {
                 }
                 break;
             case "removeAll":
-                if (tokens.length == 2) {
-                    String[] t2 = tokens[1].split(",");
-                    int[] a = new int[t2.length];
-                    for (int i = 0; i < t2.length; i++) {
-                        a[i] = Integer.parseInt(t2[i]);
-                    }
-                    l.removeAll(a);
+                try{
+                        if (tokens.length == 2) {
+                            String[] t2 = tokens[1].split(",");
+                            int[] a = new int[t2.length];
+                            for (int i = 0; i < t2.length; i++) {
+                                a[i] = Integer.parseInt(t2[i]);
+                            }
+                            l.removeAll(a);
+                        }
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
                 }
                 break;
             case "subList":
-                if (tokens.length != 2) {
-                    break;
-                }
-                String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]),
-                                        Integer.parseInt(arrstring3[1]));
-                if (object != null) {
-                    System.out.println(object);
+                try{
+                    if (tokens.length != 2) {
+                        break;
+                    }
+                    String[] arrstring3 = tokens[1].split(",");
+                    List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                            Integer.parseInt(arrstring3[1]));
+                    if (object != null) {
+                        System.out.println(object);
+                    }
+                } catch (Exception e){
+                    System.out.println(e.getMessage());
                 }
                 break;
             case "equals":
