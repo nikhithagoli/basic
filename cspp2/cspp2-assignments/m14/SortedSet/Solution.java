@@ -30,8 +30,8 @@ class Set {
      * Default constructor to create an array with the szie 10.
      */
     Set() {
-        set = new int[TEN];
-        size = ZERO;
+        set = new int[10];
+        size = 0;
     }
 
     /**
