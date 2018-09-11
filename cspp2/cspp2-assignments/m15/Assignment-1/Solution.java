@@ -341,7 +341,7 @@ class List {
         size = 0;
     }
     /**
-     * { function_description }
+     * count.
      *
      * @param      item  The item
      *
@@ -363,7 +363,7 @@ class List {
  */
 public final class Solution {
     /**
-     * { item_description }
+     * class.
      */
     private Solution() {
         //function.
