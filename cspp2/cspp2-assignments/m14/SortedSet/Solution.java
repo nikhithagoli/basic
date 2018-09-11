@@ -17,11 +17,6 @@ class Set {
      */
     public static int[] set;
     /**
-     * This constant is used to create an array
-     * with the initial capacity.
-     */
-    public static final int ZERO = 0;
-    /**
      * indicates the number of elememnts of this set.
      */
     public static int size;
@@ -30,7 +25,7 @@ class Set {
      * Default constructor to create an array with the szie 10.
      */
     Set() {
-        set = new int[10];
+        set = new int[TEN];
         size = 0;
     }
 
