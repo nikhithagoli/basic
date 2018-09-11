@@ -10,7 +10,7 @@ class Set {
      * This constant is used to create an array
      * with the initial capacity.
      */
-    final int ten = 10;
+    public static final int TEN = 10;
 
     /**
      * holds the elemtns in this Set array.
@@ -30,7 +30,7 @@ class Set {
      * Default constructor to create an array with the szie 10.
      */
     public Set() {
-        set = new int[ten];
+        set = new int[TEN];
         size = zero;
     }
 
