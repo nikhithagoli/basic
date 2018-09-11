@@ -168,8 +168,8 @@ class SortedSetADT {
     /**
      * subset.
      *
-     * @param      fromElement  The from element.
-     * @param      toElement    To element.
+     * @param      start  The from element.
+     * @param      end    To element.
      *
      * @return     { description_of_the_return_value }.
      */
@@ -187,7 +187,7 @@ class SortedSetADT {
     /**
      * headset.
      *
-     * @param      toElement  To element.
+     * @param      end  To element.
      *
      * @return     { description_of_the_return_value }.
      */
