@@ -18,6 +18,9 @@ class SortedSetADT {
      * magicnumber.
      */
     private final int ten = 10;
+    /**
+     * magicnumber.
+     */
     private final int zero = 0;
     /**
      * Constructs the object.
