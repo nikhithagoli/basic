@@ -133,21 +133,19 @@ class List {
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        try{
+        try {
             if (index >= 0 && index < size && size >= 0) {
                 for (int i = index; i < size - 1; i++) {
                     list[i] = list[i + 1];
                 }
                 size--;
-            } 
-            else{
+            } else {
                 throw new Exception();
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid Position Exception");
         }
-}
+    }
 
     /*
      * Get method has to return the items that is at the index position passed
@@ -270,11 +268,11 @@ class List {
      Removes all of its elements that are contained in the specified int
      array.
     */
-     /**
-      * Removes all.
-      *
-      * @param      newArray  The new array
-      */
+    /**
+     * Removes all.
+     *
+     * @param      newArray  The new array
+     */
     public void removeAll(final int[] newArray) {
         // write the logic
         for (int each : newArray) {
@@ -303,17 +301,17 @@ class List {
     public List subList(final int start, final int end) {
         // write the logic for subList
         List newList = new List();
-        try{
+        try {
             if (start > end || start < 0 || end <= 0 || size < end) {
                 throw new Exception();
-            
+
             } else {
                 for (int i = start; i < end; i++) {
                     newList.add(list[i]);
                 }
             }
-            return newList; 
-        } catch (Exception e){
+            return newList;
+        } catch (Exception e) {
             System.out.println("Index Out of Bounds Exception");
         }
         return null;
@@ -348,11 +346,11 @@ class List {
     /**
      * { item_description }.
     */
-    public int count(int item){
+    public int count(int item) {
         //counts the occurence.
         int c = 0;
-        for (int each: list){
-            if (item == each){
+        for (int each : list) {
+            if (item == each) {
                 c += 1;
             }
         }
@@ -362,7 +360,7 @@ class List {
 /**
  * Class for solution.
  */
-public class Solution{
+public class Solution {
     /**
      * main function.
      *
