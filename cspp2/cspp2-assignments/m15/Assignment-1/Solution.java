@@ -345,6 +345,19 @@ class List {
         // write the logic for clear.
         removeAll(list);
     }
+    /**
+     * { item_description }.
+    */
+    public int count(int item){
+        //counts the occurence.
+        int c = 0;
+        for (int each: list){
+            if (item == each){
+                c += 1;
+            }
+        }
+        return c;
+    }
 }
 /**
  * Class for solution.
