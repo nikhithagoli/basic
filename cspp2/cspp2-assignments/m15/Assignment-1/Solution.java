@@ -60,7 +60,7 @@ class List {
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
-    public List() {
+    List() {
 
         // what are the two variables to be initialized here? think about the
         // private variables described above. What should be the default values?
@@ -344,9 +344,13 @@ class List {
         removeAll(list);
     }
     /**
-     * { item_description }.
-    */
-    public int count(int item) {
+     * { function_description }
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int count(final int item) {
         //counts the occurence.
         int c = 0;
         for (int each : list) {
@@ -361,6 +365,12 @@ class List {
  * Class for solution.
  */
 public class Solution {
+/**
+ * { item_description }
+ */
+    private Solution(){
+        //function.
+    }
     /**
      * main function.
      *
