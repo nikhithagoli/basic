@@ -139,7 +139,7 @@ class List {
                 }
                 size--;
             } else {
-                throw new Exception("Invalid position Exception");
+                throw new Exception("Invalid Position Exception");
             }
     }
 
