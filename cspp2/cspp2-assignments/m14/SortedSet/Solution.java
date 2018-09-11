@@ -19,7 +19,7 @@ class Set {
     /**
      * indicates the number of elememnts of this set.
      */
-    int size;
+    public int size;
 
     /**
      * Default constructor to create an array with the szie 10.
