@@ -15,11 +15,11 @@ class Set {
     /**
      * holds the elemtns in this Set array.
      */
-    public int[] set;
+    int[] set;
     /**
      * indicates the number of elememnts of this set.
      */
-    public static int size;
+    int size;
 
     /**
      * Default constructor to create an array with the szie 10.
