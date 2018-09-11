@@ -145,7 +145,7 @@ class List {
             }
         }
         catch(Exception e){
-            System.out.println("Invalid Index position");
+            System.out.println("Invalid Position Exception");
         }
 }
 
