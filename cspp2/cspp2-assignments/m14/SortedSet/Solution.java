@@ -29,17 +29,17 @@ class Set {
     /**
      * Default constructor to create an array with the szie 10.
      */
-    public Set() {
+    Set() {
         set = new int[TEN];
         size = ZERO;
     }
 
     /**
      * add the item to this set at the last.
-     * 
+     *
      * @param item to be inserted at the last.
      */
-    public void add(int item) {
+    public void add(final int item) {
         if (size == set.length) {
             resize();
         }
@@ -60,7 +60,7 @@ class Set {
      * @param arr as an arr to be added in this set,
      *            if the element is not present in this set.
      */
-    public void add(int[] arr) {
+    public void add(final int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             add(arr[i]);
         }
@@ -72,7 +72,7 @@ class Set {
      * @return the result that contains the common
      * elements of the two sets.
      */
-    public Set intersection(Set other) {
+    public Set intersection(final Set other) {
         Set result = new Set();
         for (int i = 0; i < this.size; i++) {
             if (other.contains(this.get(i))) {
@@ -102,7 +102,7 @@ class Set {
      * @return the cartesian product in the form of 2D array.
      */
     public int[][] cartesianProduct(final Set other) {
-        int [][] result = new int[this.size() * other.size()][2];
+        int[][] result = new int[this.size() * other.size()][2];
         int k = 0;
         if (this.size() == 0 || other.size() == 0) {
             return null;
