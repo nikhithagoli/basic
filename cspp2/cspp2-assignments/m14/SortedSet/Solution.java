@@ -1,13 +1,16 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+/**
+ * Class for set.
+ */
 class Set {
 
     /**
      * This constant is used to create an array
      * with the initial capacity.
      */
-    public static final int ten = 10;
+    final int ten = 10;
 
     /**
      * holds the elemtns in this Set array.
