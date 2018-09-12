@@ -93,13 +93,13 @@ class BookYourShow {
 
 
         if (flag) {
-            ticketList.add(patron.getMobile()+" "+movie+" "+showTime);
+            ticketList.add(patron.getMobile() + " " + movie + " " + showTime);
         }
         // System.out.println(ticketList);
     }
 
     void printTicket(String movie, String showTime, String mobile) {
-        String ticket = mobile+" "+movie+" "+showTime;
+        String ticket = mobile + " " + movie + " " + showTime;
         if (ticketList.contains(ticket))
             System.out.println(ticket);
         else
@@ -108,7 +108,7 @@ class BookYourShow {
 
     void showAll() {
         for (Show s : showList)
-            System.out.println(s.toString() + "," + Arrays.toString(s.getSeats()).replace(" ",""));
+            System.out.println(s.toString() + "," + Arrays.toString(s.getSeats()).replace(" ", ""));
     }
 }
 /**
@@ -130,36 +130,36 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         BookYourShow b = new BookYourShow();
         int n = sc.nextInt();
-        for (int i=0; i<n+1;i++){
+        for (int i = 0; i < n + 1; i++) {
             String line = sc.nextLine();
             String[] tokens = line.split(" ", 2);
             switch (tokens[0]) {
-                case "add":
-                    String[] elements = tokens[1].split(",", 3);
-                    String[] s = (elements[2].substring(1,elements[2].length()-1)).split(",");
-                    b.addAShow(new Show(elements[0], elements[1], s));
-                    break;
-                case "book":
-                    elements = tokens[1].split(",",5);
-                    s = (elements[4].substring(1,elements[4].length()-1)).split(",");
-                    b.bookAShow(elements[0], elements[1],new Patron(elements[2], elements[3]), s);
-                    break;
-                case "get":
-                    elements = tokens[1].split(",",2);
-                    Show show = b.getAShow(elements[0], elements[1]);
-                    if (show != null) {
-                       System.out.println(show);
-                    } else {
-                        System.out.println("No show");
-                    }
-                    break;
-                case "print":
-                    elements = tokens[1].split(",",3);
-                    b.printTicket(elements[0], elements[1], elements[2]);
-                    break;
-                case "showAll":
-                    b.showAll();
-                    break;
+            case "add":
+                String[] elements = tokens[1].split(",", 3);
+                String[] s = (elements[2].substring(1, elements[2].length() - 1)).split(",");
+                b.addAShow(new Show(elements[0], elements[1], s));
+                break;
+            case "book":
+                elements = tokens[1].split(",", 5);
+                s = (elements[4].substring(1, elements[4].length() - 1)).split(",");
+                b.bookAShow(elements[0], elements[1], new Patron(elements[2], elements[3]), s);
+                break;
+            case "get":
+                elements = tokens[1].split(",", 2);
+                Show show = b.getAShow(elements[0], elements[1]);
+                if (show != null) {
+                    System.out.println(show);
+                } else {
+                    System.out.println("No show");
+                }
+                break;
+            case "print":
+                elements = tokens[1].split(",", 3);
+                b.printTicket(elements[0], elements[1], elements[2]);
+                break;
+            case "showAll":
+                b.showAll();
+                break;
             }
 
         }
