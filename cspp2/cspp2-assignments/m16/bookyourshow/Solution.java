@@ -24,10 +24,10 @@ class Show {
      * @param      showTime  The show time
      * @param      seats     The seats
      */
-    Show (String movie, String showTime, String[] seats) {
+    Show(final String movie, final String time, final String[] seat) {
         this.moviename = movie;
-        this.showTime = showTime;
-        this.seats = seats;
+        this.showTime = time;
+        this.seats = seat;
     }
     /**
      * Gets the moviename.
@@ -59,7 +59,7 @@ class Show {
      *
      * @param      index  The index
      */
-    void setSeatNA(int index) {
+    void setSeatNA(final int index) {
         seats[index] = "N/A";
     }
     /**
@@ -90,9 +90,9 @@ class Patron {
      * @param      mobile  The mobile
      */
 
-    Patron (String name, String mobile) {
+    Patron(final String name, final String number) {
         this.name1 = name;
-        this.mobile = mobile;
+        this.mobile = number;
     }
     /**
      * Gets the name.
@@ -157,7 +157,7 @@ class BookYourShow {
     Show getAShow(String movie, String showTime) {
         for (Show s : showList)
             if (s.getMoviename().equals(movie) &&
-             s.getShowTime().equals(showTime))
+                    s.getShowTime().equals(showTime))
                 return s;
         return null;
     }
@@ -209,8 +209,8 @@ class BookYourShow {
      */
     void showAll() {
         for (Show s : showList)
-            System.out.println(s.toString() + "," + 
-                Arrays.toString(s.getSeats()).replace(" ", ""));
+            System.out.println(s.toString() + "," +
+                               Arrays.toString(s.getSeats()).replace(" ", ""));
     }
 }
 /**
@@ -239,15 +239,15 @@ public final class Solution {
             case "add":
                 String[] elements = tokens[1].split(",", 3);
                 String[] s = (elements[2].
-                    substring(1, elements[2].length() - 1)).split(",");
+                              substring(1, elements[2].length() - 1)).split(",");
                 b.addAShow(new Show(elements[0], elements[1], s));
                 break;
             case "book":
                 elements = tokens[1].split(",", 5);
                 s = (elements[4].
-                    substring(1, elements[4].length() - 1)).split(",");
+                     substring(1, elements[4].length() - 1)).split(",");
                 b.bookAShow(elements[0], elements[1],
-                 new Patron(elements[2], elements[3]), s);
+                            new Patron(elements[2], elements[3]), s);
                 break;
             case "get":
                 elements = tokens[1].split(",", 2);
