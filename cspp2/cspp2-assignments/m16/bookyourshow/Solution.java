@@ -253,8 +253,8 @@ public final class Solution {
                 break;
             case "book":
                 elements = tokens[1].split(",", k + 2);
-                s = (elements[k + 2].
-                     substring(1, elements[k + 2].length() - 1)).split(",");
+                s = (elements[k + 1].
+                     substring(1, elements[k + 1].length() - 1)).split(",");
                 b.bookAShow(elements[0], elements[1],
                             new Patron(elements[2], elements[3]), s);
                 break;
