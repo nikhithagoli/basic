@@ -158,7 +158,7 @@ public final class Solution {
                     b.printTicket(elements[0], elements[1], elements[2]);
                     break;
                 case "showAll":
-
+                    b.showAll();
                     break;
             }
 
