@@ -21,8 +21,8 @@ class Show {
      * Constructs the object.
      *
      * @param      movie     The movie
-     * @param      showTime  The show time
-     * @param      seats     The seats
+     * @param      time  The show time
+     * @param      seat     The seats
      */
     Show(final String movie, final String time, final String[] seat) {
         this.moviename = movie;
@@ -87,7 +87,7 @@ class Patron {
      * Constructs the object.
      *
      * @param      name    The name
-     * @param      mobile  The mobile
+     * @param      number  The mobile
      */
 
     Patron(final String name, final String number) {
@@ -126,11 +126,11 @@ class BookYourShow {
     /**
      * shows array.
      */
-    ArrayList<Show> showList;
+    private ArrayList<Show> showList;
     /**
      * tickets.
      */
-    ArrayList<String> ticketList;
+    private ArrayList<String> ticketList;
     /**
      * Constructs the object.
      */
@@ -143,7 +143,7 @@ class BookYourShow {
      *
      * @param      s     { parameter_description }
      */
-    void addAShow(Show s) {
+    void addAShow(final Show s) {
         showList.add(s);
     }
     /**
@@ -154,7 +154,7 @@ class BookYourShow {
      *
      * @return     A show.
      */
-    Show getAShow(String movie, String showTime) {
+    Show getAShow(final String movie, final String showTime) {
         for (Show s : showList)
             if (s.getMoviename().equals(movie) &&
                     s.getShowTime().equals(showTime))
