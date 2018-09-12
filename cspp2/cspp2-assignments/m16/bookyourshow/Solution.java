@@ -240,18 +240,19 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         BookYourShow b = new BookYourShow();
         int n = sc.nextInt();
+        final int k = 3;
         for (int i = 0; i < n + 1; i++) {
             String line = sc.nextLine();
             String[] tokens = line.split(" ", 2);
             switch (tokens[0]) {
             case "add":
-                String[] elements = tokens[1].split(",", 3);
+                String[] elements = tokens[1].split(",", k);
                 String[] s = (elements[2].
                         substring(1, elements[2].length() - 1)).split(",");
                 b.addAShow(new Show(elements[0], elements[1], s));
                 break;
             case "book":
-                elements = tokens[1].split(",", 5);
+                elements = tokens[1].split(",", k + 2);
                 s = (elements[4].
                      substring(1, elements[4].length() - 1)).split(",");
                 b.bookAShow(elements[0], elements[1],
@@ -274,7 +275,7 @@ public final class Solution {
                 b.showAll();
                 break;
             default:
-                break; 
+                break;
             }
 
         }
