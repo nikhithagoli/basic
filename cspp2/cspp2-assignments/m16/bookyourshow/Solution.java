@@ -247,7 +247,7 @@ public final class Solution {
             case "add":
                 String[] elements = tokens[1].split(",", 3);
                 String[] s = (elements[2].
-                              substring(1, elements[2].length() - 1)).split(",");
+                        substring(1, elements[2].length() - 1)).split(",");
                 b.addAShow(new Show(elements[0], elements[1], s));
                 break;
             case "book":
@@ -273,6 +273,8 @@ public final class Solution {
             case "showAll":
                 b.showAll();
                 break;
+            default:
+                break; 
             }
 
         }
