@@ -155,10 +155,12 @@ class BookYourShow {
      * @return     A show.
      */
     Show getAShow(final String movie, final String showTime) {
-        for (Show s : showList)
-            if (s.getMoviename().equals(movie) &&
-                    s.getShowTime().equals(showTime))
+        for (Show s : showList) {
+            if (s.getMoviename().equals(movie)
+                    && s.getShowTime().equals(showTime)) {
                 return s;
+            }
+        }
         return null;
     }
     /**
@@ -169,7 +171,8 @@ class BookYourShow {
      * @param      patron    The patron
      * @param      seats     The seats
      */
-    void bookAShow(String movie, String showTime, Patron patron, String[] seats) {
+    void bookAShow(final String movie, final String showTime,
+                   final Patron patron, final String[] seats) {
         Show show = getAShow(movie, showTime);
         if (show == null) {
             System.out.println("No show");
@@ -197,20 +200,22 @@ class BookYourShow {
      * @param      showTime  The show time
      * @param      mobile    The mobile
      */
-    void printTicket(String movie, String showTime, String mobile) {
+    void printTicket(final String movie, final String showTime, final String mobile) {
         String ticket = mobile + " " + movie + " " + showTime;
-        if (ticketList.contains(ticket))
+        if (ticketList.contains(ticket)) {
             System.out.println(ticket);
-        else
+        } else {
             System.out.println("Invalid");
+        }
     }
     /**
      * Shows all.
      */
     void showAll() {
-        for (Show s : showList)
+        for (Show s : showList) {
             System.out.println(s.toString() + "," +
                                Arrays.toString(s.getSeats()).replace(" ", ""));
+        }
     }
 }
 /**
@@ -228,7 +233,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         BookYourShow b = new BookYourShow();
         int n = sc.nextInt();
