@@ -240,7 +240,7 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         BookYourShow b = new BookYourShow();
         int n = sc.nextInt();
-        int k = 3;
+        final int k = 3;
         for (int i = 0; i < n + 1; i++) {
             String line = sc.nextLine();
             String[] tokens = line.split(" ", 2);
@@ -256,7 +256,7 @@ public final class Solution {
                 s = (elements[k + 1].
                      substring(1, elements[k + 1].length() - 1)).split(",");
                 b.bookAShow(elements[0], elements[1],
-                            new Patron(elements[2], elements[3]), s);
+                            new Patron(elements[2], elements[k]), s);
                 break;
             case "get":
                 elements = tokens[1].split(",", 2);
@@ -268,7 +268,7 @@ public final class Solution {
                 }
                 break;
             case "print":
-                elements = tokens[1].split(",", 3);
+                elements = tokens[1].split(",", k);
                 b.printTicket(elements[0], elements[1], elements[2]);
                 break;
             case "showAll":
