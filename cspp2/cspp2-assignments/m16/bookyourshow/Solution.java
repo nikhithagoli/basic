@@ -240,7 +240,7 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         BookYourShow b = new BookYourShow();
         int n = sc.nextInt();
-        final int k = 3;
+        int k = 3;
         for (int i = 0; i < n + 1; i++) {
             String line = sc.nextLine();
             String[] tokens = line.split(" ", 2);
@@ -253,8 +253,8 @@ public final class Solution {
                 break;
             case "book":
                 elements = tokens[1].split(",", k + 2);
-                s = (elements[4].
-                     substring(1, elements[4].length() - 1)).split(",");
+                s = (elements[k + 2].
+                     substring(1, elements[k + 2].length() - 1)).split(",");
                 b.bookAShow(elements[0], elements[1],
                             new Patron(elements[2], elements[3]), s);
                 break;
