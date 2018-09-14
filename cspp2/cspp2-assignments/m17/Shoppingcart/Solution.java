@@ -90,17 +90,29 @@ class Item {
  */
 class Shoppingcart {
     /**
-     * { var_description }
+     * catalog.
      */
     private ArrayList<Item> catalog;
     /**
-     * { var_description }
+     * cart.
      */
     private ArrayList<Item> cart;
-    double discount, tax;
-    String[] coupons = {"IND10", "IND20", "IND30", "IND50"};
+    /**
+     * tax.
+     */
+    private double discount, tax;
+    /**
+     * coupons.
+     */
+    private String[] coupons = {"IND10", "IND20", "IND30", "IND50"};
+    /**
+     * { var_description }
+     */
     boolean flag = true;
-    double tot, pay;
+    /**
+     * { item_description }
+     */
+    private double tot, pay;
     /**
      * Constructs the object.
      */
@@ -117,7 +129,7 @@ class Shoppingcart {
      *
      * @param      item  The item
      */
-    void addToCatalog(Item item) {
+    void addToCatalog(final Item item) {
         catalog.add(item);
     }
     /**
@@ -125,8 +137,8 @@ class Shoppingcart {
      *
      * @param      item  The item
      */
-    void addToCart(Item item) {
-        for ( Item each : catalog) {
+    void addToCart(final Item item) {
+        for (Item each : catalog) {
             if (each.getpname().equals(item.getpname())) {
                 for (Item f : cart) {
                     if (f.getpname().equals(item.getpname())) {
@@ -144,7 +156,7 @@ class Shoppingcart {
      *
      * @param      item  The item
      */
-    void removeFromCart(Item item) {
+    void removeFromCart(final Item item) {
         for (Item e : cart) {
             if (e.getpname().equals(item.getpname())) {
                 if (e.getquantity() == item.getquantity()) {
@@ -175,13 +187,13 @@ class Shoppingcart {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      name  The name
      *
      * @return     { description_of_the_return_value }
      */
-    double getprice(String name) {
+    double getprice(final String name) {
         for (Item e : catalog) {
             if (e.getpname().equals(name)) {
                 return e.getprice();
@@ -208,21 +220,24 @@ class Shoppingcart {
      */
     double getPayableAmount() {
         double amount = getTotalAmount();
-        double total = (amount - ((amount * discount) / 100));
-        tax = (total  * 15) / 100;
+        final int h = 100;
+        final int f = 15;
+        double total = (amount - ((amount * discount) / h));
+        tax = (total  * f) / h;
         pay = total + tax;
         return (pay);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      coupon  The coupon
      */
-    void applyCoupon(String coupon) {
+    void applyCoupon(final String coupon) {
+        final int three = 3;
         if (flag) {
             for (String i : coupons) {
                 if (i.equals(coupon)) {
-                    discount = Double.parseDouble(coupon.substring(3));
+                    discount = Double.parseDouble(coupon.substring(three));
                     flag = false;
                     return;
                 }
@@ -231,15 +246,17 @@ class Shoppingcart {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      */
     void printInvoice() {
+        final int h = 100;
         System.out.println("Name   " + "quantity   " + "Price");
         for (Item each : cart) {
-            System.out.println(each + " " + Double.toString(this.getprice(each.getpname())));
+            System.out.println(each + " " + Double.
+                toString(this.getprice(each.getpname())));
         }
         System.out.println("Total:" + Double.toString(tot));
-        System.out.println("Disc%:" + Double.toString((tot * discount) / 100));
+        System.out.println("Disc%:" + Double.toString((tot * discount) / h));
         System.out.println("Tax:" + Double.toString(tax));
         System.out.println("Payable amount: " + Double.toString(pay));
 
@@ -251,7 +268,13 @@ class Shoppingcart {
  */
 final class Solution {
     /**
-     * { function_description }
+     * Constructs the object.
+     */
+    private Solution(){
+        //function.
+    }
+    /**
+     * main.
      *
      * @param      args  The arguments
      */
@@ -265,7 +288,8 @@ final class Solution {
             switch (tokens[0]) {
             case "Item":
                 String[] item = tokens[1].split(",");
-                s.addToCatalog(new Item(item[0], Integer.parseInt(item[1]), Double.parseDouble(item[2])));
+                s.addToCatalog(new Item(item[0], Integer.
+                    parseInt(item[1]), Double.parseDouble(item[2])));
                 break;
             case "catalog":
                 s.showCatalog();
@@ -292,6 +316,8 @@ final class Solution {
                 break;
             case "print":
                 s.printInvoice();
+                break;
+            default:
                 break;
             }
         }
