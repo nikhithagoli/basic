@@ -154,7 +154,7 @@ class Shoppingcart {
         System.out.println("Total:" + Double.toString(tot));
         System.out.println("Disc%:" + Double.toString((tot * discount) / 100));
         System.out.println("Tax:" + Double.toString(tax));
-        System.out.println("Payable amount:" + Double.toString(pay));
+        System.out.println("Payable amount: " + Double.toString(pay));
 
     }
 
