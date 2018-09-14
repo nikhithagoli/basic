@@ -18,7 +18,7 @@ class Item {
     private double price;
     /**
      * if catalog.
-     * 
+     *
      */
     private boolean catalog = false;
     /**
