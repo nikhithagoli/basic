@@ -149,7 +149,7 @@ class Shoppingcart {
     void printInvoice() {
         System.out.println("Name   " + "quantity   " + "Price");
         for (Item each : cart) {
-            System.out.println(each + " " + Double.toString(each.getquantity() * this.getprice(each.getpname())));
+            System.out.println(each + " " + Double.toString(this.getprice(each.getpname())));
         }
         System.out.println("Total:" + Double.toString(tot));
         System.out.println("Disc%:" + Double.toString((tot * discount) / 100));
