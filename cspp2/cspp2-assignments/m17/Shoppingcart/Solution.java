@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.ArrayList;
 /**
  * Class for item.
@@ -18,27 +17,58 @@ class Item {
      */
     private double price;
     private boolean catalog = false;
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     * @param      q     The quarter
+     * @param      p     { parameter_description }
+     */
     Item(final String n, final int q, final double p) {
         this.pname = n;
         this.quantity = q;
         this.price = p;
         this.catalog = true;
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     * @param      q     The quarter
+     */
     Item(final String n, final int q) {
         this.pname = n;
         this.quantity = q;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getpname() {
         return pname;
     }
-
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int getquantity() {
         return quantity;
     }
-
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     double getprice() {
         return price;
     }
+    /**
+     * { function_description }
+     *
+     * @param      quant  The quant
+     */
     void setquantity(int quant) {
         this.quantity = quant;
     }
@@ -55,14 +85,25 @@ class Item {
         return pname + " " + quantity;
     }
 }
-
+/**
+ * Class for shoppingcart.
+ */
 class Shoppingcart {
+    /**
+     * { var_description }
+     */
     private ArrayList<Item> catalog;
+    /**
+     * { var_description }
+     */
     private ArrayList<Item> cart;
     double discount, tax;
     String[] coupons = {"IND10", "IND20", "IND30", "IND50"};
     boolean flag = true;
     double tot, pay;
+    /**
+     * Constructs the object.
+     */
     Shoppingcart() {
         catalog = new ArrayList<>();
         cart = new ArrayList<>();
@@ -71,9 +112,19 @@ class Shoppingcart {
         tot = 0;
         pay = 0;
     }
+    /**
+     * Adds to catalog.
+     *
+     * @param      item  The item
+     */
     void addToCatalog(Item item) {
         catalog.add(item);
     }
+    /**
+     * Adds to cartesian.
+     *
+     * @param      item  The item
+     */
     void addToCart(Item item) {
         for ( Item each : catalog) {
             if (each.getpname().equals(item.getpname())) {
@@ -88,6 +139,11 @@ class Shoppingcart {
             }
         }
     }
+    /**
+     * Removes a from cartesian.
+     *
+     * @param      item  The item
+     */
     void removeFromCart(Item item) {
         for (Item e : cart) {
             if (e.getpname().equals(item.getpname())) {
@@ -102,16 +158,29 @@ class Shoppingcart {
         }
 
     }
+    /**
+     * Shows the cartesian.
+     */
     void showCart() {
         for (Item e : cart) {
             System.out.println(e);
         }
     }
+    /**
+     * Shows the catalog.
+     */
     void showCatalog() {
         for (Item each : catalog) {
             System.out.println(each);
         }
     }
+    /**
+     * { function_description }
+     *
+     * @param      name  The name
+     *
+     * @return     { description_of_the_return_value }
+     */
     double getprice(String name) {
         for (Item e : catalog) {
             if (e.getpname().equals(name)) {
@@ -120,6 +189,11 @@ class Shoppingcart {
         }
         return 0;
     }
+    /**
+     * Gets the total amount.
+     *
+     * @return     The total amount.
+     */
     double getTotalAmount() {
         tot = 0;
         for (Item e : cart) {
@@ -127,6 +201,11 @@ class Shoppingcart {
         }
         return (tot);
     }
+    /**
+     * Gets the payable amount.
+     *
+     * @return     The payable amount.
+     */
     double getPayableAmount() {
         double amount = getTotalAmount();
         double total = (amount - ((amount * discount) / 100));
@@ -134,6 +213,11 @@ class Shoppingcart {
         pay = total + tax;
         return (pay);
     }
+    /**
+     * { function_description }
+     *
+     * @param      coupon  The coupon
+     */
     void applyCoupon(String coupon) {
         if (flag) {
             for (String i : coupons) {
@@ -146,6 +230,9 @@ class Shoppingcart {
             System.out.println("Invalid coupon");
         }
     }
+    /**
+     * { function_description }
+     */
     void printInvoice() {
         System.out.println("Name   " + "quantity   " + "Price");
         for (Item each : cart) {
@@ -159,7 +246,15 @@ class Shoppingcart {
     }
 
 }
+/**
+ * class.
+ */
 final class Solution {
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         Shoppingcart s = new Shoppingcart();
