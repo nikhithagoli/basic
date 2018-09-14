@@ -16,6 +16,10 @@ class Item {
      * price.
      */
     private double price;
+    /**
+     * if catalog.
+     * 
+     */
     private boolean catalog = false;
     /**
      * Constructs the object.
@@ -41,7 +45,7 @@ class Item {
         this.quantity = q;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -49,7 +53,7 @@ class Item {
         return pname;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -57,7 +61,7 @@ class Item {
         return quantity;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -65,11 +69,11 @@ class Item {
         return price;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      quant  The quant
      */
-    void setquantity(int quant) {
+    void setquantity(final int quant) {
         this.quantity = quant;
     }
 
@@ -106,11 +110,11 @@ class Shoppingcart {
      */
     private String[] coupons = {"IND10", "IND20", "IND30", "IND50"};
     /**
-     * { var_description }
+     * flag.
      */
-    boolean flag = true;
+    private boolean flag = true;
     /**
-     * { item_description }
+     * total.
      */
     private double tot, pay;
     /**
@@ -270,7 +274,7 @@ final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){
+    private Solution() {
         //function.
     }
     /**
