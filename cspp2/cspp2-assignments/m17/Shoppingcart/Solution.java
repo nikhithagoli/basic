@@ -143,8 +143,8 @@ class Shoppingcart {
                     return;
                 }
             }
+            System.out.println("Invalid coupon");
         }
-        System.out.println("Invalid coupon");
     }
     void printInvoice() {
         System.out.println("Name   " + "quantity   " + "Price");
