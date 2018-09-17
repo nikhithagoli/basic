@@ -60,7 +60,7 @@ class Question {
      * @return     { description_of_the_return_value }
      */
     public boolean evaluateResponse(final String choice) {
-        if (this.correctAnswer.equals(choice.substring(8))){
+        if (this.correctAnswer.equals(choice.substring(7))){
             return true;
         }
         return false;
@@ -276,7 +276,7 @@ public final class Solution {
                     if (choices.length >= 2){
                         if(Integer.parseInt(ques[2]) >= 1 && Integer.parseInt(ques[2]) <= choices.length){
                             if(Integer.parseInt(ques[3]) > 0){
-                                if(Integer.parseInt(ques[4]) < 0){ 
+                                if(Integer.parseInt(ques[4]) <= 0){ 
                                     quiz.addQuestion(new Question(ques[0], choices,
                                      ques[2], Integer.parseInt(ques[3]),
                                         Integer.parseInt(ques[4])));
@@ -347,11 +347,11 @@ public final class Solution {
             Question que = quiz.getQuestion(i);
             System.out.println(que.getQuestionText());
             if(que.evaluateResponse(que.getResponse())){
-                System.out.println("Correct Answer! - Marks Awarded: " + que.getMaxMarks());
+                System.out.println(" Correct Answer! - Marks Awarded: " + que.getMaxMarks());
                 total += que.getMaxMarks();
             }
             else{
-                System.out.println("Wrong Answer! - Penalty:" + que.getPenalty());
+                System.out.println(" Wrong Answer! - Penalty: " + que.getPenalty());
                 total += que.getPenalty();
             }
         }
