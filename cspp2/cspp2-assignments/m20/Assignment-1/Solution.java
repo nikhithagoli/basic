@@ -274,8 +274,9 @@ public final class Solution {
             for (int i = 0; i < q; i++) {
                 String l = scan.nextLine();
                 String[] ques = l.split(":");
-                if (ques.length == five && ques[0].length() != 0 && ques[1].length() != 0
-                 && ques[2].length() != 0 && ques[3].length() != 0 && ques[4].length() != 0) {
+                if (ques.length == five && ques[0].length() != 0 &&
+                ques[1].length() != 0 && ques[2].length() != 0 &&
+                ques[three].length() != 0 && ques[four].length() != 0) {
                     String[] choices = ques[1].split(",");
                     if (choices.length >= 2) {
                         if (Integer.parseInt(ques[2]) >= 1
@@ -348,7 +349,7 @@ public final class Solution {
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
         int total = 0;
-        if(quiz.size() > 0){
+        if (quiz.size() > 0) {
             for (int i = 0; i < quiz.size(); i++) {
                 Question que = quiz.getQuestion(i);
                 System.out.println(que.getQuestionText());
