@@ -274,8 +274,8 @@ public final class Solution {
             for (int i = 0; i < q; i++) {
                 String l = scan.nextLine();
                 String[] ques = l.split(":");
-                if (ques.length == five && ques[0] != null && ques[1] != null
-                 && ques[2] != null && ques[3] != null && ques[4] != null) {
+                if (ques.length == five && ques[0] != "\0" && ques[1] != "\0"
+                 && ques[2] != "\0" && ques[3] != "\0" && ques[4] != "\0") {
                     String[] choices = ques[1].split(",");
                     if (choices.length >= 2) {
                         if (Integer.parseInt(ques[2]) >= 1
