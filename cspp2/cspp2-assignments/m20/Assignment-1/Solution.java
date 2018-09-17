@@ -362,20 +362,22 @@ public final class Solution {
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
         int total = 0;
-        for (int i = 0; i < quiz.size(); i++) {
-            Question que = quiz.getQuestion(i);
-            System.out.println(que.getQuestionText());
-            if (que.evaluateResponse(que.getResponse())) {
-                System.out.println(" Correct Answer! - Marks Awarded: "
-                 + que.getMaxMarks());
-                total += que.getMaxMarks();
-            } else {
-                System.out.println(" Wrong Answer! - Penalty: "
-                 + que.getPenalty());
-                total += que.getPenalty();
+        if(quiz.size() > 0){
+            for (int i = 0; i < quiz.size(); i++) {
+                Question que = quiz.getQuestion(i);
+                System.out.println(que.getQuestionText());
+                if (que.evaluateResponse(que.getResponse())) {
+                    System.out.println(" Correct Answer! - Marks Awarded: "
+                     + que.getMaxMarks());
+                    total += que.getMaxMarks();
+                } else {
+                    System.out.println(" Wrong Answer! - Penalty: "
+                     + que.getPenalty());
+                    total += que.getPenalty();
+                }
             }
+            System.out.println("Total Score: " + total);
         }
-        System.out.println("Total Score: " + total);
     }
 
 }
