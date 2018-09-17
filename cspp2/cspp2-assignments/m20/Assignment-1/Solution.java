@@ -273,7 +273,7 @@ public final class Solution {
                 String[] ques = l.split(":");
                 if(ques.length == 5){
                     String[] choices = ques[1].split(",");
-                    if (choices.length < 2){
+                    if (choices.length >= 2){
                         if(Integer.parseInt(ques[2]) >= 1 && Integer.parseInt(ques[2]) <= choices.length){
                             if(Integer.parseInt(ques[3]) > 0){
                                 if(Integer.parseInt(ques[4]) < 0){ 
