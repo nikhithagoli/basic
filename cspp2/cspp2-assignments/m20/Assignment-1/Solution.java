@@ -293,8 +293,8 @@ public final class Solution {
                 if (ques.length == five) {
                     String[] choices = ques[1].split(",");
                     if (choices.length >= 2) {
-                        if (Integer.parseInt(ques[2]) >= 1 &&
-                         Integer.parseInt(ques[2]) <= choices.length) {
+                        if (Integer.parseInt(ques[2]) >= 1
+                         && Integer.parseInt(ques[2]) <= choices.length) {
                             if (Integer.parseInt(ques[three]) > 0) {
                                 if (Integer.parseInt(ques[four]) <= 0) {
                                 quiz.addQuestion(new Question(ques[0], choices,
@@ -340,7 +340,7 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        for (int i = 0; i < q; i++) {
+        for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText()
              + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
             String[] c = quiz.getQuestion(i).getChoice();
