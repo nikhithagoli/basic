@@ -45,7 +45,7 @@ class Question {
      */
     Question(final String question1, final String[] choices1,
              final int correctAnswer1, final int maxMarks1,
-             final int penalty1) {
+              final int penalty1) {
         this.questiontext = question1;
         this.choices = choices1;
         this.correctAnswer = choices[correctAnswer1 - 1].split(" ")[1];
@@ -275,32 +275,32 @@ public final class Solution {
                 String l = scan.nextLine();
                 String[] ques = l.split(":");
                 if (ques.length == five && ques[0].length() != 0 && ques[1].length() != 0
-                        && ques[2].length() != 0 && ques[3].length() != 0 && ques[4].length() != 0) {
+                 && ques[2].length() != 0 && ques[3].length() != 0 && ques[4].length() != 0) {
                     String[] choices = ques[1].split(",");
                     if (choices.length >= 2) {
                         if (Integer.parseInt(ques[2]) >= 1
-                                && Integer.parseInt(ques[2]) <= choices.length) {
+                         && Integer.parseInt(ques[2]) <= choices.length) {
                             if (Integer.parseInt(ques[three]) > 0) {
                                 if (Integer.parseInt(ques[four]) <= 0) {
-                                    quiz.addQuestion(new Question(ques[0], choices,
-                                                                  Integer.parseInt(ques[2]),
-                                                                  Integer.parseInt(ques[three]),
-                                                                  Integer.parseInt(ques[four])));
+                                quiz.addQuestion(new Question(ques[0], choices,
+                                Integer.parseInt(ques[2]),
+                                Integer.parseInt(ques[three]),
+                                Integer.parseInt(ques[four])));
                                 } else {
                                     System.out.println("Invalid penalty for "
-                                                       + ques[0]);
+                                     + ques[0]);
                                 }
                             } else {
                                 System.out.println("Invalid max marks for "
-                                                   + ques[0]);
+                                 + ques[0]);
                             }
                         } else {
                             System.out.println("Error! Correct answer "
-                                               + "choice number is out of range for " + ques[0]);
+                             + "choice number is out of range for " + ques[0]);
                         }
                     } else {
                         System.out.println(ques[0]
-                                           + " does not have enough answer choices");
+                         + " does not have enough answer choices");
                     }
                 } else {
                     System.out.println("Error! Malformed question");
@@ -328,7 +328,7 @@ public final class Solution {
         // store the user respone in the question object
         for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText()
-                               + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
+             + "(" + quiz.getQuestion(i).getMaxMarks() + ")");
             String[] c = quiz.getQuestion(i).getChoice();
             for (int j = 0; j < c.length - 1; j++) {
                 System.out.print(c[j] + "\t");
@@ -348,17 +348,17 @@ public final class Solution {
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
         int total = 0;
-        if (quiz.size() > 0) {
+        if(quiz.size() > 0){
             for (int i = 0; i < quiz.size(); i++) {
                 Question que = quiz.getQuestion(i);
                 System.out.println(que.getQuestionText());
                 if (que.evaluateResponse(que.getResponse())) {
                     System.out.println(" Correct Answer! - Marks Awarded: "
-                                       + que.getMaxMarks());
+                     + que.getMaxMarks());
                     total += que.getMaxMarks();
                 } else {
                     System.out.println(" Wrong Answer! - Penalty: "
-                                       + que.getPenalty());
+                     + que.getPenalty());
                     total += que.getPenalty();
                 }
             }
