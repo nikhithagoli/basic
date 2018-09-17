@@ -15,7 +15,7 @@ class Question {
     /**
      * { var_description }.
      */
-    private String correctAnswer;
+    private int correctAnswer;
     /**
      * { var_description }.
      */
@@ -44,7 +44,7 @@ class Question {
      * @param      penalty1        The penalty 1
      */
     Question(final String question1, final String[] choices1,
-             final String correctAnswer1, final int maxMarks1,
+             final int correctAnswer1, final int maxMarks1,
               final int penalty1) {
         this.questiontext = question1;
         this.choices = choices1;
@@ -78,7 +78,7 @@ class Question {
         default:
             break;
         }
-        if (this.correctAnswer.equals(ch[1])) {
+        if (this.choices[correctAnswer - 1].equals(ch[1])) {
             return true;
         }
         return false;
@@ -88,7 +88,7 @@ class Question {
      *
      * @return     The correct answer.
      */
-    public String getCorrectAnswer() {
+    public int getCorrectAnswer() {
         return correctAnswer;
     }
     /**
@@ -298,10 +298,11 @@ public final class Solution {
                             if (Integer.parseInt(ques[three]) > 0) {
                                 if (Integer.parseInt(ques[four]) <= 0) {
                                 quiz.addQuestion(new Question(ques[0], choices,
-                                ques[2], Integer.parseInt(ques[three]),
+                                Integer.parseInt(ques[2]),
+                                Integer.parseInt(ques[three]),
                                 Integer.parseInt(ques[four])));
                                 } else {
-                                    System.out.println("Invalid penalty for"
+                                    System.out.println("Invalid penalty for "
                                      + ques[0]);
                                 }
                             } else {
