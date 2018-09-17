@@ -62,7 +62,7 @@ class Question {
      */
     public boolean evaluateResponse(final String choice) {
         String[] ch = choice.split(" ");
-        switch (ch[1]) {
+        /*switch (ch[1]) {
         case "a":
             ch[1] = "1";
             break;
@@ -77,7 +77,7 @@ class Question {
             break;
         default:
             break;
-        }
+        }*/
         if (this.correctAnswer.equals(ch[1])) {
             return true;
         }
