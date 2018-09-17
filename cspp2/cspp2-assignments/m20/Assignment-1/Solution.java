@@ -15,7 +15,7 @@ class Question {
     /**
      * { var_description }.
      */
-    private int correctAnswer;
+    private String correctAnswer;
     /**
      * { var_description }.
      */
@@ -48,7 +48,7 @@ class Question {
               final int penalty1) {
         this.questiontext = question1;
         this.choices = choices1;
-        this.correctAnswer = correctAnswer1;
+        this.correctAnswer = choices[correctAnswer1 - 1].split(" ")[1];
         this.maxMarks = maxMarks1;
         this.penalty = penalty1;
 
@@ -78,7 +78,7 @@ class Question {
         default:
             break;
         }
-        if (this.choices[correctAnswer - 1].equals(ch[1])) {
+        if (this.correctAnswer.equals(ch[1])) {
             return true;
         }
         return false;
@@ -88,7 +88,7 @@ class Question {
      *
      * @return     The correct answer.
      */
-    public int getCorrectAnswer() {
+    public String getCorrectAnswer() {
         return correctAnswer;
     }
     /**
