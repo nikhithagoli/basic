@@ -62,22 +62,6 @@ class Question {
      */
     public boolean evaluateResponse(final String choice) {
         String[] ch = choice.split(" ");
-        /*switch (ch[1]) {
-        case "a":
-            ch[1] = "1";
-            break;
-        case "b":
-            ch[1] = "2";
-            break;
-        case "c":
-            ch[1] = "3";
-            break;
-        case "d":
-            ch[1] = "4";
-            break;
-        default:
-            break;
-        }*/
         if (this.correctAnswer.equals(ch[1])) {
             return true;
         }
@@ -290,7 +274,8 @@ public final class Solution {
             for (int i = 0; i < q; i++) {
                 String l = scan.nextLine();
                 String[] ques = l.split(":");
-                if (ques.length == five) {
+                if (ques.length == five && ques[0] != null && ques[1] != null
+                 && ques[2] != null && ques[3] != null && ques[4] != null) {
                     String[] choices = ques[1].split(",");
                     if (choices.length >= 2) {
                         if (Integer.parseInt(ques[2]) >= 1
