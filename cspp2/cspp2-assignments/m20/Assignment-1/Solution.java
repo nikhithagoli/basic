@@ -60,7 +60,22 @@ class Question {
      * @return     { description_of_the_return_value }
      */
     public boolean evaluateResponse(final String choice) {
-        if (this.correctAnswer.equals(choice.substring(7))){
+    	String[] ch = choice.split(" ");
+    	switch(ch[1]){
+    		case "a":
+    			ch[1] = "1";
+    			break;
+    		case "b":
+    			ch[1] = "2";
+    			break;
+    		case "c":
+    			ch[1] = "3";
+    			break;
+    		case "d":
+    			ch[1] = "4";
+    			break;
+    	}
+        if (this.correctAnswer.equals(ch[1])){
             return true;
         }
         return false;
@@ -267,7 +282,7 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if(q > 1){
+        if(q >= 1){
             for(int i = 0; i < q; i++){
                 String l = scan.nextLine();
                 String[] ques = l.split(":");
