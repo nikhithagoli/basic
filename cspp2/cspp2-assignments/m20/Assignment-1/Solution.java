@@ -330,6 +330,7 @@ public final class Solution {
             }
             System.out.print(c[c.length-1]);
             System.out.println();
+            System.out.println();
             quiz.getQuestion(i).setResponse(scan.nextLine());
         }
         
