@@ -1,0 +1,10 @@
+Water,1250,18/9/2018 8:40PM
+PhysicalActivity,walkingbrisk,18/9/2018,7:00AM,7:30AM
+Weight,18/9/2018,6:30AM,61KG,20%
+Sleep,18/9/2018 10:30PM,19/9/18 6:30PM
+Foodlog
+Waterlog
+PhysicalActivitylog
+Weightlog
+Sleeplog
+Summary
