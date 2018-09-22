@@ -168,27 +168,27 @@ class Todoist {
  * @return     The next task.
  */
     public Task getNextTask(final String name) {
-        for (Task each : tasklist) {
-            if (each.getpersonname().equals(name)){
-                if (each.getstatus().equals("todo")){
-                    if(each.getimportant()){
-                        if(!each.geturgent()){
-                            return each;
+        for (int i = 0; i < size; i++) {
+            if (tasklist[i].getpersonname().equals(name)){
+                if (tasklist[i].getstatus().equals("todo")){
+                    if(tasklist[i].getimportant()){
+                        if(!tasklist[i].geturgent()){
+                            return tasklist[i];
                         }
                     }
                 }
             }  
         }
-        for (Task each : tasklist) {
-            if (each.getpersonname().equals(name)){
-                if (each.getstatus().equals("todo")){
-                    if(each.getimportant()){
-                        if(each.geturgent()){
-                            return each;
+        for (int i = 0; i < size; i++) {
+            if (tasklist[i].getpersonname().equals(name)){
+                if (tasklist[i].getstatus().equals("todo")){
+                    if(tasklist[i].getimportant()){
+                        if(tasklist[i].geturgent()){
+                            return tasklist[i];
                         }
                     }
                 }
-            }
+            }  
         }
         return null;
     }
@@ -202,21 +202,40 @@ class Todoist {
      */
     public Task[] getNextTask(final String name, final int count) {
         Task[] multipletasks = new Task[count];
-        int i = 0;
-        for (Task each : tasklist) {
+        int size1 = 0;
+        /*for (Task each : tasklist) {
             if (each.getpersonname().equals(name) && each.getstatus().equals("todo") && each.getimportant() && (!each.geturgent())) {
                 multipletasks[i++] = each;
             }
+        }*/
+        for (int i = 0; i < size; i++) {
+            if (tasklist[i].getpersonname().equals(name)){
+                if (tasklist[i].getstatus().equals("todo")){
+                    if(tasklist[i].getimportant()){
+                        if(!tasklist[i].geturgent()){
+                            multipletasks[size1++] = tasklist[i];
+                        }
+                    }
+                }
+            }  
         }
-        if (i == count) {
+        if (size1 == count) {
             return multipletasks;
         }
-        for (Task each : tasklist) {
-            if (each.getpersonname().equals(name) && each.getstatus().equals("todo") && each.getimportant() && (each.geturgent())) {
-                multipletasks[i++] = each;
-            }
+        size1 = 0;
+        for (int i = 0; i < size; i++) {
+            if (tasklist[i].getpersonname().equals(name)){
+                if (tasklist[i].getstatus().equals("todo")){
+                    if(tasklist[i].getimportant()){
+                        if(tasklist[i].geturgent()){
+                            multipletasks[size1++] = tasklist[i];
+                        }
+                    }
+                }
+            }  
         }
-        if (i == count) {
+        
+        if (size1 == count) {
             return multipletasks;
         }
         return null;
@@ -261,7 +280,7 @@ public class TodoistMain {
                 System.out.println(todo);
                 break;
             case "get-next":
-                System.out.println(todo.getNextTask(tokens[1]));
+                    System.out.println(todo.getNextTask(tokens[1]));
                 break;
             case "get-next-n":
                 int n = Integer.parseInt(tokens[2]);
