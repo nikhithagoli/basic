@@ -16,18 +16,18 @@ class Task{
 	public Task(String title, String assignedTo, int timeToComplete, boolean important, boolean urgent, String status){
 		if(title == null || title.isEmpty()){
         	try {
-            	throw new Exception("Title not provided");
+            	throw new Exception();
         	} catch (Exception e) {
-            	System.out.println();
+            	System.out.println("Title not provided");
         	}
     	} else{
         	this.taskname = title;
         	this.personname = assignedTo;
         	if(timeToComplete < 0){
         		try{
-        			throw new Exception("Invalid timeToComplete ");
+        			throw new Exception();
         		} catch (Exception e){
-        			System.out.println(e + Integer.toString(time));
+        			System.out.println("Invalid timeToComplete " + Integer.toString(time));
         		}
         	} else {
         		this.time = timeToComplete;
@@ -35,7 +35,7 @@ class Task{
 				this.urgent = urgent;
 				if (!(status.equals("done") || status.equals("todo"))){
 					try {
-						throw new Exception("Invalid status ");
+						throw new Exception();
 					} catch (Exception e){
 						System.out.println("Invalid status " + status);
 					}
@@ -222,7 +222,7 @@ public class TodoistMain {
      */
     public static void testTask(final String[] tokens) {
         try {
-            System.out.println(createTask(tokens));
+            createTask(tokens);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
