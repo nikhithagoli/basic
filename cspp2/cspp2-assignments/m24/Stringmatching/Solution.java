@@ -1,17 +1,31 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 /**
  * Class for common string.
  */
 class CommonString {
+    /**
+     * file1.
+     */
     private String file1;
+    /**
+     * file2.
+     */
     private String file2;
+    /**
+     * lcs.
+     */
     private int lcs = 1;
+    /**
+     * result.
+     */
     private Double result;
+    /**
+     * res.
+     */
     private Double res;
     /**
      * Constructs the object.
@@ -33,7 +47,7 @@ class CommonString {
      */
     public void common(final char[] one, final char[] two, 
         final int m, final int n) {
-        final double h = 100.0; 
+        final double h = 100.0;
         Double[][] longest = new Double[m + 1][n + 1];
         result = 0.0;
         for (int i = 0; i <= m; i++) {
