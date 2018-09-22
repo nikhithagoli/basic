@@ -241,7 +241,7 @@ class Todoist {
                 break;
             }
         }
-        if (size1 == count) {
+        if (size1 <= count) {
             return multipletasks;
         }
         int size2 = 0;
@@ -262,7 +262,7 @@ class Todoist {
             }
         }
 
-        if (size2 == count) {
+        if (size2 <= count) {
             return multipletask;
         }
         return null;
