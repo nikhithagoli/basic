@@ -26,7 +26,7 @@ class CommonString {
     /**
      * { item_description }
      */
-    public void common(final char X[], final char Y[], 
+    public void common(final char one[], final char two[], 
         final int m, final int n) {
         Double longest[][] = new Double[m + 1][n + 1];
         result = 0.0;
@@ -34,7 +34,7 @@ class CommonString {
             for (int j = 0; j <= n; j++) {
                 if (i == 0 || j == 0) {
                     longest[i][j] = 0.0;
-                } else if (X[i - 1] == Y[j - 1]) {
+                } else if (one[i - 1] == two[j - 1]) {
                     longest[i][j] = longest[i - 1][j - 1] + 1;
                     result = Double.max(result, longest[i][j]);
                 } else
