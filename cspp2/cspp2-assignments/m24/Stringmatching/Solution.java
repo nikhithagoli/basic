@@ -19,14 +19,15 @@ class CommonString {
      * @param      input1  The input 1
      * @param      input2  The input 2
      */
-    CommonString(String input1, String input2) {
+    CommonString(final String input1, final String input2) {
         file1 = input1;
         file2 = input2;
     }
     /**
      * { item_description }
      */
-    public void common(char X[], char Y[], int m, int n) {
+    public void common(final char X[], final char Y[], 
+        final int m, final int n) {
         Double longest[][] = new Double[m + 1][n + 1];
         result = 0.0;
         for (int i = 0; i <= m; i++) {
@@ -43,7 +44,7 @@ class CommonString {
         res = (double)Math.round((((result * 2) / (m + n)) * 100d));
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -58,11 +59,11 @@ class Solution {
     /**
      * Constructs the object.
      */
-    Solution(){
+    Solution() {
         //funtion.
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
@@ -86,9 +87,9 @@ class Solution {
             for (File filename : testfiles) {
                 try {
                     String content = new String(Files.
-                    readAllBytes(Paths.get(filename.getAbsolutePath())));
+                                                readAllBytes(Paths.get(filename.getAbsolutePath())));
                     content = content.replaceAll("\n", " ")
-                    .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
+                              .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
                 } catch (Exception e) {
                     System.out.println("file not found");
@@ -102,7 +103,7 @@ class Solution {
                 for (String input2 : fileStrings) {
                     objects.add(new CommonString(input1, input2));
                     objects.get(k).common(input1.toCharArray(),
-                    input2.toCharArray(), input1.length(), input2.length());
+                                          input2.toCharArray(), input1.length(), input2.length());
                     System.out.print(objects.get(k).getresult() + "         ");
                     k++;
                 }
