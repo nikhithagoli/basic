@@ -377,7 +377,7 @@ public final class TodoistMain {
         boolean urgent = tokens[2 + 2 + 1].equals("y");
         String status = tokens[2 + 2 + 2];
         return new Task(
-                   title, assignedTo, timeToComplete, important, urgent, status);
+        title, assignedTo, timeToComplete, important, urgent, status);
     }
 
     /**
