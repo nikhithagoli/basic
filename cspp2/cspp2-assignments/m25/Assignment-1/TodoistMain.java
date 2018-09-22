@@ -44,8 +44,8 @@ class Task {
      * @throws     Exception        ndkfh
      */
     Task(final String title, final String assignedTo, final int timeToComplete,
-    final boolean important1, final boolean urgent1,
-    final String status1) throws Exception {
+         final boolean important1, final boolean urgent1,
+         final String status1) throws Exception {
         if (title == null || title.isEmpty()) {
             throw new Exception("Title not provided");
         } else {
@@ -227,7 +227,7 @@ class Todoist {
         Task[] multipletasks = new Task[count];
         int size1 = 0;
         for (int i = 0; i < size; i++) {
-            if(size1 < count){
+            if (size1 < count) {
                 if (tasklist[i].getpersonname().equals(name)) {
                     if (tasklist[i].getstatus().equals("todo")) {
                         if (tasklist[i].getimportant()) {
@@ -247,7 +247,7 @@ class Todoist {
         int size2 = 0;
         Task[] multipletask = new Task[count];
         for (int i = 0; i < size; i++) {
-            if(size2 < count){
+            if (size2 < count) {
                 if (tasklist[i].getpersonname().equals(name)) {
                     if (tasklist[i].getstatus().equals("todo")) {
                         if (tasklist[i].getimportant()) {
@@ -257,7 +257,7 @@ class Todoist {
                         }
                     }
                 }
-            } else{
+            } else {
                 break;
             }
         }
@@ -377,7 +377,7 @@ public final class TodoistMain {
         boolean urgent = tokens[2 + 2 + 1].equals("y");
         String status = tokens[2 + 2 + 2];
         return new Task(
-        title, assignedTo, timeToComplete, important, urgent, status);
+                   title, assignedTo, timeToComplete, important, urgent, status);
     }
 
     /**
