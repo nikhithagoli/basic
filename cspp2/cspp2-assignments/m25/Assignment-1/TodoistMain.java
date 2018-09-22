@@ -44,7 +44,8 @@ class Task {
      * @throws     Exception        ndkfh
      */
     Task(final String title, final String assignedTo, final int timeToComplete,
-    final boolean important1, final boolean urgent1, final String status1) throws Exception {
+    final boolean important1, final boolean urgent1,
+    final String status1) throws Exception {
         if (title == null || title.isEmpty()) {
             throw new Exception("Title not provided");
         } else {
@@ -277,14 +278,17 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
+public final class TodoistMain {
 
     /**
      * Starts a test.
      */
-    private TodoistMain(){
+    private TodoistMain() {
         //constructor.
     }
+    /**
+     * Starts a test.
+     */
     public static void startTest() {
         Todoist todo = new Todoist();
         Scanner s = new Scanner(System.in);
