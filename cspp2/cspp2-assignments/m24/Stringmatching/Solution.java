@@ -4,16 +4,28 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+/**
+ * Class for common string.
+ */
 class CommonString {
     private String file1;
     private String file2;
     private int lcs = 1;
     private Double result;
     private Double res;
+    /**
+     * Constructs the object.
+     *
+     * @param      input1  The input 1
+     * @param      input2  The input 2
+     */
     CommonString(String input1, String input2) {
         file1 = input1;
         file2 = input2;
     }
+    /**
+     * { item_description }
+     */
     public void common(char X[], char Y[], int m, int n) {
         Double longest[][] = new Double[m + 1][n + 1];
         result = 0.0;
@@ -30,12 +42,31 @@ class CommonString {
         }
         res = (double)Math.round((((result * 2) / (m + n)) * 100d));
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Double getresult() {
         return res;
     }
 }
+/**
+ * Class for solution.
+ */
 class Solution {
-    public static void main(String[] args) {
+    /**
+     * Constructs the object.
+     */
+    Solution(){
+        //funtion.
+    }
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner input = new Scanner(System.in);
         // if (testfiles.length == 0) {
         //     System.out.println("empty Directory");
@@ -54,9 +85,10 @@ class Solution {
             ArrayList<CommonString> objects = new ArrayList<>();
             for (File filename : testfiles) {
                 try {
-                    String content = new String(Files.readAllBytes(Paths.get(filename.getAbsolutePath())));
+                    String content = new String(Files.
+                    readAllBytes(Paths.get(filename.getAbsolutePath())));
                     content = content.replaceAll("\n", " ")
-                              .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
+                    .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
                 } catch (Exception e) {
                     System.out.println("file not found");
@@ -70,7 +102,7 @@ class Solution {
                 for (String input2 : fileStrings) {
                     objects.add(new CommonString(input1, input2));
                     objects.get(k).common(input1.toCharArray(),
-                                          input2.toCharArray(), input1.length(), input2.length());
+                    input2.toCharArray(), input1.length(), input2.length());
                     System.out.print(objects.get(k).getresult() + "         ");
                     k++;
                 }
