@@ -23,38 +23,38 @@ class Task {
      * @param      title           The title
      * @param      assignedTo      The assigned to
      * @param      timeToComplete  The time to complete
-     * @param      important       The important
-     * @param      urgent          The urgent
-     * @param      status          The status
+     * @param      important1       The important
+     * @param      urgent1         The urgent
+     * @param      status1          The status
      */
-    public Task(final String title, final String assignedTo, final int timeToComplete, final boolean important, final boolean urgent, final String status) {
+    public Task(final String title, final String assignedTo, final int timeToComplete, final boolean important1, final boolean urgent1, final String status1) {
         if (title == null || title.isEmpty()) {
             try {
-                throw new Exception();
+                throw new Exception("Title not provided");
             } catch (Exception e) {
-                System.out.println("Title not provided");
+                //System.out.println("Title not provided");
             }
         } else {
             this.taskname = title;
             this.personname = assignedTo;
             if (timeToComplete < 0) {
                 try {
-                    throw new Exception();
+                    throw new Exception("Invalid timeToComplete " + Integer.toString(time));
                 } catch (Exception e) {
-                    System.out.println("Invalid timeToComplete " + Integer.toString(time));
+                    //System.out.println("Invalid timeToComplete " + Integer.toString(time));
                 }
             } else {
                 this.time = timeToComplete;
-                this.important = important;
-                this.urgent = urgent;
-                if (!(status.equals("done") || status.equals("todo"))) {
+                this.important = important1;
+                this.urgent = urgent1;
+                if (!(status1.equals("done") || status1.equals("todo"))) {
                     try {
-                        throw new Exception();
+                        throw new Exception("Invalid status " + status1);
                     } catch (Exception e) {
-                        System.out.println("Invalid status " + status);
+                        //System.out.println("Invalid status " + status1);
                     }
                 } else {
-                    this.status = status;
+                    this.status = status1;
                 }
             }
 
