@@ -18,7 +18,7 @@ class Task{
         	try {
             	throw new Exception("Title not provided");
         	} catch (Exception e) {
-            	System.out.println(e);
+            	System.out.println();
         	}
     	} else{
         	this.taskname = title;
@@ -27,7 +27,7 @@ class Task{
         		try{
         			throw new Exception("Invalid timeToComplete ");
         		} catch (Exception e){
-        			System.out.println(e + Integer.toString(time));
+        			System.out.println(Integer.toString(time));
         		}
         	} else {
         		this.time = timeToComplete;
@@ -37,7 +37,7 @@ class Task{
 					try {
 						throw new Exception("Invalid status ");
 					} catch (Exception e){
-						System.out.println(e + status);
+						System.out.println(status);
 					}
 				} else {
 					this.status = status;
