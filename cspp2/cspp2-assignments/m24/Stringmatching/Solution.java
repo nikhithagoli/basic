@@ -31,7 +31,7 @@ class CommonString{
                     longest[i][j] = 0.0; 
             } 
         } 
-        res = Math.round(((result * 2) /(m + n))) * 100;
+        res = (Math.round((result * 2)) /(m + n)) * 100;
     }
 	public long getresult(){
 		return res;
