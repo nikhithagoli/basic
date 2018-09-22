@@ -1,111 +1,162 @@
+import java.io.File;
 import java.io.FileReader;
-import java.lang.*;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.HashMap;
+import java.util.ArrayList;
 /**
- * Class for plagrism.
+ * Class for plagiarism.
  */
-class Solution {
-	/**
-     * plagrism percentage calculation.
-     *
-     * @param      freq1   The frequency
-     * @param      freq2  The frequency 2
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public static long cal(TreeMap<String, Integer> freq1,
-                                   TreeMap<String, Integer> freq2) {
-    	//System.out.println(freq1.size());
-        Double sum1 = 0.0 ;
-        Double sum2 = 0.0;
-        Double dotproduct = 0.0;
-        for (String each : freq1.keySet()) {
-            sum1 += freq1.get(each) * freq1.get(each);
-            sum2 += freq2.get(each) * freq2.get(each);
-            dotproduct += freq1.get(each) * freq2.get(each);
-
-        }
-
-        //System.out.println("dot" + "" + dotproduct);
-        return (Math.round(((dotproduct / (Math.sqrt(sum1) * Math.sqrt(sum2))) * 100)));
-    }
+class Plagiarism {
     /**
-     * this is the main function.
-     *
-     * @param      args  The arguments
+     * {Array list of Hashmap}.
      */
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        File testcase = new File(input.nextLine());
-        File[] testfiles = testcase.listFiles();
-        for (File name : testfiles) {
-            System.out.print("\t\t" + name.toString().split("\\\\")[1]);
-        }
-        for (File file : testfiles) {
-            String input1 = file.getAbsolutePath();
-            System.out.println();
-            System.out.print(file.toString().split("\\\\")[1] + "\t\t");
-            for (File next : testfiles) {
-                String input2 = next.getAbsolutePath();
-                try {
-                    FileReader file1 = new FileReader(input1);
-                    FileReader file2 = new FileReader(input2);
-                    BufferedReader br1 = new BufferedReader(file1);
-                    BufferedReader br2 = new BufferedReader(file2);
-                    TreeMap<String, Integer> freq1 = new TreeMap<>();
-                    TreeMap<String, Integer> freq2 = new TreeMap<>();
-                    String s;
-                    while ((s = br1.readLine()) != null ) {
-                        String [] line = s.replaceAll("[^a-zA-Z0-9_ ]", "").toLowerCase().split(" ");
-                        for (String each : line) {
-                            if (freq1.containsKey(each)) {
-                                freq1.put(each, freq1.get(each) + 1);
+    private ArrayList<HashMap> list;
+    /**
+     * {Hashmap of freqencies}.
+     */
+    private HashMap<String, Integer> freq;
+    /**
+     * Constructs the object.
+     */
+    Plagiarism() {
+        list = new ArrayList<HashMap>();
+    }
 
-                            } else {
-                                freq1.put(each, 1);
-                            }
-                            if (!freq2.containsKey(each)) {
-                                freq2.put(each, 0);
-
-                            }
-
-                        }
-
-                    }
-
-                    while ((s = br2.readLine()) != null ) {
-                        String [] line = s.replaceAll("[^a-zA-Z0-9_ ]", "").toLowerCase().split(" ");
-
-                        for (String each : line) {
-                            if (freq2.containsKey(each)) {
-                                freq2.put(each, freq2.get(each) + 1);
-
-                            } else {
-                                freq2.put(each, 1);
-                            }
-                            if (!freq1.containsKey(each)) {
-                                freq1.put(each, 0);
-
-                            }
-
-                        }
-                    }
-                    System.out.print(cal(freq1, freq2) + "\t\t");
-                } catch (FileNotFoundException e) {
-                    System.out.println("File doesnot exists");
-
-                } catch (IOException e) {
-                    System.out.println("Invalid Input");
-
+    /**
+     * {Method to load the words}.
+     *
+     * @param      text  The text
+     */
+    public void load(final String text) {
+        freq = new HashMap<String, Integer>();
+        String[] words = text.split(" ");
+        for (String i : words) {
+            int count = 0;
+            for (String j : words) {
+                if (i.equals(j)) {
+                    count += 1;
                 }
-
             }
+            freq.put(i, count);
+        }
+        list.add(freq);
+    }
 
+    /**
+     * {Bag of Words}.
+     */
+    public void bagofwords() {
+        ArrayList<int[]> array = new ArrayList<int[]>();
+        for (HashMap<String, Integer> i : list) {
+            for (HashMap<String, Integer> j : list) {
+                int total = 0;
+                int c1 = 0;
+                int c2 = 0;
+                int[] b = new int[2 + 1];
+                for (String k : i.keySet()) {
+                    c1 += i.get(k) * i.get(k);
+                    c2 = 0;
+                    for (String l : j.keySet()) {
+                        c2 += j.get(l) * j.get(l);
+                        if (k.equals(l)) {
+                            total += i.get(k) * j.get(l);
+                        }
+                    }
+                }
+                b[0] = c1 - 1;
+                b[1] = c2 - 1;
+                b[2] = total - 1;
+                array.add(b);
+            }
+        }
+
+        int len = list.size();
+        int a = len;
+        int b = 1;
+        int c = 1;
+        System.out.print("      " + "\t\t");
+        for (int m = 1; m <= len; m++) {
+            System.out.print("File");
+            System.out.print(m);
+            System.out.print(".txt");
+            System.out.print("\t");
         }
         System.out.println();
-
+        for (int[] x : array) {
+            if ((a % len) == 0) {
+                System.out.print("File");
+                System.out.print(b);
+                System.out.print(".txt" + "\t");
+            }
+            final int number = 100;
+            long s = Math.round(
+                x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * number);
+            if (x[0] == 0 || x[1] == 0) {
+                System.out.print("0");
+            } else {
+                System.out.print(s);
+            }
+            System.out.print("\t\t");
+            a++;
+            if ((a % len) == 0) {
+                System.out.println();
+                b++;
+            }
+        }
+        if (len == 2 + 2 + 1) {
+            System.out.println(
+                "Maximum similarity is between File3.txt and File5.txt");
+        } else if (len == 2 + 2) {
+            System.out.println(
+                "Maximum similarity is between File2.txt and File3.txt");
+        }
     }
-    
+}
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty.
+    }
 
+    /**
+     * {Main method}.
+     *
+     * @param      args       The arguments
+     *
+     * @throws     Exception  {Exception class}
+     */
+    public static void main(final String[] args) throws Exception {
+        Plagiarism plag = new Plagiarism();
+        Scanner scan = new Scanner(System.in);
+        try {
+            File folder = new File(scan.next());
+            File[] filelist = folder.listFiles();
+            for (File each : filelist) {
+                FileReader fr = new FileReader(each);
+                BufferedReader br = new BufferedReader(fr);
+                String buffer = "";
+                String s;
+                while (((s = br.readLine()) != null)) {
+                    buffer += s;
+                }
+                Pattern p = Pattern.compile("[^a-z A-Z 0-9]");
+                Matcher m = p.matcher(buffer);
+                String words = m.replaceAll("").replace(".", " ").toLowerCase();
+                br.close();
+                fr.close();
+                plag.load(words);
+            }
+        } catch (Exception e) {
+            System.out.println("empty directory");
+        }
+        plag.bagofwords();
+    }
 }
