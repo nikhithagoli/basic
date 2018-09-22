@@ -66,11 +66,11 @@ class Solution{
         int i = 1;
         for(String input1: fileStrings){
             System.out.println();
-            System.out.print("File" + i + ".txt" + "\t");
+            System.out.print("File" + i + ".txt" + "        ");
         	for(String input2: fileStrings){
         		objects.add(new CommonString(input1, input2));
         		objects.get(k).common(input1.toCharArray(),input2.toCharArray(),input1.length(),input2.length());
-        		System.out.print(objects.get(k).getresult() + "\t");
+        		System.out.print(objects.get(k).getresult() + "        ");
         		k++;
         	}
             i++;
