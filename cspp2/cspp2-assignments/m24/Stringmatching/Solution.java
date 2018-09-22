@@ -1,6 +1,6 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -24,11 +24,17 @@ class CommonString {
         file2 = input2;
     }
     /**
-     * { item_description }
+     * { function_description }
+     *
+     * @param      one   One
+     * @param      two   Two
+     * @param      m     { parameter_description }
+     * @param      n     { parameter_description }
      */
-    public void common(final char one[], final char two[], 
+    public void common(final char[] one, final char[] two, 
         final int m, final int n) {
-        Double longest[][] = new Double[m + 1][n + 1];
+        final double h = 100.0; 
+        Double[][] longest = new Double[m + 1][n + 1];
         result = 0.0;
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
@@ -37,11 +43,12 @@ class CommonString {
                 } else if (one[i - 1] == two[j - 1]) {
                     longest[i][j] = longest[i - 1][j - 1] + 1;
                     result = Double.max(result, longest[i][j]);
-                } else
+                } else {
                     longest[i][j] = 0.0;
+                }
             }
         }
-        res = (double)Math.round((((result * 2) / (m + n)) * 100.0));
+        res = (double) Math.round((((result * 2) / (m + n)) * h));
     }
     /**
      * { function_description }.
@@ -55,7 +62,7 @@ class CommonString {
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
     /**
      * Constructs the object.
      */
