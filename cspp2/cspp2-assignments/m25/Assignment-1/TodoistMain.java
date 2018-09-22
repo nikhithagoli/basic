@@ -4,16 +4,30 @@ import java.util.Arrays;
 /**
   * write your code below this comment
   */
-
+/**
+ * Class for task.
+ */
 class Task {
+    /**
+     * taskname.
+     */
     private String taskname;
     private String personname;
     private int time;
     private boolean important;
     private boolean urgent;
     private String status;
-
-    public Task(String title, String assignedTo, int timeToComplete, boolean important, boolean urgent, String status) {
+    /**
+     * Constructs the object.
+     *
+     * @param      title           The title
+     * @param      assignedTo      The assigned to
+     * @param      timeToComplete  The time to complete
+     * @param      important       The important
+     * @param      urgent          The urgent
+     * @param      status          The status
+     */
+    public Task(final String title, final String assignedTo, final int timeToComplete, final boolean important, final boolean urgent, final String status) {
         if (title == null || title.isEmpty()) {
             try {
                 throw new Exception();
@@ -46,31 +60,59 @@ class Task {
 
         }
     }
-
+    /**
+     * gettask.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String gettask() {
         return this.taskname;
     }
-
+    /**
+     * getpersonname.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getpersonname() {
         return this.personname;
     }
-
+    /**
+     * gettime.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int gettime() {
         return this.time;
     }
-
+    /**
+     * getimportant.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean getimportant() {
         return this.important;
     }
-
+    /**
+     * geturgent.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean geturgent() {
         return this.urgent;
     }
-
+    /**
+     * get status.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getstatus() {
         return this.status;
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String s = taskname + ", " + personname + ", " + time + ", ";
         if (this.important) {
@@ -87,34 +129,55 @@ class Task {
     }
 }
 
-
+/**
+ * Class for todoist.
+ */
 class Todoist {
+    /**
+     * tasklist
+     */
     Task[] tasklist;
     int size;
-
+    /**
+     * Constructs the object.
+     */
     public Todoist() {
         tasklist = new Task[2 * (2 + 2 + 1)];
         size = 0;
     }
-
+    /**
+     * resize.
+     */
     public void resize() {
         tasklist =  Arrays.copyOf(tasklist, tasklist.length * 2);
     }
-
-    public void addTask(Task task) {
+    /**
+     * Adds a task.
+     *
+     * @param      task  The task
+     */
+    public void addTask(final Task task) {
         if (size == tasklist.length) {
             resize();
         }
         tasklist[size++] = task;
     }
-
+    /**
+     * { function_description }
+     */
     public void toStringlist() {
         for (Task each : tasklist) {
             System.out.println(each);;
         }
     }
-
-    public Task getNextTask(String name) {
+/**
+ * Gets the next task.
+ *
+ * @param      name  The name
+ *
+ * @return     The next task.
+ */
+    public Task getNextTask(final String name) {
         for (Task each : tasklist) {
             if (each.getpersonname().equals(name) && each.getstatus().equals("todo") && each.getimportant() && (!each.geturgent())) {
                 return each;
@@ -127,8 +190,15 @@ class Todoist {
         }
         return null;
     }
-
-    public Task[] getNextTask(String name, int count) {
+    /**
+     * Gets the next task.
+     *
+     * @param      name   The name
+     * @param      count  The count
+     *
+     * @return     The next task.
+     */
+    public Task[] getNextTask(final String name, final int count) {
         Task[] multipletasks = new Task[count];
         int i = 0;
         for (Task each : tasklist) {
@@ -149,7 +219,11 @@ class Todoist {
         }
         return null;
     }
-
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int totalTime4Completion() {
         int total = 0;
         for (Task each : tasklist) {
