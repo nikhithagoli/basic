@@ -77,7 +77,7 @@ class Solution {
                 i++;
             }
         } catch(Exception e){
-            System.out.println("empty Directory");
+            System.out.println("Empty Directory");
         }
     }
 
