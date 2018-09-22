@@ -40,12 +40,12 @@ class Solution {
         File testcase = new File(input.nextLine());
         File[] testfiles = testcase.listFiles();
         for (File name : testfiles) {
-            System.out.print("\t" + name.toString().split("\\\\")[1]);
+            System.out.print("\t\t" + name.toString().split("\\\\")[1]);
         }
         for (File file : testfiles) {
             String input1 = file.getAbsolutePath();
             System.out.println();
-            System.out.print(file.toString().split("\\\\")[1] + "\t");
+            System.out.print(file.toString().split("\\\\")[1] + "\t\t");
             for (File next : testfiles) {
                 String input2 = next.getAbsolutePath();
                 try {
@@ -91,7 +91,7 @@ class Solution {
 
                         }
                     }
-                    System.out.print(cal(freq1, freq2) + "\t");
+                    System.out.print(cal(freq1, freq2) + "\t\t");
                 } catch (FileNotFoundException e) {
                     System.out.println("File doesnot exists");
 
