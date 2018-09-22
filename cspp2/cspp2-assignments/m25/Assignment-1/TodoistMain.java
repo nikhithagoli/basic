@@ -223,6 +223,7 @@ class Todoist {
             return multipletasks;
         }
         size1 = 0;
+        multipletasks = new Task[count];
         for (int i = 0; i < size; i++) {
             if (tasklist[i].getpersonname().equals(name)){
                 if (tasklist[i].getstatus().equals("todo")){
