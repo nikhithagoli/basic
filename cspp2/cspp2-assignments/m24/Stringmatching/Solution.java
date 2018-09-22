@@ -58,16 +58,18 @@ class Solution{
         	}
         }
         int k = 0;
+        int i = 1;
         for(String input1: fileStrings){
             System.out.println();
-            System.out.print("File" + k + 1 + ".txt" + "\t");
+            System.out.print("File" + i + ".txt" + "\t");
         	for(String input2: fileStrings){
         		objects.add(new CommonString(input1, input2));
         		objects.get(k).common(input1.toCharArray(),input2.toCharArray(),input1.length(),input2.length());
-        		System.out.println(objects.get(k).getresult() + "\t");
+        		System.out.print(objects.get(k).getresult() + "\t");
         		k++;
 
         	}
+            i++;
             System.out.println();
         }
 	}
