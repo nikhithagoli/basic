@@ -38,14 +38,14 @@ class CommonString {
         file2 = input2;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      one   One
      * @param      two   Two
      * @param      m     { parameter_description }
      * @param      n     { parameter_description }
      */
-    public void common(final char[] one, final char[] two, 
+    public void common(final char[] one, final char[] two,
         final int m, final int n) {
         final double h = 100.0;
         Double[][] longest = new Double[m + 1][n + 1];
