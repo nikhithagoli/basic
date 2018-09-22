@@ -21,7 +21,7 @@ class Task{
             	System.out.println(e);
         	}
     	} else{
-        	this.taskname = taskname;
+        	this.taskname = title;
         	this.personname = assignedTo;
         	if(time < 0){
         		try{
