@@ -37,12 +37,13 @@ class CommonString {
 class Solution {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String inp = input.nextLine();
-        if (inp == null || inp == "") {
-            System.out.println("empty Directory");
-        } else {
-            File testcase = new File(inp);
-            File[] testfiles = testcase.listFiles();
+        // if (testfiles.length == 0) {
+        //     System.out.println("empty Directory");
+        // } else {
+        try{
+        File testcase = new File(input.nextLine());
+        File[] testfiles = testcase.listFiles();
+        
             System.out.print("             ");
             for (File name : testfiles) {
                 System.out.print(name.toString().split("\\\\")[1] + "    ");
@@ -75,6 +76,8 @@ class Solution {
                 }
                 i++;
             }
+        } catch(Exception e){
+            System.out.println("empty Directory");
         }
     }
 
