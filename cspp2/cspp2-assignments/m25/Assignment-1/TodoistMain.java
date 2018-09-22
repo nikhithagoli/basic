@@ -12,10 +12,25 @@ class Task {
      * taskname.
      */
     private String taskname;
+    /**
+     * taskname.
+     */
     private String personname;
+    /**
+     * personname.
+     */
     private int time;
+    /**
+     * important.
+     */
     private boolean important;
+    /**
+     * urgent.
+     */
     private boolean urgent;
+    /**
+     * status.
+     */
     private String status;
     /**
      * Constructs the object.
@@ -26,8 +41,10 @@ class Task {
      * @param      important1       The important
      * @param      urgent1         The urgent
      * @param      status1          The status
+     * @throws     Exception        ndkfh
      */
-    public Task(final String title, final String assignedTo, final int timeToComplete, final boolean important1, final boolean urgent1, final String status1) throws Exception {
+    Task(final String title, final String assignedTo, final int timeToComplete,
+    final boolean important1, final boolean urgent1, final String status1) throws Exception {
         if (title == null || title.isEmpty()) {
             throw new Exception("Title not provided");
         } else {
@@ -122,14 +139,17 @@ class Task {
  */
 class Todoist {
     /**
-     * tasklist
+     * tasklist.
      */
-    Task[] tasklist;
-    int size;
+    private Task[] tasklist;
+    /**
+     * size.
+     */
+    private int size;
     /**
      * Constructs the object.
      */
-    public Todoist() {
+    Todoist() {
         tasklist = new Task[2 * (2 + 2 + 1)];
         size = 0;
     }
@@ -151,7 +171,9 @@ class Todoist {
         tasklist[size++] = task;
     }
     /**
-     * { function_description }
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
      */
     public String toString() {
         String str = "";
@@ -203,11 +225,6 @@ class Todoist {
     public Task[] getNextTask(final String name, final int count) {
         Task[] multipletasks = new Task[count];
         int size1 = 0;
-        /*for (Task each : tasklist) {
-            if (each.getpersonname().equals(name) && each.getstatus().equals("todo") && each.getimportant() && (!each.geturgent())) {
-                multipletasks[i++] = each;
-            }
-        }*/
         for (int i = 0; i < size; i++) {
             if (tasklist[i].getpersonname().equals(name)) {
                 if (tasklist[i].getstatus().equals("todo")) {
@@ -242,7 +259,7 @@ class Todoist {
         return null;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -265,6 +282,9 @@ public class TodoistMain {
     /**
      * Starts a test.
      */
+    private TodoistMain(){
+        //constructor.
+    }
     public static void startTest() {
         Todoist todo = new Todoist();
         Scanner s = new Scanner(System.in);
@@ -340,12 +360,12 @@ public class TodoistMain {
     public static Task createTask(final String[] tokens) throws Exception {
         String title = tokens[1];
         String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
+        int timeToComplete = Integer.parseInt(tokens[2 + 1]);
+        boolean important = tokens[2 + 2].equals("y");
+        boolean urgent = tokens[2 + 2 + 1].equals("y");
+        String status = tokens[2 + 2 + 2];
         return new Task(
-                   title, assignedTo, timeToComplete, important, urgent, status);
+        title, assignedTo, timeToComplete, important, urgent, status);
     }
 
     /**
