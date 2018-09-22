@@ -27,7 +27,7 @@ class Task{
         		try{
         			throw new Exception("Invalid timeToComplete ");
         		} catch (Exception e){
-        			System.out.println(Integer.toString(time));
+        			System.out.println(e + Integer.toString(time));
         		}
         	} else {
         		this.time = timeToComplete;
@@ -37,7 +37,7 @@ class Task{
 					try {
 						throw new Exception("Invalid status ");
 					} catch (Exception e){
-						System.out.println(status);
+						System.out.println("Invalid status " + status);
 					}
 				} else {
 					this.status = status;
