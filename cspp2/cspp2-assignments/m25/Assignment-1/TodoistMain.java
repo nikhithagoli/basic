@@ -221,10 +221,14 @@ public class TodoistMain {
      * @param      tokens  The tokens
      */
     public static void testTask(final String[] tokens) {
+    	Task t = null;
         try {
-            createTask(tokens);
+            t = createTask(tokens);
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+        if(t != null){
+        	System.out.println(t);
         }
     }
 
