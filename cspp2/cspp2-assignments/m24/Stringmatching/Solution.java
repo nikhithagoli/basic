@@ -9,7 +9,7 @@ class CommonString{
 	private String file2;
 	private int lcs = 1;
 	private Double result;
-	private long res;
+	private Double res;
 	CommonString(String input1, String input2){
 		file1 = input1;
 		file2 = input2;
@@ -31,9 +31,9 @@ class CommonString{
                     longest[i][j] = 0.0; 
             } 
         } 
-        res = (long)((result * 2) /(m + n)) * 100;
+        res = ((result * 2) /(m + n)) * 100;
     }
-	public long getresult(){
+	public Double getresult(){
 		return res;
 	}
 }
