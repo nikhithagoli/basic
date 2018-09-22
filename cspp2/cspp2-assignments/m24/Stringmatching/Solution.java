@@ -31,7 +31,6 @@ class CommonString{
                     longest[i][j] = 0.0; 
             } 
         } 
-        System.out.println(result);
         res = ((result * 2) /(m + n)) * 100;
     }
 	public Double getresult(){
@@ -57,8 +56,6 @@ class Solution{
         int k = 0;
         for(String input1: fileStrings){
         	for(String input2: fileStrings){
-        		System.out.println(input1);
-        		System.out.println(input2);
         		objects.add(new CommonString(input1, input2));
         		objects.get(k).common(input1.toCharArray(),input2.toCharArray(),input1.length(),input2.length());
         		System.out.println(objects.get(k).getresult());
