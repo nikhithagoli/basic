@@ -46,8 +46,8 @@ class Solution{
             System.out.println("empty directory");
         } else{
         for (File name : testfiles) {
-            System.out.print("      " +"\t\t");
-            System.out.print(name.toString().split("\\\\")[1] + "\t");
+            System.out.print("             ");
+            System.out.print(name.toString().split("\\\\")[1] + "    ");
 
        }
         
@@ -70,7 +70,7 @@ class Solution{
         	for(String input2: fileStrings){
         		objects.add(new CommonString(input1, input2));
         		objects.get(k).common(input1.toCharArray(),input2.toCharArray(),input1.length(),input2.length());
-        		System.out.print(objects.get(k).getresult() + "        ");
+        		System.out.print(objects.get(k).getresult() + "         ");
         		k++;
         	}
             i++;
