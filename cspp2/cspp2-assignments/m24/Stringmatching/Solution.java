@@ -43,7 +43,7 @@ class Solution{
         File testcase = new File(input.nextLine());
         File[] testfiles = testcase.listFiles();
         for (File name : testfiles) {
-            System.out.print("\t" + name.toString().split("\\\\")[1]);
+            System.out.print("\t\t" + name.toString().split("\\\\")[1]);
         }
         
         ArrayList<String> fileStrings = new ArrayList<>();
