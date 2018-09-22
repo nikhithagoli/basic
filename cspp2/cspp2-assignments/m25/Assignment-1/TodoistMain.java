@@ -169,13 +169,25 @@ class Todoist {
  */
     public Task getNextTask(final String name) {
         for (Task each : tasklist) {
-            if (each.getpersonname().equals(name) && each.getstatus().equals("todo") && each.getimportant() && (!each.geturgent())) {
-                return each;
-            }
+            if (each.getpersonname().equals(name)){
+                if (each.getstatus().equals("todo")){
+                    if(each.getimportant()){
+                        if(!each.geturgent()){
+                            return each;
+                        }
+                    }
+                }
+            }  
         }
         for (Task each : tasklist) {
-            if (each.getpersonname().equals(name) && each.getstatus().equals("todo") && each.getimportant() && (each.geturgent())) {
-                return each;
+            if (each.getpersonname().equals(name)){
+                if (each.getstatus().equals("todo")){
+                    if(each.getimportant()){
+                        if(each.geturgent()){
+                            return each;
+                        }
+                    }
+                }
             }
         }
         return null;
