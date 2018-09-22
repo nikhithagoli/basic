@@ -45,8 +45,8 @@ class Solution{
         if(testfiles.length == 0){
             System.out.println("empty directory");
         } else{
+        System.out.print("             ");
         for (File name : testfiles) {
-            System.out.print("             ");
             System.out.print(name.toString().split("\\\\")[1] + "    ");
 
        }
