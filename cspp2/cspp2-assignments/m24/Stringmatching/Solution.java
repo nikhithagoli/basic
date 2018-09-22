@@ -41,7 +41,7 @@ class CommonString {
                     longest[i][j] = 0.0;
             }
         }
-        res = (double)Math.round((((result * 2) / (m + n)) * 100d));
+        res = (double)Math.round((((result * 2) / (m + n)) * 100.0));
     }
     /**
      * { function_description }.
@@ -59,7 +59,7 @@ class Solution {
     /**
      * Constructs the object.
      */
-    Solution() {
+    private Solution() {
         //funtion.
     }
     /**
@@ -87,9 +87,9 @@ class Solution {
             for (File filename : testfiles) {
                 try {
                     String content = new String(Files.
-                                                readAllBytes(Paths.get(filename.getAbsolutePath())));
+                    readAllBytes(Paths.get(filename.getAbsolutePath())));
                     content = content.replaceAll("\n", " ")
-                              .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
+                    .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
                 } catch (Exception e) {
                     System.out.println("file not found");
@@ -103,7 +103,7 @@ class Solution {
                 for (String input2 : fileStrings) {
                     objects.add(new CommonString(input1, input2));
                     objects.get(k).common(input1.toCharArray(),
-                                          input2.toCharArray(), input1.length(), input2.length());
+                    input2.toCharArray(), input1.length(), input2.length());
                     System.out.print(objects.get(k).getresult() + "         ");
                     k++;
                 }
