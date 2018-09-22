@@ -34,7 +34,7 @@ class Task {
             this.taskname = title;
             this.personname = assignedTo;
             if (timeToComplete < 0) {
-                throw new Exception("Invalid timeToComplete " + time);
+                throw new Exception("Invalid timeToComplete " + timeToComplete);
             } else {
                 this.time = timeToComplete;
                 this.important = important1;
