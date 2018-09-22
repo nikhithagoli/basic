@@ -74,7 +74,6 @@ class Solution{
         		k++;
         	}
             i++;
-            System.out.println();
         }
     }
 	}
