@@ -46,8 +46,10 @@ class Solution{
             System.out.println("empty directory");
         } else{
         for (File name : testfiles) {
-            System.out.print("\t\t" + name.toString().split("\\\\")[1]);
-        }
+            System.out.print("      " +"\t\t");
+            System.out.println(name.toString().split("\\\\")[1] + "\t");
+
+       }
         
         ArrayList<String> fileStrings = new ArrayList<>();
         ArrayList<CommonString> objects = new ArrayList<>();
@@ -64,11 +66,11 @@ class Solution{
         int i = 1;
         for(String input1: fileStrings){
             System.out.println();
-            System.out.print("File" + i + ".txt" + "\t");
+            System.out.print("File" + i + ".txt" + "\t\t");
         	for(String input2: fileStrings){
         		objects.add(new CommonString(input1, input2));
         		objects.get(k).common(input1.toCharArray(),input2.toCharArray(),input1.length(),input2.length());
-        		System.out.print(objects.get(k).getresult() + "\t");
+        		System.out.print(objects.get(k).getresult() + "\t\t");
         		k++;
         	}
             i++;
