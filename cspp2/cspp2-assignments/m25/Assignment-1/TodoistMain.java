@@ -14,7 +14,7 @@ class Task{
 	private String status;
 
 	public Task(String title, String assignedTo, int timeToComplete, boolean important, boolean urgent, String status){
-		if(taskname == null || taskname.isEmpty()){
+		if(title == null || title.isEmpty()){
         	try {
             	throw new Exception("Title not provided");
         	} catch (Exception e) {
@@ -23,7 +23,7 @@ class Task{
     	} else{
         	this.taskname = title;
         	this.personname = assignedTo;
-        	if(time < 0){
+        	if(timeToComplete < 0){
         		try{
         			throw new Exception("Invalid timeToComplete ");
         		} catch (Exception e){
