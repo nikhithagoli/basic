@@ -27,7 +27,7 @@ class Task {
      * @param      urgent1         The urgent
      * @param      status1          The status
      */
-    public Task(final String title, final String assignedTo, final int timeToComplete, final boolean important1, final boolean urgent1, final String status1) throws Exception{
+    public Task(final String title, final String assignedTo, final int timeToComplete, final boolean important1, final boolean urgent1, final String status1) throws Exception {
         if (title == null || title.isEmpty()) {
             throw new Exception("Title not provided");
         } else {
@@ -156,39 +156,39 @@ class Todoist {
     public String toString() {
         String str = "";
         for (int i = 0; i < size; i++) {
-            System.out.println(tasklist[i]); 
+            System.out.println(tasklist[i]);
         }
         return str;
     }
-/**
- * Gets the next task.
- *
- * @param      name  The name
- *
- * @return     The next task.
- */
+    /**
+     * Gets the next task.
+     *
+     * @param      name  The name
+     *
+     * @return     The next task.
+     */
     public Task getNextTask(final String name) {
         for (int i = 0; i < size; i++) {
-            if (tasklist[i].getpersonname().equals(name)){
-                if (tasklist[i].getstatus().equals("todo")){
-                    if(tasklist[i].getimportant()){
-                        if(!tasklist[i].geturgent()){
+            if (tasklist[i].getpersonname().equals(name)) {
+                if (tasklist[i].getstatus().equals("todo")) {
+                    if (tasklist[i].getimportant()) {
+                        if (!tasklist[i].geturgent()) {
                             return tasklist[i];
                         }
                     }
                 }
-            }  
+            }
         }
         for (int i = 0; i < size; i++) {
-            if (tasklist[i].getpersonname().equals(name)){
-                if (tasklist[i].getstatus().equals("todo")){
-                    if(tasklist[i].getimportant()){
-                        if(tasklist[i].geturgent()){
+            if (tasklist[i].getpersonname().equals(name)) {
+                if (tasklist[i].getstatus().equals("todo")) {
+                    if (tasklist[i].getimportant()) {
+                        if (tasklist[i].geturgent()) {
                             return tasklist[i];
                         }
                     }
                 }
-            }  
+            }
         }
         return null;
     }
@@ -209,15 +209,15 @@ class Todoist {
             }
         }*/
         for (int i = 0; i < size; i++) {
-            if (tasklist[i].getpersonname().equals(name)){
-                if (tasklist[i].getstatus().equals("todo")){
-                    if(tasklist[i].getimportant()){
-                        if(!tasklist[i].geturgent()){
+            if (tasklist[i].getpersonname().equals(name)) {
+                if (tasklist[i].getstatus().equals("todo")) {
+                    if (tasklist[i].getimportant()) {
+                        if (!tasklist[i].geturgent()) {
                             multipletasks[size1++] = tasklist[i];
                         }
                     }
                 }
-            }  
+            }
         }
         if (size1 == count) {
             return multipletasks;
@@ -225,17 +225,17 @@ class Todoist {
         size1 = 0;
         multipletasks = new Task[count];
         for (int i = 0; i < size; i++) {
-            if (tasklist[i].getpersonname().equals(name)){
-                if (tasklist[i].getstatus().equals("todo")){
-                    if(tasklist[i].getimportant()){
-                        if(tasklist[i].geturgent()){
+            if (tasklist[i].getpersonname().equals(name)) {
+                if (tasklist[i].getstatus().equals("todo")) {
+                    if (tasklist[i].getimportant()) {
+                        if (tasklist[i].geturgent()) {
                             multipletasks[size1++] = tasklist[i];
                         }
                     }
                 }
-            }  
+            }
         }
-        
+
         if (size1 == count) {
             return multipletasks;
         }
@@ -248,7 +248,7 @@ class Todoist {
      */
     public int totalTime4Completion() {
         int total = 0;
-        for (int i = 0; i<size; i++) {
+        for (int i = 0; i < size; i++) {
             if (tasklist[i].getstatus().equals("todo")) {
                 total += tasklist[i].gettime();
             }
@@ -281,7 +281,7 @@ public class TodoistMain {
                 System.out.println(todo);
                 break;
             case "get-next":
-                    System.out.println(todo.getNextTask(tokens[1]));
+                System.out.println(todo.getNextTask(tokens[1]));
                 break;
             case "get-next-n":
                 int n = Integer.parseInt(tokens[2]);
