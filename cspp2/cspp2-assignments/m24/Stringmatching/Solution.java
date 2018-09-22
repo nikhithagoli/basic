@@ -42,6 +42,9 @@ class Solution{
 		Scanner input = new Scanner(System.in);
         File testcase = new File(input.nextLine());
         File[] testfiles = testcase.listFiles();
+        if(testfiles.length == 0){
+            System.out.println("empty directory");
+        } else{
         for (File name : testfiles) {
             System.out.print("\t\t" + name.toString().split("\\\\")[1]);
         }
@@ -67,11 +70,11 @@ class Solution{
         		objects.get(k).common(input1.toCharArray(),input2.toCharArray(),input1.length(),input2.length());
         		System.out.print(objects.get(k).getresult() + "\t");
         		k++;
-
         	}
             i++;
             System.out.println();
         }
+    }
 	}
 	
 }
