@@ -29,32 +29,17 @@ class Task {
      */
     public Task(final String title, final String assignedTo, final int timeToComplete, final boolean important1, final boolean urgent1, final String status1) throws Exception{
         if (title == null || title.isEmpty()) {
-            /*try {
-                throw new Exception("Title not provided");
-            } catch (Exception e) {
-                //System.out.println("Title not provided");
-            }*/
             throw new Exception("Title not provided");
         } else {
             this.taskname = title;
             this.personname = assignedTo;
             if (timeToComplete < 0) {
-                /*try {
-                    throw new Exception("Invalid timeToComplete " + Integer.toString(time));
-                } catch (Exception e) {
-                    //System.out.println("Invalid timeToComplete " + Integer.toString(time));
-                }*/
-                throw new Exception("Invalid timeToComplete " + Integer.toString(time));
+                throw new Exception("Invalid timeToComplete " + time);
             } else {
                 this.time = timeToComplete;
                 this.important = important1;
                 this.urgent = urgent1;
                 if (!(status1.equals("done") || status1.equals("todo"))) {
-                    /*try {
-                        throw new Exception("Invalid status " + status1);
-                    } catch (Exception e) {
-                        System.out.println("Invalid status " + status1);
-                    }*/
                     throw new Exception("Invalid status " + status1);
                 } else {
                     this.status = status1;
