@@ -153,10 +153,12 @@ class Todoist {
     /**
      * { function_description }
      */
-    public void toStringlist() {
+    public String toString() {
+        String str = "";
         for (Task each : tasklist) {
-            System.out.println(each);;
+            str += each.toString();
         }
+        return str;
     }
 /**
  * Gets the next task.
