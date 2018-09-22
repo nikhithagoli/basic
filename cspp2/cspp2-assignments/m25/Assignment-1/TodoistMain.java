@@ -227,14 +227,18 @@ class Todoist {
         Task[] multipletasks = new Task[count];
         int size1 = 0;
         for (int i = 0; i < size; i++) {
-            if (tasklist[i].getpersonname().equals(name)) {
-                if (tasklist[i].getstatus().equals("todo")) {
-                    if (tasklist[i].getimportant()) {
-                        if (!tasklist[i].geturgent()) {
-                            multipletasks[size1++] = tasklist[i];
+            if(size1 < count){
+                if (tasklist[i].getpersonname().equals(name)) {
+                    if (tasklist[i].getstatus().equals("todo")) {
+                        if (tasklist[i].getimportant()) {
+                            if (!tasklist[i].geturgent()) {
+                                multipletasks[size1++] = tasklist[i];
+                            }
                         }
                     }
                 }
+            } else {
+                break;
             }
         }
         if (size1 == count) {
@@ -243,14 +247,18 @@ class Todoist {
         int size2 = 0;
         Task[] multipletask = new Task[count];
         for (int i = 0; i < size; i++) {
-            if (tasklist[i].getpersonname().equals(name)) {
-                if (tasklist[i].getstatus().equals("todo")) {
-                    if (tasklist[i].getimportant()) {
-                        if (tasklist[i].geturgent()) {
-                            multipletask[size2++] = tasklist[i];
+            if(size2 < count){
+                if (tasklist[i].getpersonname().equals(name)) {
+                    if (tasklist[i].getstatus().equals("todo")) {
+                        if (tasklist[i].getimportant()) {
+                            if (tasklist[i].geturgent()) {
+                                multipletask[size2++] = tasklist[i];
+                            }
                         }
                     }
                 }
+            } else{
+                break;
             }
         }
 
