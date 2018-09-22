@@ -240,22 +240,22 @@ class Todoist {
         if (size1 == count) {
             return multipletasks;
         }
-        size1 = 0;
-        multipletasks = new Task[count];
+        int size2 = 0;
+        Task[] multipletask = new Task[count];
         for (int i = 0; i < size; i++) {
             if (tasklist[i].getpersonname().equals(name)) {
                 if (tasklist[i].getstatus().equals("todo")) {
                     if (tasklist[i].getimportant()) {
                         if (tasklist[i].geturgent()) {
-                            multipletasks[size1++] = tasklist[i];
+                            multipletask[size2++] = tasklist[i];
                         }
                     }
                 }
             }
         }
 
-        if (size1 == count) {
-            return multipletasks;
+        if (size2 == count) {
+            return multipletask;
         }
         return null;
     }
