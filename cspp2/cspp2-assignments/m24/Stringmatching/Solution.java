@@ -40,10 +40,10 @@ class Solution {
         // if (testfiles.length == 0) {
         //     System.out.println("empty Directory");
         // } else {
-        try{
-        File testcase = new File(input.nextLine());
-        File[] testfiles = testcase.listFiles();
-        
+        try {
+            File testcase = new File(input.nextLine());
+            File[] testfiles = testcase.listFiles();
+
             System.out.print("             ");
             for (File name : testfiles) {
                 System.out.print(name.toString().split("\\\\")[1] + "    ");
@@ -56,7 +56,7 @@ class Solution {
                 try {
                     String content = new String(Files.readAllBytes(Paths.get(filename.getAbsolutePath())));
                     content = content.replaceAll("\n", " ")
-                    .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
+                              .replaceAll("[^A-Za-z0-9 ]", "").replaceAll("\\s+", " ");
                     fileStrings.add(content);
                 } catch (Exception e) {
                     System.out.println("file not found");
@@ -69,14 +69,14 @@ class Solution {
                 System.out.print("File" + i + ".txt" + "        ");
                 for (String input2 : fileStrings) {
                     objects.add(new CommonString(input1, input2));
-                    objects.get(k).common(input1.toCharArray(), 
-                     input2.toCharArray(),input1.length(), input2.length());
+                    objects.get(k).common(input1.toCharArray(),
+                                          input2.toCharArray(), input1.length(), input2.length());
                     System.out.print(objects.get(k).getresult() + "         ");
                     k++;
                 }
                 i++;
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Empty Directory");
         }
     }
